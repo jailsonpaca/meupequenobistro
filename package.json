@@ -1,0 +1,19 @@
+{
+  "name": "meupequenobistro",
+  "version": "1.0.0",
+  "description": "layout para o site meupequenobistro",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon --watch src --watch index.js",
+    "dev":"browser-sync start --server --files \"*.html\" \"./assets\""
+  },
+  "author": "jailson",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

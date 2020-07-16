@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="pt-BR" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Meu Pequeno Bistro</title>
+        <link rel="stylesheet" type="text/css" href="https://meupequenobistro.com.br/cardapio/assets/css/bootstrap.min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="https://meupequenobistro.com.br/cardapio/assets/css/font-awesome.min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="https://meupequenobistro.com.br/cardapio/assets/css/animate.min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="https://meupequenobistro.com.br/cardapio/assets/css/font-pizzaro.css" media="all" />
+        <link rel="stylesheet" type ="text/css" href="https://meupequenobistro.com.br/cardapio/assets/css/style.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="https://meupequenobistro.com.br/cardapio/assets/css/colors/blue.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="https://meupequenobistro.com.br/cardapio/assets/css/jquery.mCustomScrollbar.min.css" media="all" />
+        <link href="https://meupequenobistro.com.br/cardapio/assets/css/colors/blue.css" rel="alternate stylesheet" title="Blue color">
+        <link rel="stylesheet" type="text/css" href="https://meupequenobistro.com.br/cardapio/assets/css/mobile.css" media="all" />
+        <link href="https://meupequenobistro.com.br/cardapio/assets/css/sumoselect.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CYanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
+        <link rel="shortcut icon" href="https://meupequenobistro.com.br/cardapio/assets/images/fav-icon.png">
+    </head>
+    <body class="page-template-template-homepage-v1 home-v1">
+        <div id="page" class="hfeed site">
+
+            <div class="modal" id="dvModalQuantidade" tabindex="-1" role="dialog" style="z-index:2200000 !important">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Adicionar ao carrinho</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" style="color:#000 !important">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <input type="hidden" id="txtModalAdicionarProdutoIdProduto">
+                                <div id="dvModalAdicionarProdutoMensagem"></div>
+
+                                <div class='col-xs-12 col-sm-6 col-md-6'>
+                                    <label>Quantidade</label>
+                                    <select id="txtModalAdicionarProdutoQuantidade" class="form-control">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+
+                                <div class='col-xs-12 col-sm-6 col-md-6'>
+                                    <label>Nome</label>
+                                    <div id="txtModalAdicionarProdutoNome"></div>
+                                </div>
+
+                                <!--<table class="table table-responsive" id="tbModalQuantidade" style="border:none !important">
+                                    <thead style="border:none !important">
+                                        <tr style="border:none !important">
+                                            <th width="30%" style="border:none !important">QUANTIDADE</th>
+                                            <th width="70%" style="border:none !important">NOME</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <select id="txtModalAdicionarProdutoQuantidade" class="form-control">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" id="txtModalAdicionarProdutoNome" readonly>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table> -->
+
+                            </div>
+                            <div class="row" id="dvInsumoProduto">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+
+                            <div class="col-lg-12 col-xs-12">
+                                <button type="button" class="btn btn-danger adicionar" id="txtModalAdicionarProdutoBtnAdicionar">ADICIONAR</button>
+                            </div>
+                            <!--<div class="col-lg-4 col-xs-4">
+                                <button type="button" class="btn btn-secondary fechar" data-dismiss="modal">FECHAR</button>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <header id="masthead" class="site-header header-v1" style="background-image: none; ">
+                <div class="col-full">
+                    <a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
+                    <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+                    <div class="header-wrap">
+                        <div class="site-branding">
+                            <a href="https://meupequenobistro.com.br/cardapio/home" class="custom-logo-link" rel="home">
+                                <img src="https://meupequenobistro.com.br/cardapio/imgs/logo_menu.png" class="hide-mob" alt="Logo Meu Pequeno Bistro" title="Logo Meu Pequeno Bistro" />
+                                <img src="https://meupequenobistro.com.br/cardapio/imgs/logo_menu_mobile.png" class="show-mob" alt="Logo Meu Pequeno Bistro" title="Logo Meu Pequeno Bistro" />
+                            </a>
+                        </div>
+                        <nav id="site-navigation" class="main-navigation" aria-label="Primary Navigation">
+                            <button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false">
+                                <span class="close-icon">
+                                   <i class="po po-close-delete"></i>
+                                </span>
+                                <span class="menu-icon">
+                                   <i class="po po-menu-icon"></i>
+                                </span>
+                                <span class=" screen-reader-text">Menu</span>
+                            </button>
+                            <div class="primary-navigation">
+                                <ul id="menu-main-menu" class="menu nav-menu" aria-expanded="false">
+                                    <li class="menu-item"><a href="shop-grid-3-column.html">Peça Online</a></li>
+                                    <li class="yamm-fw menu-item menu-item-has-children">
+                                        <a href="about.html">Menu</a>
+                                        <ul class="sub-menu">
+                                            <li class="menu-item">
+                                                <div class="yamm-content">
+                                                    <div class="kc-elm kc-css-4169277 kc_row">
+                                                        <div class="kc-row-container  kc-container">
+                                                            <div class="kc-wrap-columns">
+                                                                <div class="col-sm-3 col-xs-12 col-md-3 col-lg-3">
+                                                                    <div class="kc-col-container">
+                                                                        <div class="widget widget_nav_menu kc-elm kc-css-1908114">
+                                                                            <div class="menu-pages-menu-1-container">
+                                                                                <ul id="menu-pages-menu-5" class="menu">
+                                                                                    <li class="nav-title menu-item"><a href="#">Início</a></li>
+                                                                                    <li class="menu-item"><a href="index.html">Home</a></li>
+                                                                                    <li class="nav-title menu-item"><a href="#">Usuário</a></li>
+                                                                                    <li class="menu-item"><a href="login-and-register.html">Minha conta</a></li>
+                                                                                    <li class="menu-item"><a href="track-order.html">Acompanhar o pedido</a></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 col-xs-12 col-md-3 col-lg-3">
+                                                                    <div class="kc-col-container">
+                                                                        <div class="widget widget_nav_menu kc-elm kc-css-2420681">
+                                                                            <div class="menu-pages-menu-2-container">
+                                                                                <ul id="menu-pages-menu-6" class="menu">
+                                                                                    <li class="nav-title menu-item"><a href="#">Página de compra</a></li>
+                                                                                    <li class="menu-item"><a href="shop-sidebar-grid-3-column.html">Comprar</a></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 col-xs-12 col-md-3 col-lg-3">
+                                                                    <div class="kc-col-container">
+                                                                        <div class="widget widget_nav_menu kc-elm kc-css-3102392">
+                                                                            <div class="menu-pages-menu-3-container">
+                                                                                <ul id="menu-pages-menu-7" class="menu">
+                                                                                    <li class="nav-title menu-item current_page_parent"><a href="blog.html">Nosso Blog</a></li>
+                                                                                    <li class="menu-item current_page_parent"><a href="blog.html">Blog</a></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-3 col-xs-12 col-md-3 col-lg-3">
+                                                                    <div class="kc-col-container">
+                                                                        <div class="widget widget_nav_menu kc-elm kc-css-3447423">
+                                                                            <div class="menu-pages-menu-4-container">
+                                                                                <ul id="menu-pages-menu-8" class="menu">
+                                                                                    <li class="nav-title menu-item"><a href="single-product-v1.html">Um produto só</a></li>
+                                                                                    <li class="menu-item"><a href="single-product-v3.html">Produtos</a></li>
+                                                                                    <li class="nav-title menu-item"><a href="#">Meu pequeno bistro</a></li>
+                                                                                    <li class="menu-item"><a href="about.html">Sobre nós</a></li>
+                                                                                    <li class="menu-item"><a href="contact.html">Contato</a></li>
+                                                                                    <li class="menu-item"><a href="terms-and-conditions.html">Termos &amp; Condições</a></li>
+                                                                                    <li class="menu-item"><a href="faq-v2.html">FAQ</a></li>
+                                                                                    <li class="menu-item"><a href="404.html">404</a></li>
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item"><a href="blog.html">Notícias</a></li>
+                                    <li class="menu-item"><a href="https://meupequenobistro.com.br/cardapio/contato">Localização</a></li>
+                                </ul>
+                            </div>
+                            <div class="handheld-navigation">
+                                <span class="phm-close">Fechar</span>
+                                <ul class="menu">
+                                    <li class="menu-item "><a href="https://meupequenobistro.com.br/cardapio/produtos/confeitaria">Confeitaria</a></li>
+                                    <li class="menu-item "><a href="https://meupequenobistro.com.br/cardapio/produtos/p-o-de-queijo">Pão de Queijo</a></li>
+                                    <li class="menu-item "><a href="https://meupequenobistro.com.br/cardapio/produtos/sandu-che-na-baguete">Baguete</a></li>
+                                    <li class="menu-item "><a href="https://meupequenobistro.com.br/cardapio/produtos/pratos">Pratos</a></li>
+                                    <li class="menu-item "><a href="https://meupequenobistro.com.br/cardapio/produtos/por-es">Porções</a></li>
+                                    <li class="menu-item "><a href="https://meupequenobistro.com.br/cardapio/produtos/bebidas">Bebidas</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <div class="header-info-wrapper">
+                            <div class="header-phone-numbers">
+                                <span class="intro-text">Ligue para nós em</span>
+                                <span class="select-city-phone-numbers">Araranguá</span>
+                                <span id="city-phone-number-label" class="phone-number">48 3524-6999</span>
+                            </div>
+                            <ul class="site-header-cart-v2 menu">
+                                <li class="cart-content ">
+                                    <a href="https://meupequenobistro.com.br/cardapio/fechar" title="Seu Carrinho">
+                                        <span>Seu Carrinho</span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li sytle="padding-bottom:10px;">
+                                            <a href="https://meupequenobistro.com.br/cardapio/fechar" title="Seu Carrinho">
+                                                <span class="count" style="font-size:12px;">0 item</span> <span class="amount" style="font-size:14px">R$ 0,00</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pizzaro-secondary-navigation">
+                        <nav class="secondary-navigation" aria-label="Secondary Navigation">
+                            <ul class="menu">
+                                <li class="menu-item confeitaria">
+                                    <a href="https://meupequenobistro.com.br/cardapio/produtos/confeitaria"><span>Confeitaria</span></a>
+                                </li>
+
+                                <li class="menu-item burger">
+                                    <a href="https://meupequenobistro.com.br/cardapio/produtos/p-o-de-queijo"><span>Pão de Queijo</span></a>
+                                </li>
+
+                                <li class="menu-item baguete">
+                                    <a href="https://meupequenobistro.com.br/cardapio/produtos/sandu-che-na-baguete"><span>Baguete</span></a>
+                                </li>
+
+                                <li class="menu-item pratos">
+                                    <a href="https://meupequenobistro.com.br/cardapio/produtos/pratos"><span>Pratos</span></a>
+                                </li>
+
+                                <li class="menu-item porcoes">
+                                    <a href="https://meupequenobistro.com.br/cardapio/produtos/por-es"><span>Porções</span></a>
+                                </li>
+
+                                <li class="menu-item bebidas">
+                                    <a href="https://meupequenobistro.com.br/cardapio/produtos/bebidas"><span>Bebidas</span></a>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!--<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false" data-toggle="collapse" data-target="#dvFiltroAdmin">
+                    <span class="close-icon">
+                        <i class="po po-close-delete"></i>
+                    </span>
+                        <span class="menu-icon">
+                        <i class="po po-menu-icon"></i>
+                    </span>
+                        <span class=" screen-reader-text">Menu</span>
+                    </button>
+
+
+                    <div id="dvFiltroAdmin" class="collapse">
+                        <ul class="menu menuMob">
+                            <li class="menu-item"><a href="https://meupequenobistro.com.br/cardapio/produtos/confeitaria">Confeitaria</a></li>
+                            <li class="menu-item"><a href="https://meupequenobistro.com.br/cardapio/produtos/p-o-de-queijo">Pão de queijo</a></li>
+                            <li class="menu-item"><a href="https://meupequenobistro.com.br/cardapio/produtos/salgados">Salgados</a></li>
+                            <li class="menu-item"><a href="https://meupequenobistro.com.br/cardapio/produtos/por-es">Porções</a></li>
+                            <li class="menu-item"><a href="https://meupequenobistro.com.br/cardapio/produtos/pratos">Pratos</a></li>
+                            <li class="menu-item"><a href="https://meupequenobistro.com.br/cardapio/produtos/bebidas">Bebidas</a></li>
+                        </ul>
+                    </div> -->
+                </div>
+            </header>
+
+
+            <div id="content" class="site-content" tabindex="-1" >
+                <div class="col-full">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">
+            <div class="home-v1-slider" >
+                <div id="owl-main" class="owl-carousel owl-inner-nav owl-ui-sm">
+                    <div class="item slider-1" style="background-image: url(assets/images/slider/homepage-slider-1.jpg);">
+                        <div class="caption fadeIn">
+                            <div class="pre-title">
+                                <div class="border front"></div>
+                                <div class="lable">Top!</div>
+                                <div class="pre-title-value">VAMOS CURTIR?</div>
+                                <div class="border back"></div>
+                            </div>
+                            <div class="title">MÚSICA</div>
+                            <div class="sub-title">AO VIVO</div>
+                            <div class="bottom-caption">Clássicos - Bandas - Covers</div>
+                        </div>
+                    </div>
+                    <div class="item slider-2" style="background-image: url(assets/images/slider/homepage-slider-2.jpg);">
+                        <div class="caption fadeIn">
+                            <div class="price-tag">
+                                <div class="border front"> </div>
+                                <div class="price-tag-value">
+                                    <div class="price"><span class="symbol">R$</span>14<span class="slider-amount">99<br><span class="price-only">apenas</span></span> </div>
+                                </div>
+                                <div class="border back"> </div>
+                            </div>
+                            <div class="title">BURGER SHOW</div>
+                            <div class="sub-title">PARA OS AMANTES DE BURGER</div>
+                        </div>
+                    </div>
+                    <div class="item slider-3" style="background-image: url(assets/images/slider/homepage-slider-3.jpg);">
+                        <div class="caption fadeIn">
+                            <div class="pre-title">EXPERIMENTE O QUE HÁ DE NOVO</div>
+                            <div class="title"><span>nas</span>taças<span>com<br>amor</span>avessas</div>
+                        </div>
+                    </div>
+                    <div class="item slider-4" style="background-image: url(assets/images/slider/homepage-slider-4.jpg);">
+                        <div class="caption fadeIn">
+                            <div class="pre-title">EXTRAORDINÁRIO</div>
+                            <div class="title"><span>PÃO DE QUEIJO</span><br>RECHEADO</div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="col-lg-12 shadow"></div>
+
+            </div>
+
+            <div class="tiles">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="banner top-left" >
+                            <a href="#">
+                                <div class="banner-bg" style="background-size: cover; background-position: center center; background-image: url( assets/images/homepage-banners/1.jpg); height: 442px;">
+                                    <div class="caption">
+                                        <h3 class="title">TAÇA AVESSA</h3>
+                                        <h4 class="subtitle">GOURMET</h4>
+                                        <span class="button">Experimente</span>
+                                        <span class="condition"><em>*</em>Apenas no Bistrô</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="banners">
+                            <div class="row">
+                                <div class="banner col-sm-6 top-right" >
+                                    <a href="#">
+                                        <div class="banner-bg" style="background-size: cover; background-position: center center; background-image: url( assets/images/homepage-banners/2.jpg); height: 210px;">
+                                            <div class="caption">
+                                                <h3 class="title">FOOD</h3>
+                                                <h4 class="subtitle">GOURMET</h4>
+                                                <div class="description">Apenas no Bistrô</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="banner col-sm-6 top-right" >
+                                    <a href="#">
+                                        <div class="banner-bg" style="background-size: cover; background-position: center center; background-image: url( assets/images/homepage-banners/3.jpg); height: 210px;">
+                                            <div class="caption">
+                                                <h3 class="title">CAFÉS</h3>
+                                                <h4 class="subtitle">GOURMET</h4>
+                                                <span class="condition"><em>*</em>Apenas no Bistrô</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banner center" >
+                            <a href="#">
+                                <div class="banner-bg" style="background-size: cover; background-position: center center; background-image: url( assets/images/homepage-banners/4.jpg); height: 210px;">
+                                    <div class="caption">
+                                        <h3 class="title"><span>PEÇA</span> ONLINE</h3>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-tabs">
+                <ul class="nav nav-tabs pizzaro-nav-tabs" >
+                   <li class="nav-item ">
+                        <a href="#h1-tab-products-1"  data-toggle="tab">ÁGUAS</a>
+                    </li><li class="nav-item active">
+                        <a href="#h1-tab-products-2" class="active" data-toggle="tab">SALGADOS</a>
+                    </li><li class="nav-item ">
+                        <a href="#h1-tab-products-3"  data-toggle="tab">ENERGÉTICOS</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane " id="h1-tab-products-1">
+                            <div class="section-products">
+                                <div class="woocommerce columns-3">
+                                    <div class="columns-3">
+                                        <ul class="products"><li class="product first">
+                                <div class="product-outer">
+                                    <div class="product-inner">
+                                        <div class="product-image-wrapper">
+                                            <a href="https://meupequenobistro.com.br/cardapio/produto/-gua-t-nica" class="woocommerce-LoopProduct-link">
+                                                <img src="https://meupequenobistro.com.br/cardapio/imagens/172830201801287505226936192.jpeg" class="img-responsive" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="product-content-wrapper">
+                                            <a href="https://meupequenobistro.com.br/cardapio/produto/-gua-t-nica" class="woocommerce-LoopProduct-link">
+                                                <h3>ÁGUA TÔNICA</h3>
+                                                <div itemprop="description">
+                                                    <p style="max-height: none;">ÁGUA TÔNICA</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li><li class="product ">
+                                <div class="product-outer">
+                                    <div class="product-inner">
+                                        <div class="product-image-wrapper">
+                                            <a href="https://meupequenobistro.com.br/cardapio/produto/-gua-sem-g-s" class="woocommerce-LoopProduct-link">
+                                                <img src="https://meupequenobistro.com.br/cardapio/imagens/125947201801161174110589.jpg" class="img-responsive" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="product-content-wrapper">
+                                            <a href="https://meupequenobistro.com.br/cardapio/produto/-gua-sem-g-s" class="woocommerce-LoopProduct-link">
+                                                <h3>ÁGUA SEM GÁS</h3>
+                                                <div itemprop="description">
+                                                    <p style="max-height: none;">ÁGUA SEM GÁS</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li><li class="product ">
+                                <div class="product-outer">
+                                    <div class="product-inner">
+                                        <div class="product-image-wrapper">
+                                            <a href="https://meupequenobistro.com.br/cardapio/produto/-gua-de-coco-200ml" class="woocommerce-LoopProduct-link">
+                                                <img src="https://meupequenobistro.com.br/cardapio/imagens/020455201801256764126694762.jpg" class="img-responsive" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="product-content-wrapper">
+                                            <a href="https://meupequenobistro.com.br/cardapio/produto/-gua-de-coco-200ml" class="woocommerce-LoopProduct-link">
+                                                <h3>ÁGUA DE COCO 200ML</h3>
+                                                <div itemprop="description">
+                                                    <p style="max-height: none;">ÁGUA DE CÔCO DUCOCO 200ML</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="tab-pane active" id="h1-tab-products-2">
+                            <div class="section-products">
+                                <div class="woocommerce columns-3">
+                                    <div class="columns-3">
+                                        <ul class="products"><li class="product first">
+                                <div class="product-outer">
+                                    <div class="product-inner">
+                                        <div class="product-image-wrapper">
+                                            <a href="https://meupequenobistro.com.br/cardapio/produto/p-o-de-queijo" class="woocommerce-LoopProduct-link">
+                                                <img src="https://meupequenobistro.com.br/cardapio/imagens/132133201801197974666305818.png" class="img-responsive" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="product-content-wrapper">
+                                            <a href="https://meupequenobistro.com.br/cardapio/produto/p-o-de-queijo" class="woocommerce-LoopProduct-link">
+                                                <h3>PÃO DE QUEIJO</h3>
+                                                <div itemprop="description">
+                                                    <p style="max-height: none;">PÃO DE QUEIJO QUATRO QUEIJOS</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li><li class="product ">
+                                <div class="product-outer">
+                                    <div class="product-inner">
+                                        <div class="product-image-wrapper">
+                                            <a href="https://meupequenobistro.com.br/cardapio/produto/pastel-o-lombo-canadense" class="woocommerce-LoopProduct-link">
+                                                <img src="https://meupequenobistro.com.br/cardapio/imagens/" class="img-responsive" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="product-content-wrapper">
+                                            <a href="https://meupequenobistro.com.br/cardapio/produto/pastel-o-lombo-canadense" class="woocommerce-LoopProduct-link">
+                                                <h3>PASTELÃO LOMBO CANADENSE</h3>
+                                                <div itemprop="description">
+                                                    <p style="max-height: none;">PASTELÃO LOMBO CANADENSE</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><div class="tab-pane " id="h1-tab-products-3">
+                            <div class="section-products">
+                                <div class="woocommerce columns-3">
+                                    <div class="columns-3">
+                                        <ul class="products"><li class="product first">
+                                <div class="product-outer">
+                                    <div class="product-inner">
+                                        <div class="product-image-wrapper">
+                                            <a href="https://meupequenobistro.com.br/cardapio/produto/red-bull-lata" class="woocommerce-LoopProduct-link">
+                                                <img src="https://meupequenobistro.com.br/cardapio/imagens/141348201811093455647695810.jpg" class="img-responsive" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="product-content-wrapper">
+                                            <a href="https://meupequenobistro.com.br/cardapio/produto/red-bull-lata" class="woocommerce-LoopProduct-link">
+                                                <h3>RED BULL LATA</h3>
+                                                <div itemprop="description">
+                                                    <p style="max-height: none;">RED BULL</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li></ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="stretch-full-width section-products-sale-event"  style="background-size: cover; background-position: center center; background-image: url( assets/images/homepage-banners/5.jpg); height: 468px;">
+                <div class="sale-event-content">
+                    <h3 class="pre-title"><span>PROMOÇÃO NOVINHA SAINDO</span></h3>
+                    <h2 class="section-title">DO FORNO</h2>
+                    <div class="sale-event-products">
+                        <div class="products-price">
+                            <span class="price"><span class="currency"> R&#36;</span>14<span class="decimals">99</span><span class="price-info">CADA</span></span>
+                        </div>
+                        <ul class="products-info">
+                            <li>
+                                <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
+                                    <h3>Burger Triplo</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
+                                    <h3>Taça doce</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="single-product-v1.html" class="woocommerce-LoopProduct-link">
+                                    <h3>Pão de queijo monstro</h3>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="single-product-v1.html" class="button">Peça agora</a>
+                </div>
+            </div>
+
+            <div class="features-list">
+                <div class="row">
+                    <div class="col-lg-12 shadow"></div>
+                    <div class="feature col-xs-12 col-sm-3">
+                        <div class="feature-icon"><i class="po po-best-quality"></i></div>
+                        <div class="feature-label">
+                            <h4>Melhor Qualidade</h4>
+                            <p>Ingredientes selecionados a dedo, naturais e fresquinhos.</p>
+                        </div>
+                    </div>
+                    <div class="feature col-xs-12 col-sm-3">
+                        <div class="feature-icon"><i class="po po-on-time"></i></div>
+                        <div class="feature-label">
+                            <h4>Velocidade</h4>
+                            <p>Entrega com velocidade e qualidade, em um espaço aconchegante.</p>
+                        </div>
+                    </div>
+                    <div class="feature col-xs-12 col-sm-3">
+                        <div class="feature-icon"><i class="po po-master-chef"></i></div>
+                        <div class="feature-label">
+                            <h4>MasterChefs</h4>
+                            <p>Chefs profissionais e especializados, com as melhores receitas.</p>
+                        </div>
+                    </div>
+                    <div class="feature col-xs-12 col-sm-3">
+                        <div class="feature-icon"><i class="po po-ready-delivery"></i></div>
+                        <div class="feature-label">
+                            <h4>Comida saborosa</h4>
+                            <p>Cardápio extraordinário, com receitas muito bem elaboradas e gostosas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+            </div>
+
+            <div class="footer-v1-static-content">
+                <div class="kc-css-994088 kc_row">
+                    <div class="kc-row-container  kc-container">
+                        <div class="kc-wrap-columns">
+                            <div class="kc-css-194963 kc_col-sm-12 kc_column kc_col-sm-12">
+                                <div class="stretch-full-width kc-col-container">
+                                    <div class="kc-css-126640 kc_shortcode kc_wrap_instagram  kc_ins_col_6">
+                                        <ul class="row">
+                                            <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
+                                                <a href="https://www.instagram.com/meupequenobistro/" target="_blank">
+                                                    <img alt="" src="https://meupequenobistro.com.br/cardapio/assets/images/footer/1.jpg">
+                                                </a>
+                                            </li>
+
+                                            <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
+                                                <a href="https://www.instagram.com/meupequenobistro/" target="_blank">
+                                                    <img alt="" src="https://meupequenobistro.com.br/cardapio/assets/images/footer/2.jpg">
+                                                </a>
+                                            </li>
+
+                                            <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
+                                                <a href="https://www.instagram.com/meupequenobistro/" target="_blank">
+                                                    <img alt="" src="https://meupequenobistro.com.br/cardapio/assets/images/footer/3.jpg">
+                                                </a>
+                                            </li>
+
+                                            <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
+                                                <a href="https://www.instagram.com/meupequenobistro/" target="_blank">
+                                                    <img alt="" src="https://meupequenobistro.com.br/cardapio/assets/images/footer/4.jpg">
+                                                </a>
+                                            </li>
+
+                                            <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
+                                                <a href="https://www.instagram.com/meupequenobistro/" target="_blank">
+                                                    <img alt="" src="https://meupequenobistro.com.br/cardapio/assets/images/footer/5.jpg">
+                                                </a>
+                                            </li>
+
+                                            <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
+                                                <a href="https://www.instagram.com/meupequenobistro/" target="_blank">
+                                                    <img alt="" src="https://meupequenobistro.com.br/cardapio/assets/images/footer/6.jpg">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer id="colophon" class="site-footer footer-v1">
+                <div class="col-full">
+                    <div class="footer-logo">
+                        <a href="https://meupequenobistro.com.br/cardapio/home" class="custom-logo-link" rel="home">
+                            <img src="https://meupequenobistro.com.br/cardapio/imgs/logo_bistro_rodape.png" alt="Logo Meu Pequeno Bistro" title="Logo Meu Pequeno Bistro" />
+                        </a>
+                    </div>
+
+                    <div class="footer-social-icons">
+                        <span class="social-icon-text">Follow us</span>
+                        <ul class="social-icons list-unstyled">
+                            <li><a class="fa fa-facebook" href="#"></a></li>
+                            <li><a class="fa fa-twitter" href="#"></a></li>
+                            <li><a class="fa fa-instagram" href="#"></a></li>
+                            <li><a class="fa fa-youtube" href="#"></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="site-address">
+                        <ul class="address">
+                            <li>Meu Pequeno Bistro</li>
+                            <li>Caverá - Araranguá - Santa Catarina - Brasil</li>
+                            <li>Telefone - 48 3524-6999</li>
+                        </ul>
+                    </div>
+
+                    <div class="site-info">
+                        <p class="copyright">Copyright &copy; 2018 Meu Pequeno Bistro.</p>
+                    </div>
+
+                    <div class="pizzaro-handheld-footer-bar">
+                        <ul class="columns-3">
+                            <li class="my-account">
+                                <a href="https://meupequenobistro.com.br/cardapio/meus-pedidos">Meus Pedidos</a>
+                            </li>
+                            <li class="search">
+                                <a href="#">Search</a>
+                                <div class="site-search">
+                                    <div class="widget woocommerce widget_product_search">
+                                        <form role="search" method="get" class="woocommerce-product-search" >
+                                            <input type="hidden" name="acao" value="buscar">
+                                            <label class="screen-reader-text" for="woocommerce-product-search-field">Search for:</label>
+                                            <input type="search" id="woocommerce-product-search-field" class="search-field" placeholder="Search Products&hellip;" value="" name="s" title="Search for:" />
+                                            <input type="submit" value="Buscar" />
+                                            <input type="hidden" name="post_type" value="product" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="cart">
+                                <a class="footer-cart-contents" href="https://meupequenobistro.com.br/cardapio/fechar" title="Finalizar Pedido">
+                                    <span class="count">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script type="text/javascript" src="https://meupequenobistro.com.br/cardapio/assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="https://meupequenobistro.com.br/cardapio/assets/js/tether.min.js"></script>
+        <script type="text/javascript" src="https://meupequenobistro.com.br/cardapio/assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://meupequenobistro.com.br/cardapio/assets/js/owl.carousel.min.js"></script>
+        <script type="text/javascript" src="https://meupequenobistro.com.br/cardapio/assets/js/social.share.min.js"></script>
+        <script type="text/javascript" src="https://meupequenobistro.com.br/cardapio/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script type="text/javascript" src="https://meupequenobistro.com.br/cardapio/lib/js/jquery.mask.js"></script>
+        <script type="text/javascript" src="https://meupequenobistro.com.br/cardapio/assets/js/jquery.sumoselect.js"></script>
+        <script type="text/javascript" src="https://meupequenobistro.com.br/cardapio/assets/js/scripts.min.js"></script>
+        <script type="text/javascript" src="https://meupequenobistro.com.br/cardapio/assets/js/login.js"></script>
+        <script type="text/javascript" src="https://meupequenobistro.com.br/cardapio/switchstylesheet/switchstylesheet.js"></script>
+        <script type="text/javascript">
+            var GLOBAL_LINK = "https://meupequenobistro.com.br/cardapio/";
+            $('select').SumoSelect();
+        </script>
+    </body>
+</html>

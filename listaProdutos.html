@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="pt-BR" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meu Pequeno Bistro</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/animate.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/font-pizzaro.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/colors/blue.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/jquery.mCustomScrollbar.min.css" media="all" />
+    <link href="./assets/css/colors/blue.css" rel="alternate stylesheet" title="Blue color">
+    <link rel="stylesheet" type="text/css" href="./assets/css/mobile.css" media="all" />
+    <link href="./assets/css/sumoselect.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" media="all" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CYanone+Kaffeesatz:200,300,400,700"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/images/fav-icon.png">
+</head>
+
+<body class="page-template-template-homepage-v1 home-v1">
+    <div id="page" class="hfeed site">
+
+        <div class="modal" id="dvModalQuantidade" tabindex="-1" role="dialog" style="z-index:2200000 !important">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Adicionar ao carrinho</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" style="color:#000 !important">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <input type="hidden" id="txtModalAdicionarProdutoIdProduto">
+                            <div id="dvModalAdicionarProdutoMensagem"></div>
+
+                            <div class='col-xs-12 col-sm-6 col-md-6'>
+                                <label>Quantidade</label>
+                                <select id="txtModalAdicionarProdutoQuantidade" class="form-control">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+
+                            <div class='col-xs-12 col-sm-6 col-md-6'>
+                                <label>Nome</label>
+                                <div id="txtModalAdicionarProdutoNome"></div>
+                            </div>
+
+                            <thead style="border:none !important">
+                                <tr style="border:none !important">
+                                    <th width="30%" style="border:none !important">QUANTIDADE</th>
+                                    <th width="70%" style="border:none !important">NOME</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <select id="txtModalAdicionarProdutoQuantidade" class="form-control">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" id="txtModalAdicionarProdutoNome"
+                                            readonly>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            </table> -->
+
+                        </div>
+                        <div class="row" id="dvInsumoProduto">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+                        <div class="col-lg-12 col-xs-12">
+                            <button type="button" class="btn btn-danger adicionar"
+                                id="txtModalAdicionarProdutoBtnAdicionar">ADICIONAR</button>
+                        </div>
+                        <!--<div class="col-lg-4 col-xs-4">
+                                <button type="button" class="btn btn-secondary fechar" data-dismiss="modal">FECHAR</button>
+                            </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <header id="masthead" class="site-header header-v1" style="background-image: none; ">
+            <div class="col-full">
+                <a class="skip-link screen-reader-text" href="#site-navigation">Skip to navigation</a>
+                <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+                <div class="header-wrap">
+                    <div class="site-branding">
+                        <a href="https://meupequenobistro.com.br/cardapio/home" class="custom-logo-link" rel="home">
+                            <img src="https://meupequenobistro.com.br/cardapio/imgs/logo_menu.png" class="hide-mob"
+                                alt="Logo Meu Pequeno Bistro" title="Logo Meu Pequeno Bistro" />
+                            <img src="https://meupequenobistro.com.br/cardapio/imgs/logo_menu_mobile.png"
+                                class="show-mob" alt="Logo Meu Pequeno Bistro" title="Logo Meu Pequeno Bistro" />
+                        </a>
+                    </div>
+                    <nav id="site-navigation" class="main-navigation" aria-label="Primary Navigation">
+                        <button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false">
+                            <span class="close-icon">
+                                <i class="po po-close-delete"></i>
+                            </span>
+                            <span class="menu-icon">
+                                <i class="po po-menu-icon"></i>
+                            </span>
+                            <span class=" screen-reader-text">Menu</span>
+                        </button>
+                        <div class="primary-navigation">
+                            <ul id="menu-main-menu" class="menu nav-menu" aria-expanded="false">
+                                <li class="menu-item"><a href="shop-grid-3-column.html">Peça Online</a></li>
+                                <li class="yamm-fw menu-item menu-item-has-children">
+                                    <a href="about.html">Menu</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item">
+                                            <div class="yamm-content">
+                                                <div class="kc-elm kc-css-4169277 kc_row">
+                                                    <div class="kc-row-container  kc-container">
+                                                        <div class="kc-wrap-columns">
+                                                            <div class="col-sm-3 col-xs-12 col-md-3 col-lg-3">
+                                                                <div class="kc-col-container">
+                                                                    <div
+                                                                        class="widget widget_nav_menu kc-elm kc-css-1908114">
+                                                                        <div class="menu-pages-menu-1-container">
+                                                                            <ul id="menu-pages-menu-5" class="menu">
+                                                                                <li class="nav-title menu-item"><a
+                                                                                        href="#">Início</a></li>
+                                                                                <li class="menu-item"><a
+                                                                                        href="index.html">Home</a></li>
+                                                                                <li class="nav-title menu-item"><a
+                                                                                        href="#">Usuário</a></li>
+                                                                                <li class="menu-item"><a
+                                                                                        href="login-and-register.html">Minha
+                                                                                        conta</a></li>
+                                                                                <li class="menu-item"><a
+                                                                                        href="track-order.html">Acompanhar
+                                                                                        o pedido</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3 col-xs-12 col-md-3 col-lg-3">
+                                                                <div class="kc-col-container">
+                                                                    <div
+                                                                        class="widget widget_nav_menu kc-elm kc-css-2420681">
+                                                                        <div class="menu-pages-menu-2-container">
+                                                                            <ul id="menu-pages-menu-6" class="menu">
+                                                                                <li class="nav-title menu-item"><a
+                                                                                        href="#">Página de compra</a>
+                                                                                </li>
+                                                                                <li class="menu-item"><a
+                                                                                        href="shop-sidebar-grid-3-column.html">Comprar</a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3 col-xs-12 col-md-3 col-lg-3">
+                                                                <div class="kc-col-container">
+                                                                    <div
+                                                                        class="widget widget_nav_menu kc-elm kc-css-3102392">
+                                                                        <div class="menu-pages-menu-3-container">
+                                                                            <ul id="menu-pages-menu-7" class="menu">
+                                                                                <li
+                                                                                    class="nav-title menu-item current_page_parent">
+                                                                                    <a href="blog.html">Nosso Blog</a>
+                                                                                </li>
+                                                                                <li
+                                                                                    class="menu-item current_page_parent">
+                                                                                    <a href="blog.html">Blog</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-sm-3 col-xs-12 col-md-3 col-lg-3">
+                                                                <div class="kc-col-container">
+                                                                    <div
+                                                                        class="widget widget_nav_menu kc-elm kc-css-3447423">
+                                                                        <div class="menu-pages-menu-4-container">
+                                                                            <ul id="menu-pages-menu-8" class="menu">
+                                                                                <li class="nav-title menu-item"><a
+                                                                                        href="single-product-v1.html">Um
+                                                                                        produto só</a></li>
+                                                                                <li class="menu-item"><a
+                                                                                        href="single-product-v3.html">Produtos</a>
+                                                                                </li>
+                                                                                <li class="nav-title menu-item"><a
+                                                                                        href="#">Meu pequeno bistro</a>
+                                                                                </li>
+                                                                                <li class="menu-item"><a
+                                                                                        href="about.html">Sobre nós</a>
+                                                                                </li>
+                                                                                <li class="menu-item"><a
+                                                                                        href="contact.html">Contato</a>
+                                                                                </li>
+                                                                                <li class="menu-item"><a
+                                                                                        href="terms-and-conditions.html">Termos
+                                                                                        &amp; Condições</a></li>
+                                                                                <li class="menu-item"><a
+                                                                                        href="faq-v2.html">FAQ</a></li>
+                                                                                <li class="menu-item"><a
+                                                                                        href="404.html">404</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item"><a href="blog.html">Notícias</a></li>
+                                <li class="menu-item"><a
+                                        href="https://meupequenobistro.com.br/cardapio/contato">Localização</a></li>
+                            </ul>
+                        </div>
+                        <div class="handheld-navigation">
+                            <span class="phm-close">Fechar</span>
+                            <ul class="menu">
+                                <li class="menu-item "><a
+                                        href="https://meupequenobistro.com.br/cardapio/produtos/confeitaria">Confeitaria</a>
+                                </li>
+                                <li class="menu-item "><a
+                                        href="https://meupequenobistro.com.br/cardapio/produtos/p-o-de-queijo">Pão de
+                                        Queijo</a></li>
+                                <li class="menu-item "><a
+                                        href="https://meupequenobistro.com.br/cardapio/produtos/sandu-che-na-baguete">Baguete</a>
+                                </li>
+                                <li class="menu-item "><a
+                                        href="https://meupequenobistro.com.br/cardapio/produtos/pratos">Pratos</a></li>
+                                <li class="menu-item "><a
+                                        href="https://meupequenobistro.com.br/cardapio/produtos/por-es">Porções</a></li>
+                                <li class="menu-item "><a
+                                        href="https://meupequenobistro.com.br/cardapio/produtos/bebidas">Bebidas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="header-info-wrapper">
+                        <div class="header-phone-numbers">
+                            <span class="intro-text">Ligue para nós em</span>
+                            <span class="select-city-phone-numbers">Araranguá</span>
+                            <span id="city-phone-number-label" class="phone-number">48 3524-6999</span>
+                        </div>
+                        <ul class="site-header-cart-v2 menu">
+                            <li class="cart-content ">
+                                <a href="https://meupequenobistro.com.br/cardapio/fechar" title="Seu Carrinho">
+                                    <span>Seu Carrinho</span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li sytle="padding-bottom:10px;">
+                                        <a href="https://meupequenobistro.com.br/cardapio/fechar" title="Seu Carrinho">
+                                            <span class="count" style="font-size:12px;">0 item</span> <span
+                                                class="amount" style="font-size:14px">R$ 0,00</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pizzaro-secondary-navigation">
+                    <nav class="secondary-navigation" aria-label="Secondary Navigation">
+                        <ul class="menu">
+                            <li class="menu-item confeitaria">
+                                <a
+                                    href="https://meupequenobistro.com.br/cardapio/produtos/confeitaria"><span>Confeitaria</span></a>
+                            </li>
+
+                            <li class="menu-item burger">
+                                <a href="https://meupequenobistro.com.br/cardapio/produtos/p-o-de-queijo"><span>Pão de
+                                        Queijo</span></a>
+                            </li>
+
+                            <li class="menu-item baguete">
+                                <a
+                                    href="https://meupequenobistro.com.br/cardapio/produtos/sandu-che-na-baguete"><span>Baguete</span></a>
+                            </li>
+
+                            <li class="menu-item pratos">
+                                <a
+                                    href="https://meupequenobistro.com.br/cardapio/produtos/pratos"><span>Pratos</span></a>
+                            </li>
+
+                            <li class="menu-item porcoes">
+                                <a
+                                    href="https://meupequenobistro.com.br/cardapio/produtos/por-es"><span>Porções</span></a>
+                            </li>
+
+                            <li class="menu-item bebidas">
+                                <a
+                                    href="https://meupequenobistro.com.br/cardapio/produtos/bebidas"><span>Bebidas</span></a>
+                            </li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+
+        <div id="content" class="site-content" tabindex="-1">
+            <div class="col-full listaProdutosPage">
+                <div class="pizzaro-breadcrumb" style="margin-top: 2.214em !important;">
+                    <nav class="woocommerce-breadcrumb" itemprop="breadcrumb">
+                        <a href="https://meupequenobistro.com.br/cardapio/home">Home</a><span class="delimiter"><i
+                                class="po po-arrow-right-slider"></i></span>
+                        <a href="https://meupequenobistro.com.br/cardapio/produtos/p-o-de-queijo">PÃO DE QUEIJO DO
+                            CHEF</a><span class="delimiter"><i class="po po-arrow-right-slider"></i></span>
+                        <a href="https://meupequenobistro.com.br/cardapio/produtos/p-o-de-queijo/p-o-de-queijo">PÃO DE
+                            QUEIJO</a><span class="delimiter"><i class="po po-arrow-right-slider"></i></span>
+                        <a href="#1">PÃO DE QUEIJO</a>
+                    </nav>
+                </div>
+
+                <div id="primary" class="content-area">
+                    <main id="main" class="site-main">
+                        <div class="modal modalAddItem" tabindex="-1" role="dialog" id="modalAddItem">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header headerModal">
+                                        <div class="d-none showMobile">
+                                            <nav class="navbar">
+                                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                                    data-target="#navbarToggleExternalContent"
+                                                    aria-controls="navbarToggleExternalContent" aria-expanded="false"
+                                                    aria-label="Toggle navigation">
+                                                    <i class="fa fa-bars" aria-hidden="true"></i>
+                                                </button>
+                                            </nav>
+                                        </div>
+                                        <h5 class="modal-title headerTitle">ADICIONAR ITEM</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div
+                                                class="col-sm-4 col-md-4 col-lg-4 list-group sidebarAddItem hideMobile">
+                                                <a href="#"
+                                                    class="list-group-item list-group-item-action sidebarAddImg">
+                                                    <img src="https://meupequenobistro.com.br/cardapio/imagens/154901201904062825403818861.jpg"
+                                                        class="img-responsive" alt="">
+                                                    <h3>BURGUER CHEESE</h3>
+                                                </a>
+                                                <a href="#"
+                                                    class="list-group-item list-group-item-action active">Quantidade</a>
+                                                <a href="#"
+                                                    class="list-group-item list-group-item-action">Ingredientes</a>
+                                                <a href="#"
+                                                    class="list-group-item list-group-item-action">Adicionais</a>
+                                                <a href="#" class="list-group-item list-group-item-action">Modo de
+                                                    servir</a>
+                                            </div>
+                                            <div class="d-none showMobile">
+                                                <div class="collapse" id="navbarToggleExternalContent">
+                                                    <div class="col-sm-4 list-group">
+                                                        <a href="#"
+                                                            class="list-group-item list-group-item-action sidebarAddImg">
+                                                            <img src="https://meupequenobistro.com.br/cardapio/imagens/154901201904062825403818861.jpg"
+                                                                class="img-responsive" alt="">
+
+                                                        </a>
+                                                        <a href="#" class="list-group-item list-group-item-action">
+                                                            <h3>BURGUER CHEESE</h3>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8 col-md-8 col-lg-8 containerAddItem">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h4>Qual a quantidade?</h4>
+                                                    </div>
+                                                    <div class="card-body quantidadeBody">
+                                                        <a onclick="downQuantity();"><i
+                                                                class="fa fa-minus"></i></a><input type="number"
+                                                            value="1" class="form-control" min="1" id="quantidadeItem">
+                                                        <a onclick="upQuantity();"><i class="fa fa-plus"></i></a>
+                                                        <hr />
+                                                        <div class="priceItemContainer">R$<div id="priceItem">29,90
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row row-cols-3 rowBtnAddItem">
+
+                                                    <div class=" col ">
+                                                        <div class="subTotalItemContainer">Subtotal: R$<div
+                                                                id="subTotalItem">29,90
+                                                            </div>
+                                                        </div>
+                                                        <div class="totalItemContainer">Total: <div class="text-danger">
+                                                                R$<div id="totalItem">29,90</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class=" col-8 colForBtn"><button
+                                                            class="btn btn-success btnLarge"
+                                                            onclick="nextAddItem();">Continuar</button><button
+                                                            class="btn btn-danger btnLarge"
+                                                            onclick="backAddItem();">Voltar</button>
+
+                                                    </div>
+                                                    <!--<div class=" col colForBtn"><button class="btn btn-success btnLarge"
+                                                            onclick="nextAddItem();">Continuar</button></div>-->
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns-3">
+                            <ul class="products">
+                                <ul class="products">
+                                    <li class="product first">
+                                        <div class="product-outer">
+                                            <div class="product-inner" style="height: inherit !important;">
+                                                <div class="product-image-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/burger-cheese"-->
+                                                    <a class="woocommerce-LoopProduct-link">
+                                                        <img src="https://meupequenobistro.com.br/cardapio/imagens/154901201904062825403818861.jpg"
+                                                            class="img-responsive" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="product-content-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/burger-cheese"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <h3>BURGUER CHEESE</h3>
+                                                    </a>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    </p>
+                                                    <div class="productPrices">de<p class="line-through">R$ 43,00</p>por
+                                                    </div>
+                                                    <h2>R$ 33,00</h2>
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/burger-cheese"-->
+                                                    <a rel="nofollow" onclick="$('#modalAddItem').modal('show')"
+                                                        class="button product_type_simple hover-area btnComprar">COMPRAR</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="product ">
+                                        <div class="product-outer">
+                                            <div class="product-inner" style="height: inherit !important;">
+                                                <div class="product-image-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/requeij-o-com-bacon"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <img src="https://meupequenobistro.com.br/cardapio/imagens/161607201904066793170296588.jpg"
+                                                            class="img-responsive" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="product-content-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/requeij-o-com-bacon"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <h3>REQUEIJÃO COM BACON</h3>
+                                                    </a>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    </p>
+                                                    <div class="productPrices">de<p class="line-through">R$ 43,00</p>por
+                                                    </div>
+                                                    <h2>R$ 33,00</h2>
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/burger-cheese"-->
+                                                    <a rel="nofollow" onclick="$('#modalAddItem').modal('show')"
+                                                        class="button product_type_simple hover-area btnComprar">COMPRAR</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="product last">
+                                        <div class="product-outer">
+                                            <div class="product-inner" style="height: inherit !important;">
+                                                <div class="product-image-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/frango-cremoso-com-requeij-o"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <img src="https://meupequenobistro.com.br/cardapio/imagens/160500201904063328608702869.jpg"
+                                                            class="img-responsive" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="product-content-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/frango-cremoso-com-requeij-o"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <h3>FRANGO CREMOSO COM REQUEIJÃO</h3>
+                                                    </a>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    </p>
+                                                    <div class="productPrices">de<p class="line-through">R$ 43,00</p>por
+                                                    </div>
+                                                    <h2>R$ 33,00</h2>
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/burger-cheese"-->
+                                                    <a rel="nofollow" onclick="$('#modalAddItem').modal('show')"
+                                                        class="button product_type_simple hover-area btnComprar">COMPRAR</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="product first">
+                                        <div class="product-outer">
+                                            <div class="product-inner" style="height: inherit !important;">
+                                                <div class="product-image-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/lombo-canadense-com-molho"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <img src="https://meupequenobistro.com.br/cardapio/imagens/160002201811097308031106368.jpg"
+                                                            class="img-responsive" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="product-content-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/lombo-canadense-com-molho"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <h3>LOMBO CANADENSE COM MOLHO</h3>
+                                                    </a>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    </p>
+                                                    <div class="productPrices">de<p class="line-through">R$ 43,00</p>por
+                                                    </div>
+                                                    <h2>R$ 33,00</h2>
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/burger-cheese"-->
+                                                    <a rel="nofollow" onclick="$('#modalAddItem').modal('show')"
+                                                        class="button product_type_simple hover-area btnComprar">COMPRAR</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="product ">
+                                        <div class="product-outer">
+                                            <div class="product-inner" style="height: inherit !important;">
+                                                <div class="product-image-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/explendoroso"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <img src="https://meupequenobistro.com.br/cardapio/imagens/162035201904069392419550568.jpg"
+                                                            class="img-responsive" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="product-content-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/explendoroso"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <h3>EXPLENDOROSO</h3>
+                                                    </a>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    </p>
+                                                    <div class="productPrices">de<p class="line-through">R$ 43,00</p>por
+                                                    </div>
+                                                    <h2>R$ 33,00</h2>
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/burger-cheese"-->
+                                                    <a rel="nofollow" onclick="$('#modalAddItem').modal('show')"
+                                                        class="button product_type_simple hover-area btnComprar">COMPRAR</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="product last">
+                                        <div class="product-outer">
+                                            <div class="product-inner" style="height: inherit !important;">
+                                                <div class="product-image-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/incr-vel"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <img src="https://meupequenobistro.com.br/cardapio/imagens/160819201904064435671027750.jpg"
+                                                            class="img-responsive" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="product-content-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/incr-vel"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <h3>INCRÍVEL</h3>
+                                                    </a>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    </p>
+                                                    <div class="productPrices">de<p class="line-through">R$ 43,00</p>por
+                                                    </div>
+                                                    <h2>R$ 33,00</h2>
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/burger-cheese"-->
+                                                    <a rel="nofollow" onclick="$('#modalAddItem').modal('show')"
+                                                        class="button product_type_simple hover-area btnComprar">COMPRAR</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="product first">
+                                        <div class="product-outer">
+                                            <div class="product-inner" style="height: inherit !important;">
+                                                <div class="product-image-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/magn-fico"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <img src="https://meupequenobistro.com.br/cardapio/imagens/161050201904063174835722894.jpg"
+                                                            class="img-responsive" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="product-content-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/magn-fico"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <h3>MAGNÍFICO</h3>
+                                                    </a>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    </p>
+                                                    <div class="productPrices">de<p class="line-through">R$ 43,00</p>por
+                                                    </div>
+                                                    <h2>R$ 33,00</h2>
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/burger-cheese"-->
+                                                    <a rel="nofollow" onclick="$('#modalAddItem').modal('show')"
+                                                        class="button product_type_simple hover-area btnComprar">COMPRAR</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="product ">
+                                        <div class="product-outer">
+                                            <div class="product-inner" style="height: inherit !important;">
+                                                <div class="product-image-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/extraordin-rio"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <img src="https://meupequenobistro.com.br/cardapio/imagens/161529201811093031502459199.jpg"
+                                                            class="img-responsive" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="product-content-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/extraordin-rio"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <h3>EXTRAORDINÁRIO</h3>
+                                                    </a>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    </p>
+                                                    <div class="productPrices">de<p class="line-through">R$ 43,00</p>por
+                                                    </div>
+                                                    <h2>R$ 33,00</h2>
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/burger-cheese"-->
+                                                    <a rel="nofollow" onclick="$('#modalAddItem').modal('show')"
+                                                        class="button product_type_simple hover-area btnComprar">COMPRAR</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="product last">
+                                        <div class="product-outer">
+                                            <div class="product-inner" style="height: inherit !important;">
+                                                <div class="product-image-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/inesquec-vel"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <img src="https://meupequenobistro.com.br/cardapio/imagens/173538201803093506289017387.png"
+                                                            class="img-responsive" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="product-content-wrapper">
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/inesquec-vel"-->
+                                                    <a onclick="$('#modalAddItem').modal('show')"
+                                                        class="woocommerce-LoopProduct-link">
+                                                        <h3>INESQUECÍVEL</h3>
+                                                    </a>
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                                    </p>
+                                                    <div class="productPrices">de<p class="line-through">R$ 43,00</p>por
+                                                    </div>
+                                                    <h2>R$ 33,00</h2>
+                                                    <!--href="https://meupequenobistro.com.br/cardapio/produto/burger-cheese"-->
+                                                    <a rel="nofollow" onclick="$('#modalAddItem').modal('show')"
+                                                        class="button product_type_simple hover-area btnComprar">COMPRAR</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-v1-static-content">
+            <div class="kc-css-994088 kc_row">
+                <div class="kc-row-container  kc-container">
+                    <div class="kc-wrap-columns">
+                        <div class="kc-css-194963 kc_col-sm-12 kc_column kc_col-sm-12">
+                            <div class="stretch-full-width kc-col-container">
+                                <div class="kc-css-126640 kc_shortcode kc_wrap_instagram  kc_ins_col_6">
+                                    <ul class="row">
+                                        <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
+                                            <a href="https://www.instagram.com/meupequenobistro/" target="_blank">
+                                                <img alt=""
+                                                    src="https://meupequenobistro.com.br/cardapio/assets/images/footer/1.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
+                                            <a href="https://www.instagram.com/meupequenobistro/" target="_blank">
+                                                <img alt=""
+                                                    src="https://meupequenobistro.com.br/cardapio/assets/images/footer/2.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
+                                            <a href="https://www.instagram.com/meupequenobistro/" target="_blank">
+                                                <img alt=""
+                                                    src="https://meupequenobistro.com.br/cardapio/assets/images/footer/3.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
+                                            <a href="https://www.instagram.com/meupequenobistro/" target="_blank">
+                                                <img alt=""
+                                                    src="https://meupequenobistro.com.br/cardapio/assets/images/footer/4.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
+                                            <a href="https://www.instagram.com/meupequenobistro/" target="_blank">
+                                                <img alt=""
+                                                    src="https://meupequenobistro.com.br/cardapio/assets/images/footer/5.jpg">
+                                            </a>
+                                        </li>
+
+                                        <li class="col-md-2 col-sm-2 col-lg-2 col-xs-4">
+                                            <a href="https://www.instagram.com/meupequenobistro/" target="_blank">
+                                                <img alt=""
+                                                    src="https://meupequenobistro.com.br/cardapio/assets/images/footer/6.jpg">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="colophon" class="site-footer footer-v1">
+            <div class="col-full">
+                <div class="footer-logo">
+                    <a href="https://meupequenobistro.com.br/cardapio/home" class="custom-logo-link" rel="home">
+                        <img src="https://meupequenobistro.com.br/cardapio/imgs/logo_bistro_rodape.png"
+                            alt="Logo Meu Pequeno Bistro" title="Logo Meu Pequeno Bistro" />
+                    </a>
+                </div>
+                <div class="footer-social-icons">
+                    <span class="social-icon-text">Follow us</span>
+                    <ul class="social-icons list-unstyled">
+                        <li><a class="fa fa-facebook" href="#"></a></li>
+                        <li><a class="fa fa-twitter" href="#"></a></li>
+                        <li><a class="fa fa-instagram" href="#"></a></li>
+                        <li><a class="fa fa-youtube" href="#"></a></li>
+                    </ul>
+                </div>
+
+                <div class="site-address">
+                    <ul class="address">
+                        <li>Meu Pequeno Bistro</li>
+                        <li>Caverá - Araranguá - Santa Catarina - Brasil</li>
+                        <li>Telefone - 48 3524-6999</li>
+                    </ul>
+                </div>
+
+                <div class="site-info">
+                    <p class="copyright">Copyright &copy; 2018 Meu Pequeno Bistro.</p>
+                </div>
+
+                <div class="pizzaro-handheld-footer-bar">
+                    <ul class="columns-3">
+                        <li class="my-account">
+                            <a href="https://meupequenobistro.com.br/cardapio/meus-pedidos">Meus Pedidos</a>
+                        </li>
+                        <li class="search">
+                            <a href="#">Search</a>
+                            <div class="site-search">
+                                <div class="widget woocommerce widget_product_search">
+                                    <form role="search" method="get" class="woocommerce-product-search">
+                                        <input type="hidden" name="acao" value="buscar">
+                                        <label class="screen-reader-text" for="woocommerce-product-search-field">Search
+                                            for:</label>
+                                        <input type="search" id="woocommerce-product-search-field" class="search-field"
+                                            placeholder="Search Products&hellip;" value="" name="s"
+                                            title="Search for:" />
+                                        <input type="submit" value="Buscar" />
+                                        <input type="hidden" name="post_type" value="product" />
+                                    </form>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cart">
+                            <a class="footer-cart-contents" href="https://meupequenobistro.com.br/cardapio/fechar"
+                                title="Finalizar Pedido">
+                                <span class="count">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="./assets/js/tether.min.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript"
+        src="https://meupequenobistro.com.br/cardapio/assets/js/social.share.min.js"></script>
+    <script type="text/javascript"
+        src="https://meupequenobistro.com.br/cardapio/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="https://meupequenobistro.com.br/cardapio/lib/js/jquery.mask.js"></script>
+    <script type="text/javascript"
+        src="https://meupequenobistro.com.br/cardapio/assets/js/jquery.sumoselect.js"></script>
+    <script type="text/javascript" src="https://meupequenobistro.com.br/cardapio/assets/js/scripts.min.js"></script>
+    <script type="text/javascript" src="https://meupequenobistro.com.br/cardapio/assets/js/login.js"></script>
+    <script type="text/javascript"
+        src="https://meupequenobistro.com.br/cardapio/switchstylesheet/switchstylesheet.js"></script>
+    <script type="text/javascript">
+        var GLOBAL_LINK = "https://meupequenobistro.com.br/cardapio/";
+        $('select').SumoSelect();
+        var sideBarCount = 0;
+        var addItemAr = [`<div class="card-header">
+                                                        <h4>Qual a quantidade?</h4>
+                                                    </div>
+                                                    <div class="card-body quantidadeBody">
+                                                        <a onclick="downQuantity();"><i class="fa fa-minus"></i></a><input type="number" value="1"
+                                                            class="form-control" min="1" id="quantidadeItem"> 
+                                                            <a onclick="upQuantity();"><i
+                                                            class="fa fa-plus"></i></a>
+                                                            <hr/>
+                                                        <div class="priceItemContainer">R$<div id="priceItem">29,90
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            `, `
+                                            <div class="card-header">
+                                                        <h4>Deseja remover algo?</h4>
+                                                    </div>
+                                                    <div class="card-body removerBody">
+                                                        <div class="form-group">
+                                                            <div class="form-check ">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="ingreCheck1" checked>
+                                                                <label class="form-check-label" for="ingreCheck1">
+                                                                    Pão de queijo
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check ">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="ingreCheck2" checked>
+                                                                <label class="form-check-label" for="ingreCheck2">
+                                                                    Bacon
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check ">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="ingreCheck3" checked>
+                                                                <label class="form-check-label" for="ingreCheck3">
+                                                                    Rúcula
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check ">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="ingreCheck4" checked>
+                                                                <label class="form-check-label" for="ingreCheck4">
+                                                                    Mussarela
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check ">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="ingreCheck5" checked>
+                                                                <label class="form-check-label" for="ingreCheck5">
+                                                                    Molho do Chef
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check ">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="ingreCheck6" checked>
+                                                                <label class="form-check-label" for="ingreCheck6">
+                                                                    Tomate
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check ">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="ingreCheck7" checked>
+                                                                <label class="form-check-label" for="ingreCheck7">
+                                                                    Molho do Chef
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check ">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="ingreCheck8" checked>
+                                                                <label class="form-check-label" for="ingreCheck8">
+                                                                    Tomate
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                            `, ` <div class="card-header">
+                                                        <h4>Deseja adicionar algo?</h4>
+                                                    </div>
+                                                    <div class="card-body addItemExtraBody">
+                                                        <ul class="list-unstyled ">
+                                                            <li class="media">
+                                                                <img src="https://meupequenobistro.com.br/cardapio/imagens/154901201904062825403818861.jpg"
+                                                                    class="imgItemExtra" alt="...">
+                                                                    <div class="extraItemContainer">
+                                                                        <div class="extraItemName">Tomate seco</div>
+                                                                        <div class="extraItemContainerPrice">R$<div class="extraItemPrice">5,50</div></div>
+                                                                    </div>
+                                                                <div class="media-body">
+                                                                    <p class="textPorcao">Adicione uma porção a mais de tomate seco e deixe
+                                                                        seu prato ainda mais gostoso!</p>
+                                                                    <div class="changeItemExtra"><a
+                                                                            onclick="downQuantityExtra('#quantidadeExtraItem1');"><i
+                                                                                class="fa fa-minus"></i></a>
+                                                                        <input type="number" value="1"
+                                                                            class="form-control quantidadeExtraItem"
+                                                                            min="1" id="quantidadeExtraItem1">
+                                                                        <a
+                                                                            onclick="upQuantityExtra('#quantidadeExtraItem1');"><i
+                                                                                class="fa fa-plus"></i></a>
+                                                                        <hr />
+                                                                        <div class="priceExtraItemContainer">R$<div
+                                                                                class="priceExtraItem"
+                                                                                id="priceExtraItem">29,90
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li class="media">
+                                                                <img src="https://meupequenobistro.com.br/cardapio/imagens/154901201904062825403818861.jpg"
+                                                                    class="imgItemExtra" alt="...">
+                                                                    <div class="extraItemContainer">
+                                                                        <div class="extraItemName">Tomate seco</div>
+                                                                        <div class="extraItemContainerPrice">R$<div class="extraItemPrice">5,50</div></div>
+                                                                    </div>
+                                                                <div class="media-body">
+                                                                    <p class="textPorcao">Adicione uma porção a mais de tomate seco e deixe
+                                                                        seu prato ainda mais gostoso!</p>
+                                                                    <div class="changeItemExtra"><a
+                                                                            onclick="downQuantityExtra('#quantidadeExtraItem2');"><i
+                                                                                class="fa fa-minus"></i></a><input
+                                                                            type="number" value="1"
+                                                                            class="form-control quantidadeExtraItem"
+                                                                            min="1" id="quantidadeExtraItem2">
+                                                                        <a
+                                                                            onclick="upQuantityExtra('#quantidadeExtraItem2');"><i
+                                                                                class="fa fa-plus"></i></a>
+                                                                        <hr />
+                                                                        <div class="priceExtraItemContainer">R$<div
+                                                                                class="priceExtraItem"
+                                                                                id="priceExtraItem">29,90
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                            `, `<div class="card-header">
+                                                        <h4>Escolha o modo de servir</h4>
+                                                    </div>
+                                                    <div class="card-body modoServirBody">
+                                                        <ul class="list-group">
+                                                            <li class="list-group-item"><div class="form-check ">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="ingreCheck1">
+                                                                <label class="form-check-label" for="ingreCheck1">
+                                                                    Copos
+                                                                </label>
+                                                            </div><div class="changeItemServir"><a
+                                                                onclick="downQuantityExtra('#quantidadeServirItem1');"><i
+                                                                    class="fa fa-minus"></i></a><input
+                                                                type="number" value="1"
+                                                                class="form-control quantidadeServirItem"
+                                                                min="1" id="quantidadeServirItem1">
+                                                            <a
+                                                                onclick="upQuantityExtra('#quantidadeServirItem1');"><i
+                                                                    class="fa fa-plus"></i></a>
+                                                            <hr />
+                                                            </div></li>
+                                                            <li class="list-group-item"><div class="form-check ">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="ingreCheck1">
+                                                                <label class="form-check-label" for="ingreCheck1">
+                                                                    Limão e gelo
+                                                                </label>
+                                                            </div><div class="changeItemServir"><a
+                                                                onclick="downQuantityExtra('#quantidadeServirItem1');"><i
+                                                                    class="fa fa-minus"></i></a><input
+                                                                type="number" value="1"
+                                                                class="form-control quantidadeServirItem"
+                                                                min="1" id="quantidadeServirItem1">
+                                                            <a
+                                                                onclick="upQuantityExtra('#quantidadeServirItem1');"><i
+                                                                    class="fa fa-plus"></i></a>
+                                                            <hr />
+                                                            </div></li>
+                                                            <li class="list-group-item"><div class="form-check ">
+                                                                <input class="form-check-input" type="checkbox"
+                                                                    id="ingreCheck1">
+                                                                <label class="form-check-label" for="ingreCheck1">
+                                                                    Garfo e faca
+                                                                </label>
+                                                            </div><div class="changeItemServir"><a
+                                                                onclick="downQuantityExtra('#quantidadeServirItem1');"><i
+                                                                    class="fa fa-minus"></i></a><input
+                                                                type="number" value="1"
+                                                                class="form-control quantidadeServirItem"
+                                                                min="1" id="quantidadeServirItem1">
+                                                            <a
+                                                                onclick="upQuantityExtra('#quantidadeServirItem1');"><i
+                                                                    class="fa fa-plus"></i></a>
+                                                            <hr />
+                                                            </div></li>
+                                                            
+                                                          </ul>
+                                                    </div>
+                                            `, `<div class="card-header">
+                                                        <h4>Resumo do pedido</h4>
+                                                    </div>
+                                                    <div class="card-body resumoBody">
+                                                        <table class="table">
+                                                            <tbody>
+                                                              <tr>
+                                                                <th scope="row"><span id="productQty1">1</span> <span id="productName1">Burguer Cheese</span></th>
+                                                                <td><strong>R$ <span id="productPrice1">29,90</span></strong></td>  
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="textGrey">Modo se servir: </td><td><span id="productServir1">Embalado a vácuo, 3 copos descartáveis</span></td> 
+                                                                <td></td>
+                                                            </tr>
+                                                              <tr>
+                                                                <th scope="row" class="textGrey">Ingredientes retirados:</th>
+                                                                <th scope="row" class="textGrey">Adicionais:</th>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Cebola</td>
+                                                                <td>Bacon</td>
+                                                                <td >R$ 5,90</td>
+                                                            </tr>  
+                                                              <tr>
+                                                                <td>Tomate</td>
+                                                                <td>Thornton</td>
+                                                                <td >R$ 5,90</td>
+                                                              </tr>
+                                                                <td>Rúcula</td>
+                                                                <td>Tomate seco</td>
+                                                                <td >R$ 5,90</td>
+                                                            <tr><td></td>
+                                                                <td class="textGrey">Total de adicionais</td>
+                                                                <td >R$ 25,90</td>
+                                                              </tr>
+                                                              <tr class="lastTr"><td></td><td class="textGrey">Total:</td><td class="text-danger textGrey">R$ <span id="productTotal1">59,90</span></td></tr>
+                                                            </tbody>
+                                                          </table>
+                                                          <hr/>
+                                                          <table class="table">
+                                                            <tbody>
+                                                              <tr>
+                                                                <th scope="row"><span id="productQty1">1</span> <span id="productName1">Burguer Cheese</span></th>
+                                                                <td><strong>R$ <span id="productPrice1">29,90</span></strong></td>  
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="textGrey">Modo se servir: </td><td><span id="productServir1">Embalado a vácuo, 3 copos descartáveis</span></td> 
+                                                                <td></td>
+                                                            </tr>
+                                                              <tr>
+                                                                <th scope="row" class="textGrey">Ingredientes retirados:</th>
+                                                                <th scope="row" class="textGrey">Adicionais:</th>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Cebola</td>
+                                                                <td>Bacon</td>
+                                                                <td >R$ 5,90</td>
+                                                            </tr>  
+                                                              <tr>
+                                                                <td>Tomate</td>
+                                                                <td>Thornton</td>
+                                                                <td >R$ 5,90</td>
+                                                              </tr>
+                                                                <td>Rúcula</td>
+                                                                <td>Tomate seco</td>
+                                                                <td >R$ 5,90</td>
+                                                            <tr><td></td>
+                                                                <td class="textGrey">Total de adicionais</td>
+                                                                <td >R$ 25,90</td>
+                                                              </tr>
+                                                              <tr class="lastTr"><td></td><td class="textGrey">Total:</td><td class="text-danger textGrey">R$ <span id="productTotal1">59,90</span></td></tr>
+                                                            </tbody>
+                                                          </table>
+                                                    </div>
+                                           `];
+
+        function nextAddItem() {
+            var side = document.querySelector('.sidebarAddItem');
+            var maxL = side.getElementsByTagName('a').length;
+            if (sideBarCount < maxL - 2) {
+                var cs = side.getElementsByTagName('a')[sideBarCount + 1];
+                cs.classList.remove('active');
+
+                sideBarCount++;
+                cs = side.getElementsByTagName('a')[sideBarCount + 1];
+                cs.classList.add('active');
+                var cont = document.querySelector('.containerAddItem');
+                var card = cont.querySelector('.card');
+                card.innerHTML = addItemAr[sideBarCount];
+            } else {
+                console.log("tsete: " + sideBarCount);
+                sideBarCount++;
+                var cont = document.querySelector('.containerAddItem');
+                var card = cont.querySelector('.card');
+                card.innerHTML = addItemAr[sideBarCount];
+                sideBarCount = 0;
+            }
+        }
+
+        function backAddItem() {
+            var side = document.querySelector('.sidebarAddItem');
+            var maxL = side.getElementsByTagName('a').length;
+            console.log(maxL);
+            console.log(sideBarCount);
+            var cs = side.getElementsByTagName('a')[sideBarCount];
+            cs.classList.remove('active');
+            if (sideBarCount > 0) {
+                sideBarCount--;
+                cs = side.getElementsByTagName('a')[sideBarCount];
+                cs.classList.add('active');
+                var cont = document.querySelector('.containerAddItem');
+                var card = cont.querySelector('.card');
+                card.innerHTML = addItemAr[sideBarCount - 1];
+            } else {
+                sideBarCount = maxL - 1;
+                cs = side.getElementsByTagName('a')[sideBarCount];
+                cs.classList.add('active');
+                var cont = document.querySelector('.containerAddItem');
+                var card = cont.querySelector('.card');
+                card.innerHTML = addItemAr[sideBarCount - 1];
+            }
+
+
+
+
+        }
+
+        function upQuantity() {
+            var input = document.querySelector('#quantidadeItem');
+            console.log(input.value);
+            input.value = parseInt(input.value, 10) + 1;
+        }
+        function downQuantity() {
+            var input = document.querySelector('#quantidadeItem');
+            console.log(input);
+            if (input.value > 1) {
+                input.value = parseInt(input.value, 10) - 1;
+            }
+        }
+        function downQuantityExtra(item) {
+            var input = document.querySelector(item);
+            console.log(input);
+            if (input.value > 1) {
+                input.value = parseInt(input.value, 10) - 1;
+            }
+        }
+        function upQuantityExtra(item) {
+            var input = document.querySelector(item);
+            console.log(input.value);
+            input.value = parseInt(input.value, 10) + 1;
+        }
+    </script>
+</body>
+
+</html>

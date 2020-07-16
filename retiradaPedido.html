@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meu Pequeno Bistro</title>
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/animate.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/font-pizzaro.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/colors/blue.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/jquery.mCustomScrollbar.min.css" media="all" />
+    <link href="./assets/css/colors/blue.css" rel="alternate stylesheet" title="Blue color">
+    <link rel="stylesheet" type="text/css" href="./assets/css/mobile.css" media="all" />
+    <link href="./assets/css/sumoselect.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" media="all" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CYanone+Kaffeesatz:200,300,400,700"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/images/fav-icon.png">
+</head>
+
+<body>
+    <div class="container-fluid formFinalizarPage retiradaPage">
+        <header id="masthead" class="site-header header-v1" style="background-image: none; ">
+            <div class="col-full">
+                <div class="site-branding">
+                    <a href="https://meupequenobistro.com.br/cardapio/home" class="custom-logo-link" rel="home">
+                        <img src="https://meupequenobistro.com.br/cardapio/imgs/logo_menu.png" class="hide-mob"
+                            alt="Logo Meu Pequeno Bistro" title="Logo Meu Pequeno Bistro" />
+                        <img src="https://meupequenobistro.com.br/cardapio/imgs/logo_menu_mobile.png" class="show-mob"
+                            alt="Logo Meu Pequeno Bistro" title="Logo Meu Pequeno Bistro" />
+                    </a>
+                </div>
+            </div>
+        </header>
+        <div class="formEntrega col-lg-12 col-sm-12 ">
+            <h2>Finalização do Pedido</h2>
+            <h4>Retirada do produto</h4>
+            <hr />
+            <h3>O numero do seu pedido é: <span class="numeroPedido">#12I24654</span> selecione abaixo o método de
+                recebimento</h3>
+            <div class="container" id="myGroup">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-check">
+                            <input class="form-check-input input-group-lg mb-3" type="radio" name="checkEntrega"
+                                id="checkVoucher" value="checkVoucher" data-toggle="collapse"
+                                data-target="#voucherDados" aria-expanded="false" aria-controls="voucherDados">
+                            <label class="form-check-label" for="checkVoucher">
+                                Retirada por meio de Voucher
+                                <p class="card-text">Apresente na hora do pagamento no estabelecimento esse voucher ou
+                                    cpf e
+                                    documento com foto</p>
+                            </label>
+                        </div>
+                        <div id="voucherDados" class="voucherDados collapse" data-parent="#myGroup">
+                            <button type="submit" class="btn btn-block btn-success">ABRIR VOUCHER</button>
+                            <button type="button" class="btn btn-success .btnFinalizar"
+                                onclick="$('#modalPedidoSucessoVoucher').modal('show')">FINALIZAR
+                                PEDIDO(VOUCHER)</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="checkEntrega" id="checkDelivery"
+                                value="checkDelivery" data-toggle="collapse" data-target="#deliveryDados"
+                                aria-expanded="false" aria-controls="deliveryDados">
+                            <label class="form-check-label" for="checkDelivery">
+                                Retirada por Delivery <p class="card-text">Caso queira receber no local, ou retirar no
+                                    estabelecimento.</p>
+                            </label>
+                        </div>
+
+                        <form id="deliveryDados" class="deliveryDados collapse" data-parent="#myGroup">
+                            <br />
+                            <div class="timeEntContainer"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                                <h5>Tempo de entrega:</h5>
+                                <div class="timeEntClass">25-30min</div>
+                            </div>
+                            <div class="taxaEntContainer"><i class="fa fa-percent" aria-hidden="true"></i>
+                                <h5>Taxa de entrega: R$</h5>
+                                <div class="taxaEntClass">9,90</div>
+                            </div>
+                            <h4>Informe o local de entrega</h4>
+                            <div class="form-row">
+                                <div class="form-group col-md-4" onclick="$('#CEPModal').modal('show')">
+                                    <label for="inputZip">CEP :</label>
+                                    <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputZip">Cidade :</label>
+                                    <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputZip">Bairro :</label>
+                                    <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="inputRua">Rua :</label>
+                                    <input type="text" class="form-control" id="inputRua" placeholder="Digite aqui">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputAddress2">Numero:</label>
+                                    <input type="number" class="form-control" id="inputAddress2"
+                                        placeholder="Digite aqui">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputCity">Complemento :</label>
+                                    <input type="text" class="form-control" id="inputCity" placeholder="Digite aqui">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <!--type="submit"-->
+                                    <button type="button" class="btn btn-success "
+                                        onclick="$('#modalErrorEndereco').modal('show')">FINALIZAR PEDIDO</button>
+                                    <button type="button" class="btn btn-success .btnFinalizar"
+                                        onclick="$('#modalPedidoSucessoDelivery').modal('show')">FINALIZAR
+                                        PEDIDO(DELIVERY)</button>
+                                        <button type="button" class="btn btn-success .btnFinalizar"
+                                        onclick="$('#modalLocalFechado').modal('show')">FINALIZAR
+                                        PEDIDO(LOCAL FECHADO)</button>
+
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal modalErrorEndereco" tabindex="-1" role="dialog" id="modalErrorEndereco">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header headerModal"></div>
+                        <div class="modal-body text-danger">
+                            O estabelecimento não entrega no local desejado!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="modal modalCEP" tabindex="-1" role="dialog" id="CEPModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header headerModal">
+                        <h4>Agendamento Automático</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mapIcon"> <i class="fa fa-map-marker" aria-hidden="true"></i></div>
+
+                        <h2 class="modal-title">Informe o local de entrega</h2>
+                        <h5>Digite seu CEP</h5>
+                        <div class="form-group col-md-6">
+                            <input type="number" class="form-control" id="inputCEPModal" placeholder="Digite aqui">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <h7 class="text-danger">*não foi possível encontrar seu endereço pelo CEP, por favor
+                                preencha os dados abaixo.</h7>
+                        </div>
+                        <form id="CEPDados" class="deliveryDados collapse">
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputRua">Rua</label>
+                                    <input type="text" class="form-control" id="inputRua" placeholder="Digite aqui">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputZip">Bairro</label>
+                                    <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputZip">Cidade</label>
+                                    <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputCity">Complemento</label>
+                                    <input type="text" class="form-control" id="inputCity" placeholder="Digite aqui">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label class="labelNumeroCasa" for="inputNumeroCasa">Numero</label>
+                                    <input type="number" class="form-control" id="inputNumeroCasa"
+                                        placeholder="Digite aqui">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div class="form-check ">
+                                        <input class="form-check-input" type="checkbox" id="NomeEnderecoCheck"
+                                            data-toggle="collapse" data-target="#inputNomeEndereco"
+                                            aria-expanded="false" aria-controls="inputNomeEndereco">
+                                        <label class="form-check-label" for="NomeEnderecoCheck">
+                                            Desejo salvar este endereço
+                                        </label>
+                                    </div>
+                                    <input class="inputNomeEndereco collapse form-control" type="text"
+                                        id="inputNomeEndereco" placeholder="Casa, trabalho..." />
+                                </div>
+                            </div>
+                        </form>
+                        <button type="button" class="btn  btn-success" data-toggle="collapse" data-target="#CEPDados"
+                            aria-expanded="false" aria-controls="CEPDados">Confirmar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modalLocalFechado" tabindex="-1" role="dialog" id="modalLocalFechado">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header headerModal">
+                        <h4>Agendamento Automático</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card cardLocalFechado">
+                            <div class="card-body">
+                                <h5 class="textDanger">O estabelecimento está fechado no momento, deseja agendar um
+                                    horário para receber o produto?</h5>
+                                <p>(Horário de atendimento)</p>
+                                <div class="dropDiv">
+                                    <select class="bootstrap-select">
+                                        <option value="1" selected="selected">8:00h - 13:30h e 14:30h - 20:00h
+                                        </option>
+                                        <option value="2">8:00h - 13:30h e 14:30h - 20:00h</option>
+                                        <option value="3">8:00h - 13:30h e 14:30h - 20:00h</option>
+                                        <option value="4">8:00h - 13:30h e 14:30h - 20:00h</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clockIcon"> <i class="fa fa-clock-o" aria-hidden="true"></i></div>
+                        <h3>Agende data e hora</h3>
+                        <div class="form-row rowSelect">
+                            <div class="form-group col-md-6 SelectDia">
+                                <select class="form-control" id="SelectDia">
+                                    <option>03/07/2020</option>
+                                    <option>04/07/2020</option>
+                                    <option>05/07/2020</option>
+                                    <option>06/07/2020</option>
+                                    <option>07/07/2020</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6 SelectHora">
+                                <select class="form-control" id="SelectHora">
+                                    <option>18:00</option>
+                                    <option>20:00</option>
+                                    <option>20:30</option>
+                                    <option>20:45</option>
+                                    <option>21:00</option>
+                                    <option>21:50</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h6 class="text-danger">*após o agendamento do horário, respeitar a tolerância que pode ser
+                            de 25-30min</h6>
+                        <div class="rowBtn"><button type="button" class="btn btn-success">CONFIRMAR HORÁRIO</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="formLocalFechado col-lg-12 col-sm-12 ">
+            <h2>Finalização do Pedido</h2>
+            <h4>Retirada do produto</h4>
+            <hr />
+            <h3>O numero do seu pedido é: <span class="numeroPedido">#12I24654</span>, o estabelecimento está fechado no
+                momento, como deseja usar seu voucher?</h3>
+            <div class="container" id="myGroup2">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-check">
+                            <input class="form-check-input input-group-lg mb-3" type="radio" name="checkFechado"
+                                id="checkVoucherLocal" value="checkVoucherLocal" data-toggle="collapse"
+                                data-target="#voucherDadosLocal" aria-expanded="false"
+                                aria-controls="voucherDadosLocal">
+                            <label class="form-check-label" for="checkVoucherLocal">
+                                Comer no local
+                                <p class="card-text">Apresente o voucher(ou o número do pedido) e retire o produto para
+                                    comer no local.</p>
+                            </label>
+                        </div>
+                        <div id="voucherDadosLocal" class="voucherDadosLocal collapse" data-parent="#myGroup2">
+                            <button type="submit" class="btn btn-block btn-success">ABRIR VOUCHER</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-check">
+                            <input class="form-check-input input-group-lg mb-3" type="radio" name="checkFechado"
+                                id="checkVoucherDados" value="checkVoucherDados" data-toggle="collapse"
+                                data-target="#voucherDadosViagem" aria-expanded="false"
+                                aria-controls="voucherDadosViagem">
+                            <label class="form-check-label" for="checkVoucherDados">
+                                Levar para a viagem
+                                <p class="card-text">Apresente o voucher no estabelecimento e retire o produto embalado
+                                    para viagem.</p>
+                                <div class="row taxRow col-lg-12">
+                                    <div class="timeEntContainer col-sm-6 col-lg-6"><i class="fa fa-clock-o"
+                                            aria-hidden="true"></i>
+                                        <h5>Tempo de entrega:</h5>
+                                        <div class="timeEntClass">25-30min</div>
+                                    </div>
+                                    <div class="taxaEntContainer col-sm-6 col-lg-6"><i class="fa fa-percent"
+                                            aria-hidden="true"></i>
+                                        <h5>Sem taxa de entrega.</h5>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div id="voucherDadosViagem" class="voucherDadosViagem collapse" data-parent="#myGroup2">
+                            <button type="submit" class="btn btn-block btn-success">ABRIR VOUCHER</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="checkFechado" id="checkDelivery"
+                                value="checkDelivery" data-toggle="collapse" data-target="#deliveryDadosFechado"
+                                aria-expanded="false" aria-controls="deliveryDadosFechado">
+                            <label class="form-check-label" for="checkDelivery">
+                                Delivery <p class="card-text">Tenha o pedido entregue no local desejado.</p>
+                                <div class="row taxRow">
+                                    <div class="timeEntContainer col-sm-6"><i class="fa fa-clock-o"
+                                            aria-hidden="true"></i>
+                                        <h5>Tempo de entrega:</h5>
+                                        <div class="timeEntClass">25-30min</div>
+                                    </div>
+                                    <div class="taxaEntContainer col-sm-6"><i class="fa fa-percent"
+                                            aria-hidden="true"></i>
+                                        <h5>Taxa de entrega: R$</h5>
+                                        <div class="taxaEntClass">9,90</div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+
+                        <form id="deliveryDadosFechado" class="deliveryDadosFechado collapse" data-parent="#myGroup2">
+                            <h4>Informe o local de entrega</h4>
+                            <div class="form-row">
+                                <div class="form-group col-md-4" onclick="$('#CEPModal').modal('show')">
+                                    <label for="inputZip">CEP :</label>
+                                    <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputZip">Cidade :</label>
+                                    <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputZip">Bairro :</label>
+                                    <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="inputRua">Rua :</label>
+                                    <input type="text" class="form-control" id="inputRua" placeholder="Digite aqui">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputAddress2">Numero:</label>
+                                    <input type="number" class="form-control" id="inputAddress2"
+                                        placeholder="Digite aqui">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputCity">Complemento :</label>
+                                    <input type="text" class="form-control" id="inputCity" placeholder="Digite aqui">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <!--type="submit"-->
+                                    <button type="button" class="btn btn-success "
+                                        onclick="$('#modalErrorEndereco').modal('show')">FINALIZAR PEDIDO</button>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+                <button type="button" class="btn  btn-success btnFinalizar"
+                    onclick="$('#modalPedidoSucessoVoucher').modal('show')">FINALIZAR PEDIDO(VOUCHER)</button>
+                <button type="button" class="btn  btn-success btnFinalizar"
+                    onclick="$('#modalPedidoSucessoDelivery').modal('show')">FINALIZAR PEDIDO(DELIVERY)</button>
+            </div>
+
+            
+        </div>
+        <div class="modal modalPedidoSucessoVoucher" tabindex="-1" role="dialog" id="modalPedidoSucessoVoucher">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header headerModal">
+                        <h4>PEDIDO ACEITO</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-title">Seu pedido foi recebido com sucesso!</div>
+                        <div class="successIcon"><i class="fa fa-check" aria-hidden="true"></i></div>
+                        <h5>Nossa equipe encaminhará o Voucher para o seu e-mail o mais rápido possível.</h5>
+                        <button type="button" class="btn btn-lg btn-success">Continuar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modalPedidoSucessoDelivery" tabindex="-1" role="dialog" id="modalPedidoSucessoDelivery">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header headerModal">
+                        <h4>PEDIDO ACEITO</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-title">Seu pedido foi recebido com sucesso!</div>
+                        <div class="successIcon"><i class="fa fa-check" aria-hidden="true"></i></div>
+                        <h5>O pedido está a caminho.</h5>
+                        <button type="button" class="btn btn-lg btn-success">Continuar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="./assets/js/tether.min.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="./assets/js/social.share.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="./lib/js/jquery.mask.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.sumoselect.js"></script>
+    <script type="text/javascript" src="./assets/js/scripts.min.js"></script>
+    <script type="text/javascript" src="./assets/js/login.js"></script>
+    <script type="text/javascript" src="./switchstylesheet/switchstylesheet.js"></script>
+    <script type="text/javascript">
+        $("#carouselExampleIndicators").carousel({
+            interval: 2000
+        });
+        var GLOBAL_LINK = "https://meupequenobistro.com.br/cardapio/";
+        $('select').SumoSelect();
+
+
+
+    </script>
+</body>
+
+</html>

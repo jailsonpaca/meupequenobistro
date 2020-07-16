@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meu Pequeno Bistro</title>
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/animate.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/font-pizzaro.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/colors/blue.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/jquery.mCustomScrollbar.min.css" media="all" />
+    <link href="./assets/css/colors/blue.css" rel="alternate stylesheet" title="Blue color">
+    <link rel="stylesheet" type="text/css" href="./assets/css/mobile.css" media="all" />
+    <link href="./assets/css/sumoselect.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" media="all" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CYanone+Kaffeesatz:200,300,400,700"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/images/fav-icon.png">
+</head>
+
+<body>
+    <div class="container-fluid formFinalizarPage">
+        <header id="masthead" class="site-header header-v1" style="background-image: none; ">
+            <div class="col-full">
+                <div class="site-branding">
+                    <a href="https://meupequenobistro.com.br/cardapio/home" class="custom-logo-link" rel="home">
+                        <img src="https://meupequenobistro.com.br/cardapio/imgs/logo_menu.png" class="hide-mob"
+                            alt="Logo Meu Pequeno Bistro" title="Logo Meu Pequeno Bistro" />
+                        <img src="https://meupequenobistro.com.br/cardapio/imgs/logo_menu_mobile.png" class="show-mob"
+                            alt="Logo Meu Pequeno Bistro" title="Logo Meu Pequeno Bistro" />
+                    </a>
+                </div>
+            </div>
+        </header>
+        <div class="formFinalizar col-sm-8">
+            <div class="card ">
+            
+                <div class="card-body ">
+                    <h5 class="card-title parentTitle">Dados Cadastrais</h5>
+                    <p>Preencha o formulário abaixo com os seus dados.Os campos marcados com "*" são de preenchimento obrigatório</p>
+                    <hr/>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputState">Tipo de cadastro *:</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>SELECIONE...</option>
+                                    <option>...</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6 checkEstrangeiro">
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Sou estrangeiro
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="form-group ">
+                                <label for="inputNome">Nome completo *:</label>
+                                <input type="text" class="form-control" id="inputNome" placeholder="Digite aqui">
+                            </div><div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCelular">Celular *:</label>
+                                <input type="tel" class="form-control" id="inputCelular" placeholder="Digite aqui">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputWhatsApp">WhatsApp *:</label>
+                                <input type="tel" class="form-control" id="inputWhatsApp" placeholder="Digite aqui">
+                            </div></div>
+                            <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputTelefone">Telefone</label>
+                                <input type="tel" class="form-control" id="inputTelefone" placeholder="Digite aqui">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" class="form-control" id="inputEmail" placeholder="Digite aqui">
+                              </div></div>
+                        <h3>Endereço</h3>
+                        <hr/>
+                        <div class="form-group">
+                            <label for="inputZip">CEP *:</label>
+                            <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
+                        </div>
+                        <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputAddress">Endereço *:</label>
+                            <input type="text" class="form-control" id="inputAddress" placeholder="Digite aqui">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputAddress2">Numero *:</label>
+                            <input type="number" class="form-control" id="inputAddress2"
+                                placeholder="Digite aqui">
+                        </div></div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">Complemento :</label>
+                                <input type="text" class="form-control" id="inputCity" placeholder="Digite aqui">
+                            </div>
+                           
+                            <div class="form-group col-md-6">
+                                <label for="inputZip">Bairro *:</label>
+                                <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">Estado *:</label>
+                                <input type="text" class="form-control" id="inputCity" placeholder="Digite aqui">
+                            </div>
+                           
+                            <div class="form-group col-md-6">
+                                <label for="inputZip">Cidade *:</label>
+                                <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
+                            </div>
+                        </div>
+                        <h3>Usuário</h3>
+                        <hr/>
+                        <div class="form-group">
+                            <label for="inputUsuario">Nome de usuário *:</label>
+                            <input type="text" class="form-control" id="inputUsuario" placeholder="Digite aqui">
+                        </div>
+                        <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword">Senha *:</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Digite aqui">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword2">Confirme a senha *:</label>
+                            <input type="password" class="form-control" id="inputPassword2"
+                                placeholder="Digite aqui">
+                        </div></div>
+                        <button type="submit" class="btn btn-block btn-success">CONFIRMAR</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="./assets/js/popper.min.js"></script>
+    <script type="text/javascript" src="./assets/js/tether.min.js"></script>
+    <script type="text/javascript" src="./assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./assets/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="./assets/js/social.share.min.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="./lib/js/jquery.mask.js"></script>
+    <script type="text/javascript" src="./assets/js/jquery.sumoselect.js"></script>
+    <script type="text/javascript" src="./assets/js/scripts.min.js"></script>
+    <script type="text/javascript" src="./assets/js/login.js"></script>
+    <script type="text/javascript" src="./switchstylesheet/switchstylesheet.js"></script>
+    <script type="text/javascript">
+        $("#carouselExampleIndicators").carousel({
+            interval: 2000
+        });
+        var GLOBAL_LINK = "https://meupequenobistro.com.br/cardapio/";
+        $('select').SumoSelect();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+@media (min-width: 317px) and (max-width: 1199px) {
+	.show-mob {
+		display: inline;
+	}
+
+	.hide-mob {
+		display: none;
+	}
+
+	.cart-collaterals .cart_totals table.shop_table tbody tr td {
+		padding-right: 0;
+		text-align: right;
+	}
+}
+
+@media (min-width: 1200px) {
+	.show-mob {
+		display: none;
+	}
+	
+	.hide-mob {
+		display: inline;
+	}
+}
+
+
