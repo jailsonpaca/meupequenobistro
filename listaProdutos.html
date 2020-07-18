@@ -403,19 +403,25 @@
                                                         <h4>Qual a quantidade?</h4>
                                                     </div>
                                                     <div class="card-body quantidadeBody">
-                                                        <a onclick="downQuantity();"><i
-                                                                class="fa fa-minus"></i></a><input type="number"
-                                                            value="1" class="form-control" min="1" id="quantidadeItem">
-                                                        <a onclick="upQuantity();"><i class="fa fa-plus"></i></a>
-                                                        <hr />
-                                                        <div class="priceItemContainer">R$<div id="priceItem">29,90
+                                                        <div class="row changeQuantidade">
+                                                            <a onclick="downQuantity();" class="col-3"><i
+                                                                    class="fa fa-minus"></i></a>
+                                                            <input type="number" value="1"
+                                                                class="col-5 form-control quantidadeInput" min="1"
+                                                                id="quantidadeItem">
+                                                            <a onclick="upQuantity();" class="col-3"><i
+                                                                    class="fa fa-plus"></i></a>
+
+                                                            <div class="col-12 priceItemContainer">R$<div
+                                                                    id="priceItem">29,90
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row row-cols-3 rowBtnAddItem">
+                                                <div class="row rowBtnAddItem">
 
-                                                    <div class=" col ">
+                                                    <div class="col-sm-4 col-12 ">
                                                         <div class="subTotalItemContainer">Subtotal: R$<div
                                                                 id="subTotalItem">29,90
                                                             </div>
@@ -425,15 +431,16 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class=" col-8 colForBtn"><button
-                                                            class="btn btn-success btnLarge"
-                                                            onclick="nextAddItem();">Continuar</button><button
-                                                            class="btn btn-danger btnLarge"
+                                                    <div class="col-sm-4 col-6">
+                                                        <button class="btn btn-danger btnLarge "
                                                             onclick="backAddItem();">Voltar</button>
-
                                                     </div>
-                                                    <!--<div class=" col colForBtn"><button class="btn btn-success btnLarge"
-                                                            onclick="nextAddItem();">Continuar</button></div>-->
+                                                    <div class="col-sm-4 col-6">
+                                                        <button class="btn btn-success btnLarge "
+                                                            onclick="nextAddItem();">Continuar</button>
+                                                    </div>
+
+
 
 
                                                 </div>
@@ -857,19 +864,23 @@
         var GLOBAL_LINK = "https://meupequenobistro.com.br/cardapio/";
         $('select').SumoSelect();
         var sideBarCount = 0;
-        var addItemAr = [`<div class="card-header">
-                                                        <h4>Qual a quantidade?</h4>
+        var addItemAr = [` <div class="card-header">
+                                            <h4>Qual a quantidade?</h4>
+                                        </div>
+                                        <div class="card-body quantidadeBody">
+                                            <div class="row changeQuantidade">
+                                                <a onclick="downQuantity();" class="col-3"><i
+                                                        class="fa fa-minus"></i></a>
+                                                    <input type="number" value="1"
+                                                        class="col-5 form-control quantidadeInput" min="1"
+                                                        id="quantidadeItem"> 
+                                                <a onclick="upQuantity();" class="col-3"><i class="fa fa-plus"></i></a>
+
+                                                <div class="col-12 priceItemContainer">R$<div id="priceItem">29,90
                                                     </div>
-                                                    <div class="card-body quantidadeBody">
-                                                        <a onclick="downQuantity();"><i class="fa fa-minus"></i></a><input type="number" value="1"
-                                                            class="form-control" min="1" id="quantidadeItem"> 
-                                                            <a onclick="upQuantity();"><i
-                                                            class="fa fa-plus"></i></a>
-                                                            <hr/>
-                                                        <div class="priceItemContainer">R$<div id="priceItem">29,90
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                             `, `
                                             <div class="card-header">
                                                         <h4>Deseja remover algo?</h4>
@@ -935,127 +946,144 @@
                                                         </div>
                                                     </div>
                                             `, ` <div class="card-header">
-                                                        <h4>Deseja adicionar algo?</h4>
+                                            <h4>Deseja adicionar algo?</h4>
+                                        </div>
+                                        <div class="card-body cardExtraItem">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                                    <h3 style="text-align: center;">Tomate seco</h3>
+                                                    <h4 class="text-danger">R$: 5,50</h4>
+                                                    <p class="textPorcao showOnMobile">Adicione uma porção a mais de
+                                                        tomate seco e
+                                                        deixe
+                                                        seu prato ainda mais gostoso!</p>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-8 col-12 hideOnMobile">
+                                                    <p class="textPorcao">Adicione uma porção a mais de tomate seco e
+                                                        deixe
+                                                        seu prato ainda mais gostoso!</p>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-8 colChangeItemExtra">
+                                                    <div class="row changeItemExtra">
+                                                        <a class="col-3 aIcon"
+                                                            onclick="downQuantityExtra('#quantidadeExtraItem2');"
+                                                            ><i
+                                                                class="fa fa-minus"></i></a>
+                                                        <input type="number" value="1"
+                                                            class=" col-6 form-control  quantidadeExtraInput" min="1"
+                                                            id="quantidadeExtraItem2">
+                                                        <a class="col-3 aIcon"
+                                                            onclick="upQuantityExtra('#quantidadeExtraItem2');"
+                                                           ><i
+                                                                class="fa fa-plus"></i>
+                                                            </a>
+                                                        
+                                                        <div class="col-12 priceExtraItemContainer">R$<div
+                                                                class="priceExtraItem" id="priceExtraItem">29,90
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="card-body addItemExtraBody">
-                                                        <ul class="list-unstyled ">
-                                                            <li class="media">
-                                                                <img src="https://meupequenobistro.com.br/cardapio/imagens/154901201904062825403818861.jpg"
-                                                                    class="imgItemExtra" alt="...">
-                                                                    <div class="extraItemContainer">
-                                                                        <div class="extraItemName">Tomate seco</div>
-                                                                        <div class="extraItemContainerPrice">R$<div class="extraItemPrice">5,50</div></div>
-                                                                    </div>
-                                                                <div class="media-body">
-                                                                    <p class="textPorcao">Adicione uma porção a mais de tomate seco e deixe
-                                                                        seu prato ainda mais gostoso!</p>
-                                                                    <div class="changeItemExtra"><a
-                                                                            onclick="downQuantityExtra('#quantidadeExtraItem1');"><i
-                                                                                class="fa fa-minus"></i></a>
-                                                                        <input type="number" value="1"
-                                                                            class="form-control quantidadeExtraItem"
-                                                                            min="1" id="quantidadeExtraItem1">
-                                                                        <a
-                                                                            onclick="upQuantityExtra('#quantidadeExtraItem1');"><i
-                                                                                class="fa fa-plus"></i></a>
-                                                                        <hr />
-                                                                        <div class="priceExtraItemContainer">R$<div
-                                                                                class="priceExtraItem"
-                                                                                id="priceExtraItem">29,90
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                            <li class="media">
-                                                                <img src="https://meupequenobistro.com.br/cardapio/imagens/154901201904062825403818861.jpg"
-                                                                    class="imgItemExtra" alt="...">
-                                                                    <div class="extraItemContainer">
-                                                                        <div class="extraItemName">Tomate seco</div>
-                                                                        <div class="extraItemContainerPrice">R$<div class="extraItemPrice">5,50</div></div>
-                                                                    </div>
-                                                                <div class="media-body">
-                                                                    <p class="textPorcao">Adicione uma porção a mais de tomate seco e deixe
-                                                                        seu prato ainda mais gostoso!</p>
-                                                                    <div class="changeItemExtra"><a
-                                                                            onclick="downQuantityExtra('#quantidadeExtraItem2');"><i
-                                                                                class="fa fa-minus"></i></a><input
-                                                                            type="number" value="1"
-                                                                            class="form-control quantidadeExtraItem"
-                                                                            min="1" id="quantidadeExtraItem2">
-                                                                        <a
-                                                                            onclick="upQuantityExtra('#quantidadeExtraItem2');"><i
-                                                                                class="fa fa-plus"></i></a>
-                                                                        <hr />
-                                                                        <div class="priceExtraItemContainer">R$<div
-                                                                                class="priceExtraItem"
-                                                                                id="priceExtraItem">29,90
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                                    <h3 style="text-align: center;">Tomate seco</h3>
+                                                    <h4 class="text-danger">R$: 5,50</h4>
+                                                    <p class="textPorcao showOnMobile">Adicione uma porção a mais de
+                                                        tomate seco e
+                                                        deixe
+                                                        seu prato ainda mais gostoso!</p>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-8 col-12 hideOnMobile">
+                                                    <p class="textPorcao">Adicione uma porção a mais de tomate seco e
+                                                        deixe
+                                                        seu prato ainda mais gostoso!</p>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-8 colChangeItemExtra">
+                                                    <div class="row changeItemExtra">
+                                                        <a class="col-3"
+                                                            onclick="downQuantityExtra('#quantidadeExtraItem2');"
+                                                            style="margin: auto;text-align: center;"><i
+                                                                class="fa fa-minus"></i></a>
+                                                        <input type="number" value="1"
+                                                            class=" col-6 form-control  quantidadeExtraInput" min="1"
+                                                            id="quantidadeExtraItem2">
+                                                        <a class="col-3"
+                                                            onclick="upQuantityExtra('#quantidadeExtraItem2');"
+                                                            style="margin: auto;text-align: center;"><i
+                                                                class="fa fa-plus"></i>
+                                                            </a>
+                                                        
+                                                        <div class="col-12 priceExtraItemContainer">R$<div
+                                                                class="priceExtraItem" id="priceExtraItem">29,90
+                                                            </div>
+                                                        </div>
                                                     </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                                    <h3 style="text-align: center;">Tomate seco</h3>
+                                                    <h4 class="text-danger">R$: 5,50</h4>
+                                                    <p class="textPorcao showOnMobile">Adicione uma porção a mais de
+                                                        tomate seco e
+                                                        deixe
+                                                        seu prato ainda mais gostoso!</p>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-8 col-12 hideOnMobile">
+                                                    <p class="textPorcao">Adicione uma porção a mais de tomate seco e
+                                                        deixe
+                                                        seu prato ainda mais gostoso!</p>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-6 col-8 colChangeItemExtra">
+                                                    <div class="row changeItemExtra">
+                                                        <a class="col-3"
+                                                            onclick="downQuantityExtra('#quantidadeExtraItem2');"
+                                                            style="margin: auto;text-align: center;"><i
+                                                                class="fa fa-minus"></i></a>
+                                                        <input type="number" value="1"
+                                                            class=" col-6 form-control  quantidadeExtraInput" min="1"
+                                                            id="quantidadeExtraItem2">
+                                                        <a class="col-3"
+                                                            onclick="upQuantityExtra('#quantidadeExtraItem2');"
+                                                            style="margin: auto;text-align: center;"><i
+                                                                class="fa fa-plus"></i>
+                                                            </a>
+                                                        
+                                                        <div class="col-12 priceExtraItemContainer">R$<div
+                                                                class="priceExtraItem" id="priceExtraItem">29,90
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                             `, `<div class="card-header">
-                                                        <h4>Escolha o modo de servir</h4>
+                                            <h4>Escolha o modo de servir</h4>
+                                        </div>
+                                        <div class="card-body modoServirBody">
+                                            <div class="row">
+                                                <div class="col-lg-7 col-md-7 col-sm-7 col-5 form-check">
+                                                    <input class="form-check-input" type="checkbox" id="ingreCheck1">
+                                                    <label class="form-check-label" for="ingreCheck1">
+                                                        Copos
+                                                    </label>
+                                                </div>
+                                                <div class="col-lg-5 col-md-5 col-sm-5 col-7 colChangeItemExtra">
+                                                    <div class="row changeItemServir">
+                                                        <a class="col-3 aIcon"
+                                                            onclick="downQuantityExtra('#quantidadeServirItem1');"><i
+                                                                class="fa fa-minus "></i></a>
+                                                        <input type="number" value="1"
+                                                            class="col-6 form-control quantidadeServirItem" min="1"
+                                                            id="quantidadeServirItem1">
+                                                        <a class="col-3 aIcon"
+                                                            onclick="upQuantityExtra('#quantidadeServirItem1');"><i
+                                                                class=" fa fa-plus"></i></a>
                                                     </div>
-                                                    <div class="card-body modoServirBody">
-                                                        <ul class="list-group">
-                                                            <li class="list-group-item"><div class="form-check ">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    id="ingreCheck1">
-                                                                <label class="form-check-label" for="ingreCheck1">
-                                                                    Copos
-                                                                </label>
-                                                            </div><div class="changeItemServir"><a
-                                                                onclick="downQuantityExtra('#quantidadeServirItem1');"><i
-                                                                    class="fa fa-minus"></i></a><input
-                                                                type="number" value="1"
-                                                                class="form-control quantidadeServirItem"
-                                                                min="1" id="quantidadeServirItem1">
-                                                            <a
-                                                                onclick="upQuantityExtra('#quantidadeServirItem1');"><i
-                                                                    class="fa fa-plus"></i></a>
-                                                            <hr />
-                                                            </div></li>
-                                                            <li class="list-group-item"><div class="form-check ">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    id="ingreCheck1">
-                                                                <label class="form-check-label" for="ingreCheck1">
-                                                                    Limão e gelo
-                                                                </label>
-                                                            </div><div class="changeItemServir"><a
-                                                                onclick="downQuantityExtra('#quantidadeServirItem1');"><i
-                                                                    class="fa fa-minus"></i></a><input
-                                                                type="number" value="1"
-                                                                class="form-control quantidadeServirItem"
-                                                                min="1" id="quantidadeServirItem1">
-                                                            <a
-                                                                onclick="upQuantityExtra('#quantidadeServirItem1');"><i
-                                                                    class="fa fa-plus"></i></a>
-                                                            <hr />
-                                                            </div></li>
-                                                            <li class="list-group-item"><div class="form-check ">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    id="ingreCheck1">
-                                                                <label class="form-check-label" for="ingreCheck1">
-                                                                    Garfo e faca
-                                                                </label>
-                                                            </div><div class="changeItemServir"><a
-                                                                onclick="downQuantityExtra('#quantidadeServirItem1');"><i
-                                                                    class="fa fa-minus"></i></a><input
-                                                                type="number" value="1"
-                                                                class="form-control quantidadeServirItem"
-                                                                min="1" id="quantidadeServirItem1">
-                                                            <a
-                                                                onclick="upQuantityExtra('#quantidadeServirItem1');"><i
-                                                                    class="fa fa-plus"></i></a>
-                                                            <hr />
-                                                            </div></li>
-                                                            
-                                                          </ul>
-                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                             `, `<div class="card-header">
                                                         <h4>Resumo do pedido</h4>
                                                     </div>
@@ -1142,7 +1170,6 @@
             if (sideBarCount < maxL - 2) {
                 var cs = side.getElementsByTagName('a')[sideBarCount + 1];
                 cs.classList.remove('active');
-
                 sideBarCount++;
                 cs = side.getElementsByTagName('a')[sideBarCount + 1];
                 cs.classList.add('active');
@@ -1150,41 +1177,52 @@
                 var card = cont.querySelector('.card');
                 card.innerHTML = addItemAr[sideBarCount];
             } else {
-                console.log("tsete: " + sideBarCount);
+                console.log("teste: " + sideBarCount);
+                var cs = side.getElementsByTagName('a')[sideBarCount + 1];
+                cs.classList.remove('active');
                 sideBarCount++;
                 var cont = document.querySelector('.containerAddItem');
                 var card = cont.querySelector('.card');
                 card.innerHTML = addItemAr[sideBarCount];
-                sideBarCount = 0;
+                sideBarCount = 1;
             }
         }
 
         function backAddItem() {
             var side = document.querySelector('.sidebarAddItem');
+            var arr = side.getElementsByTagName('a');
+            console.log(arr.item(0));
+            var select = document.querySelector('.sidebarAddItem');
+            var items = select.querySelectorAll('a:not(.sidebarAddImg)');
+            console.log(items);
+            console.log(items[0].classList);
+            items[0].classList.remove('active');
+            console.log(items[0].classList);
             var maxL = side.getElementsByTagName('a').length;
+            console.log(addItemAr.length);
             console.log(maxL);
             console.log(sideBarCount);
-            var cs = side.getElementsByTagName('a')[sideBarCount];
-            cs.classList.remove('active');
-            if (sideBarCount > 0) {
-                sideBarCount--;
-                cs = side.getElementsByTagName('a')[sideBarCount];
-                cs.classList.add('active');
-                var cont = document.querySelector('.containerAddItem');
-                var card = cont.querySelector('.card');
-                card.innerHTML = addItemAr[sideBarCount - 1];
-            } else {
-                sideBarCount = maxL - 1;
-                cs = side.getElementsByTagName('a')[sideBarCount];
-                cs.classList.add('active');
-                var cont = document.querySelector('.containerAddItem');
-                var card = cont.querySelector('.card');
-                card.innerHTML = addItemAr[sideBarCount - 1];
+            if (sideBarCount < maxL) {
+                var cs = side.querySelectorAll('a:not(.sidebarAddImg)')[sideBarCount];
+                cs.classList.remove('active');
             }
-
-
-
-
+            if (sideBarCount > 0) {
+                console.log("teste1");
+                sideBarCount--;
+                cs = side.querySelectorAll('a:not(.sidebarAddImg)')[sideBarCount];
+                cs.classList.add('active');
+                var cont = document.querySelector('.containerAddItem');
+                var card = cont.querySelector('.card');
+                card.innerHTML = addItemAr[sideBarCount];
+            } else {
+                console.log("teste2");
+                sideBarCount = maxL - 2;
+                cs = side.querySelectorAll('a:not(.sidebarAddImg)')[sideBarCount];
+                cs.classList.add('active');
+                var cont = document.querySelector('.containerAddItem');
+                var card = cont.querySelector('.card');
+                card.innerHTML = addItemAr[sideBarCount];
+            }
         }
 
         function upQuantity() {

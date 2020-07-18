@@ -23374,7 +23374,7 @@ table.cart {
   margin-right: 28%;
 }
 
-@media (min-width: 317px) and (max-width: 500px) {
+@media (min-width: 217px) and (max-width: 500px) {
   table tr .product-quantity .qty-btn .quantity input.qty {
     max-width: 5em;
   }
@@ -23467,13 +23467,13 @@ table.cart {
   margin: auto;
 }
 
-@media (min-width: 317px) and (max-width: 754px) {
+@media (min-width: 217px) and (max-width: 754px) {
   .formFinalizar .checkEstrangeiro {
     margin-left: 30%;
   }
 }
 
-@media (min-width: 317px) and (max-width: 1199px) {
+@media (min-width: 217px) and (max-width: 1199px) {
   .finalizarPage header .col-full .site-branding a .show-mob, .formFinalizarPage header .col-full .site-branding a .show-mob {
     margin: auto;
     display: block;
@@ -23786,7 +23786,7 @@ table.cart {
   width: 120%;
 }
 
-@media (min-width: 317px) and (max-width: 750px) {
+@media (min-width: 217px) and (max-width: 750px) {
   .formLocalFechado .taxRow {
     width: 100%;
   }
@@ -23834,6 +23834,7 @@ table.cart {
 /*--Modal Adicionar Item--*/
 
 .modalAddItem {
+  padding-right: 0px !important;
   border: none;
 }
 
@@ -23864,43 +23865,19 @@ table.cart {
   color: white;
 }
 
-.modalAddItem .containerAddItem .card #quantidadeItem {
-  width: 45%;
-  margin: auto 5%;
-  padding: 0;
-  display: inline;
-  border: none;
-  font-weight: bold;
-  font-size: 800%;
-  text-align: center;
-}
-
 .modalAddItem .containerAddItem .card .quantidadeBody {
   display: inline;
-  margin: auto;
-  width: 70%;
 }
 
-.modalAddItem .containerAddItem .card .quantidadeBody input::-webkit-outer-spin-button, .modalAddItem .containerAddItem .card .quantidadeBody input::-webkit-inner-spin-button {
+.modalAddItem .containerAddItem .card .quantidadeBody a{
+  margin: auto;
+  text-align:center;
+}
+
+.modalAddItem .containerAddItem .card .quantidadeBody input::-webkit-outer-spin-button, 
+.modalAddItem .containerAddItem .card .quantidadeBody input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.modalAddItem .containerAddItem .card .quantidadeBody hr {
-  margin: 1em auto;
-  background-color: black;
-  height: 5px;
-  width: 50%;
-  margin-top: 0;
-}
-
-.modalAddItem .containerAddItem .card .quantidadeBody i {
-  font-size: 450%;
-  vertical-align: super;
-}
-
-.modalAddItem .containerAddItem .card .quantidadeBody a:first-of-type {
-  margin-left: 5%;
 }
 
 .modalAddItem .containerAddItem .card .quantidadeBody .priceItemContainer {
@@ -23919,19 +23896,17 @@ table.cart {
   margin-top: 0%;
   margin-left: 0%;
 }
-.subTotalItemContainer{
-min-width: 130px;
+
+.subTotalItemContainer {
+  min-width: 130px;
 }
 
 .modalAddItem .addItemExtraBody .list-unstyled .textPorcao {
-  margin-left: -55% !important;
+  margin-left: -45% !important;
 }
 
 @media (min-width:350px) and (max-width:800px) {
-  .modalAddItem .containerAddItem .card .quantidadeBody {
-    width: 85%;
-  }
-
+  
   .modalAddItem .addItemExtraBody .imgItemExtra {
     width: 40% !important;
   }
@@ -23941,32 +23916,37 @@ min-width: 130px;
     right: 31% !important;
   }
   .modalAddItem .addItemExtraBody .list-unstyled li .media-body p {
-    margin-left: -30% !important;
+    margin-left: -25% !important;
     width: 100% !important;
   }
-  .modalAddItem .addItemExtraBody .list-unstyled li .media-body .changeItemExtra {
-    margin-left: -30% !important;
-    width: 100% !important;
+  .modalAddItem .containerAddItem .card {
+    /*margin-bottom: 15%;*/
   }
-  .modalAddItem .addItemExtraBody .list-unstyled .changeItemExtra .quantidadeExtraItem {
-    font-size: 200% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
- 
- 
 }
+
 .rowBtnAddItem {
   position: absolute;
   bottom: 0;
   margin-right: 0;
+  text-align: center;
 }
-
 .rowBtnAddItem .btnLarge {
   width: 110px;
-  display:inline-block;
+  display: inline-block;
   float: right;
-  margin: auto 2%;
+  margin: auto;
+}
+.colChangeItemExtra{
+  margin: auto;
+}
+.aIcon{
+  margin: auto;
+  text-align: center;
+}
+.cardExtraItem .row:not(.changeItemExtra),
+.quantidadeBody input{
+  margin-bottom:20px;
+border-bottom: 4px solid #bbb;
 }
 @media (max-width: 1200px) {
   .modalAddItem {
@@ -23974,50 +23954,36 @@ min-width: 130px;
   }
 }
 
-@media (min-width: 317px) and (max-width:610px) {
+@media (min-width: 217px) and (max-width:610px) {
   .modalAddItem .containerAddItem .card .quantidadeBody {
     margin: auto;
     padding: 0;
   }
-  .modalAddItem .containerAddItem{
-    width:100%;
-    flex:0 0 100%;
-    max-width:100%;
+  .modalAddItem .containerAddItem {
+    width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
   }
-  .modalAddItem .containerAddItem .card #quantidadeItem{
-    font-size: 500%;
-    width: 35%;
-  }
-  .modalAddItem .containerAddItem .card .quantidadeBody i{
-    font-size: 400%;
-  }
-  .modalAddItem .containerAddItem .card .quantidadeBody a:first-of-type {
-    margin-left: 10%;
-  }
+
   .rowBtnAddItem {
     position: relative;
     padding-top: 10%;
     text-align: center;
-    margin:auto 5%;
-   
+    margin: auto 5%;
   }
   .rowBtnAddItem .btnLarge {
     width: 100%;
-    display:inline-block;
+    display: inline-block;
     float: right;
     margin: 2% auto;
   }
-  .rowBtnAddItem .col:first-of-type{
+  .rowBtnAddItem .col:first-of-type {
     padding-left: 0;
     padding-right: 0;
   }
-  
   .modalAddItem .hideMobile {
     display: none;
   }
-  
-  
-  
   .modalAddItem .showMobile {
     display: inline-block !important;
   }
@@ -24048,16 +24014,12 @@ min-width: 130px;
   .modalAddItem .modal-body {
     padding-top: 0;
   }
-  
 }
-@media (min-width: 317px) and (max-width:400px) {
-  .modalAddItem .containerAddItem .card .quantidadeBody a:first-of-type {
-    margin-left: 5%;
-  }
-  .subTotalItemContainer{
-    min-width: 80px;
-    }
 
+@media (min-width: 217px) and (max-width:400px) {
+  .subTotalItemContainer {
+    min-width: 80px;
+  }
 }
 
 .modalAddItem .modal-footer {
@@ -24071,8 +24033,6 @@ min-width: 130px;
 .totalItemContainer {
   clear: both;
 }
-
-
 
 .rowBtnAddItem button:first-of-type {
   margin-right: 0%;
@@ -24100,28 +24060,29 @@ min-width: 130px;
 .modalAddItem .removerBody .form-check {
   display: inline-block;
 }
-.modalAddItem .removerBody .form-check label{
-margin-bottom: 10%;
-}
-.modalAddItem .removerBody .form-check label,
-.modalAddItem .modoServirBody .form-check label {
-  font-size: 160%;
-  min-width: 230px;
-  
+
+.modalAddItem .removerBody .form-check label {
+  margin-bottom: 10%;
 }
 
-.modalAddItem .removerBody .form-check input[type="checkbox"]+label::before,
-.modalAddItem .modoServirBody .form-check input[type="checkbox"]+label::before {
+.modalAddItem .removerBody .form-check label, .modalAddItem .modoServirBody .form-check label {
+  font-size: 160%;
+  min-width: 230px;
+}
+
+.modalAddItem .removerBody .form-check input[type="checkbox"]+label::before, .modalAddItem .modoServirBody .form-check input[type="checkbox"]+label::before {
   font-size: 140%;
   height: 40px;
   vertical-align: baseline;
   width: 40px;
 }
-.modalAddItem .removerBody .form-check input[type="checkbox"]:checked+label:before,
-.modalAddItem .modoServirBody .form-check input[type="checkbox"]:checked+label:before{
+
+.modalAddItem .removerBody .form-check input[type="checkbox"]:checked+label:before, .modalAddItem .modoServirBody .form-check input[type="checkbox"]:checked+label:before {
   background: #fff;
   color: #0d0;
-  font-weight:bolder;
+  font-weight: bolder;
+  font-size: 120%;
+  vertical-align: revert;
 }
 
 .modalAddItem .addItemExtraBody {
@@ -24133,56 +24094,47 @@ margin-bottom: 10%;
   background-color: #eee;
 }
 
-.modalAddItem .addItemExtraBody .list-unstyled li {
-  border-bottom: 4px solid #ccc;
+.modalAddItem .changeItemExtra .imgItemExtra {
+  max-width: 150px;
 }
 
-.modalAddItem .addItemExtraBody .imgItemExtra {
-  width: 30%;
-}
-
-.modalAddItem .addItemExtraBody .list-unstyled li .media-body p {
-  margin-top: 10%;
-  width: 70%;
-  display: inline-block;
-  margin-left: -65%;
-}
-
-.modalAddItem .addItemExtraBody .list-unstyled .changeItemExtra input::-webkit-outer-spin-button, .modalAddItem .addItemExtraBody .list-unstyled .changeItemExtra input::-webkit-inner-spin-button, .modalAddItem .modoServirBody .changeItemServir input::-webkit-inner-spin-button, .modalAddItem .modoServirBody .changeItemServir input::-webkit-outer-spin-button {
+.modalAddItem .changeItemExtra input::-webkit-outer-spin-button, .modalAddItem .changeItemExtra input::-webkit-inner-spin-button, .modalAddItem .modoServirBody .changeItemServir input::-webkit-inner-spin-button, .modalAddItem .modoServirBody .changeItemServir input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-.modalAddItem .addItemExtraBody .list-unstyled .changeItemExtra {
-  width: 70%;
-  display: inline-block;
-  margin-left: 5%;
-}
-
-.modalAddItem .addItemExtraBody .list-unstyled .changeItemExtra .quantidadeExtraItem {
-  width: 50%;
-  margin: auto 5%;
+.modalAddItem .quantidadeExtraInput,
+.modalAddItem .quantidadeInput,
+.modalAddItem .quantidadeServirItem{
   display: inline-block;
   border: none;
-  font-size: 300%;
+  font-family: Roboto;
+  font-weight: 600;
+  font-size: 250%;
   text-align: center;
-  background-color: #eee;
+  background-color: #fff;
+  border-bottom:5px solid black;
+  border-radius:0;
   color: black;
 }
-
-.modalAddItem .addItemExtraBody .list-unstyled .changeItemExtra i {
+.modalAddItem .quantidadeInput{
+  font-size: 750%;
+}
+.modalAddItem .changeQuantidade{
+margin-top: 15%;}
+.modalAddItem .changeItemExtra i,
+.modalAddItem .changeQuantidade i{
   font-size: 200%;
   color: black;
 }
-
-.modalAddItem .addItemExtraBody .list-unstyled .changeItemExtra hr {
-  height: 5px;
-  background-color: black;
+.modalAddItem .changeQuantidade i{
+  font-size: 350%;
 }
 
 .priceExtraItemContainer {
-  margin-left: 30%;
+  text-align: center;
   color: black;
+  font-weight:600;
 }
 
 .priceExtraItemContainer, .priceExtraItem {
@@ -24208,51 +24160,13 @@ margin-bottom: 10%;
   display: inline-block;
 }
 
-.modalAddItem .modoServirBody .list-group .form-check {
-  display: inline-block;
-  width: 50%;
-}
-
-.modalAddItem .modoServirBody .changeItemServir {
-  width: 40%;
-  display: inline-block;
-  margin-left: 10%;
-}
-
-.modalAddItem .modoServirBody .changeItemServir hr {
-  height: 5px;
-  background-color: black;
-}
-
-.modalAddItem .modoServirBody .changeItemServir .quantidadeServirItem {
-  width: 55%;
-  margin: auto 2%;
-  display: inline-block;
-  border: none;
-  font-size: 300%;
-  text-align: center;
-  color: black;
-}
-
 .modalAddItem .modoServirBody .changeItemServir i {
-  margin-left: 3%;
   font-size: 200%;
   color: black;
 }
-
-@media (min-width: 317px) and (max-width:500px) {
-  .modalAddItem .modoServirBody .list-group .form-check {
-    width: 40% !important;
-  }
-  .changeItemServir {
-    width: 50% !important;
-  }
+.modoServirBody .row{
+margin:auto;
 }
-
-.modalAddItem .modoServirBody .list-group {
-  margin-left: 0%;
-}
-
 .textGrey {
   font-weight: bold;
   color: #666;
@@ -24314,7 +24228,32 @@ margin-bottom: 10%;
   text-align: right;
 }
 
-@media (min-width: 317px) and (max-width:630px) {
+@media (min-width: 769px){
+  .showOnMobile{
+    display: none;
+  }
+}
+.containerAddItem .resumoBody,
+.cardExtraItem,
+.modoServirBody{
+  margin-bottom: 15%;
+}
+@media (min-width: 100px) and (max-width:768px) {
+  .hideOnMobile {
+    display: none;
+  }
+  .cardExtraItem,
+  .containerAddItem .quantidadeBody
+ {
+    margin-bottom: 40%;
+  }
+  .containerAddItem .resumoBody{
+    margin-bottom: 15%;
+  }
+
+}
+
+@media (min-width: 100px) and (max-width:630px) {
   .modalVisualizarPedido .tableInfos .hideMobile {
     display: none;
   }
@@ -24328,7 +24267,7 @@ margin-bottom: 10%;
   }
 }
 
-@media (min-width: 317px) and (max-width:520px) {
+@media (min-width: 217px) and (max-width:520px) {
   .bg-dark {
     width: 100%;
   }
@@ -24401,7 +24340,7 @@ margin-bottom: 10%;
   margin-left: 25%;
 }
 
-@media (min-width: 317px) and (max-width:780px) {
+@media (min-width: 217px) and (max-width:780px) {
   .modalTroco .modal-body .form-group {
     width: 100%;
   }
@@ -24417,9 +24356,27 @@ margin-bottom: 10%;
   }
 }
 
-@media (min-width: 317px) and (max-width:480px) {
+@media (min-width: 217px) and (max-width:480px) {
   .modalTroco .modal-body .checkTrocoModal, .modalPrimeCard .modal-body .checkTrocoModal, .modalPrimeCard .modal-body .codePrimeCardModal {
     margin-left: 25%;
+  }
+  .modoServirBody{
+    padding: .75rem .25rem;
+  }
+  .modoServirBody .changeItemServir .quantidadeServirItem{
+    font-size: 200%;
+  }
+  .modalAddItem .modoServirBody .form-check input[type="checkbox"]+label::before{
+    font-size: 100%;
+    height: 25px;
+    vertical-align: super;
+    width: 25px;
+  }
+  .modoServirBody .changeItemServir .form-check{
+    padding: .2rem .2rem;
+  }
+  .modalAddItem .modoServirBody .form-check label{
+    font-size: 100%
   }
 }
 
