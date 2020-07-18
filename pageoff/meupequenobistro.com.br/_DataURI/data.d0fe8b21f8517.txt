@@ -1,1 +1,0 @@
-chrome-extension://gbmdgpbipfallnflgajpaliibnhdgobh/assets/viewer.js
