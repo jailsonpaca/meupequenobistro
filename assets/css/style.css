@@ -23016,8 +23016,7 @@ p.order-again .button:after {
 
 .modal .modal-header button.close {
   font-size: 32px;
-  margin-top: -30px;
-  color: #000 !important;
+  color: #fff !important;
 }
 
 input[type=checkbox] {
@@ -23835,6 +23834,8 @@ table.cart {
 
 .modalAddItem {
   padding-right: 0px !important;
+  padding-left: 0px !important;
+  font-family: Roboto !important;
   border: none;
 }
 
@@ -23919,9 +23920,6 @@ table.cart {
     margin-left: -25% !important;
     width: 100% !important;
   }
-  .modalAddItem .containerAddItem .card {
-    /*margin-bottom: 15%;*/
-  }
 }
 
 .rowBtnAddItem {
@@ -23969,7 +23967,7 @@ border-bottom: 4px solid #bbb;
     position: relative;
     padding-top: 10%;
     text-align: center;
-    margin: auto 5%;
+    margin: auto 2%;
   }
   .rowBtnAddItem .btnLarge {
     width: 100%;
@@ -24330,12 +24328,28 @@ margin:auto;
   text-align: center;
 }
 
-.modalTroco .modal-body .checkTrocoModal, .modalPrimeCard .modal-body .checkTrocoModal, .modalPrimeCard .modal-body .codePrimeCardModal {
+.modalTroco .modal-body .checkTrocoModal, 
+.modalPrimeCard .modal-body .checkTrocoModal, 
+.modalPrimeCard .modal-body .codePrimeCardModal,
+.modalSuccessAddItem .modal-body .checkAddModal {
   font-size: 900%;
   margin-left: 30%;
   text-align: center;
 }
-
+.modalSuccessAddItem .modal-body{
+  text-align:center;
+}
+.modalSuccessAddItem .modal-body .checkAddModal{
+  margin:auto;
+  color: #5bb300; 
+}
+.modalSuccessAddItem .checkAddModalGarcom{
+  width:45%;
+  margin-bottom:5%;
+}
+.modalSuccessAddItem .modal-dialog {
+  max-width: 600px;
+}
 .modalPrimeCard .modal-body .codePrimeCardModal {
   margin-left: 25%;
 }
@@ -24380,6 +24394,25 @@ margin:auto;
   }
 }
 
+.comandaText{
+  margin-top: 85%;
+    margin-left: 20%;
+}
+#cameraComanda{
+  background-color:#555;
+  border-radius: 10px;
+  margin-left: 5%;
+  min-height:300px;
+}
+@media (min-width: 217px) and (max-width:577px) {
+  #cameraComanda{
+    background-color:#555;
+    border-radius: 10px;
+    margin-left: auto;
+    
+  }
+}
+
 .modalTroco .modal-body h3, .modalPrimeCard h3 {
   text-align: center;
 }
@@ -24395,7 +24428,8 @@ margin:auto;
   width: 100%;
   text-align: center;
 }
-
 .inputPrimeCard input {
   border: none;
 }
+
+
