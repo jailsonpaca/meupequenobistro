@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"browser-sync start --server --files \"*.html\" \"./assets\""
+    "dev":"browser-sync start --server --files \"*.html\" \"./assets\"",
+    "minify":"uglifycss \"./assets/css/style.css\" > \"./assets/css/style.min.css\""
   },
   "author": "jailson",
   "license": "ISC",
