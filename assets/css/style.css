@@ -23117,6 +23117,11 @@ input[type=checkbox] {
   font-weight: 500;
   padding-top: 0px;
 }
+@media (max-width:400px){
+  .modal .headerModal .headerTitle{
+    font-size:100%;
+  }
+}
 
 .modalFechado .modal-body .dropDiv {
   margin: auto;
@@ -23831,8 +23836,15 @@ table.cart {
 }
 
 /*--Modal Adicionar Item--*/
-
-.modalAddItem {
+@media (min-width:600px) and (max-width:900px){
+.product:nth-of-type(even){
+  margin-left: 4% !important;
+  margin-right: 0% !important;
+}
+}
+.modalAddItem,
+.modalComanda,
+.modalSuccessAddItem {
   padding-right: 0px !important;
   padding-left: 0px !important;
   font-family: Roboto !important;

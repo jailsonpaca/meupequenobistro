@@ -116,10 +116,10 @@
                 <div class="header-wrap">
                     <div class="site-branding">
                         <a href="https://meupequenobistro.com.br/cardapio/home" class="custom-logo-link" rel="home">
-                            <img src="https://meupequenobistro.com.br/cardapio/imgs/logo_menu.png" class="hide-mob"
-                                alt="Logo Meu Pequeno Bistro" title="Logo Meu Pequeno Bistro" />
-                            <img src="https://meupequenobistro.com.br/cardapio/imgs/logo_menu_mobile.png"
-                                class="show-mob" alt="Logo Meu Pequeno Bistro" title="Logo Meu Pequeno Bistro" />
+                            <img src="./imgs/logo_menu.png" class="hide-mob" alt="Logo Meu Pequeno Bistro"
+                                title="Logo Meu Pequeno Bistro" />
+                            <img src="./imgs/logo_menu_mobile.png" class="show-mob" alt="Logo Meu Pequeno Bistro"
+                                title="Logo Meu Pequeno Bistro" />
                         </a>
                     </div>
                     <nav id="site-navigation" class="main-navigation" aria-label="Primary Navigation">
@@ -265,31 +265,57 @@
                                 <li class="menu-item "><a
                                         href="https://meupequenobistro.com.br/cardapio/produtos/bebidas">Bebidas</a>
                                 </li>
+                                <li class="menu-item ">
+                                    <div class="myAccount">
+                                        <img class="myAccountIcon" src="./assets/images/myAccountIcon.png" />
+                                        <div href="#" class="myAccountLink">
+                                            <ul class=" myAccountList">
+                                                <li class="blackOnHover"><a href="./meusDados.html">Meus dados</a></li>
+                                                <li class="blackOnHover"><a href="./meusPedidos.html">Meus pedidos</a></li>
+                                            </ul>
+                                        </div>
+        
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </nav>
                     <div class="header-info-wrapper">
-                        <div class="header-phone-numbers">
-                            <span class="intro-text">Ligue para nós em</span>
-                            <span class="select-city-phone-numbers">Araranguá</span>
-                            <span id="city-phone-number-label" class="phone-number">48 3524-6999</span>
+                        <div class="row">
+                            <div class="header-phone-numbers col-5">
+                                <span class="intro-text">Ligue para nós em</span>
+                                <span class="select-city-phone-numbers">Araranguá</span>
+                                <span id="city-phone-number-label" class="phone-number">48 3524-6999</span>
+                            </div>
+                            <ul class="site-header-cart-v2 menu col-4">
+                                <li class="cart-content ">
+                                    <a href="./fecharPedido.html" title="Seu Carrinho">
+                                        <span>Seu Carrinho</span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li sytle="padding-bottom:10px;">
+                                            <a href="./fecharPedido.html"
+                                                title="Seu Carrinho">
+                                                <span class="count" style="font-size:12px;">0 item</span> <span
+                                                    class="amount" style="font-size:14px">R$ 0,00</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="myAccount col-3">
+                                <img class="myAccountIcon" src="./assets/images/myAccountIcon.png" />
+                                <div href="#" class="myAccountLink">Minha Conta<span class=" myAccountArrow ">▲</span>
+                                    <ul class=" myAccountList">
+                                        <li class="blackOnHover"><a href="./meusDados.html">Meus dados</a></li>
+                                        <li class="blackOnHover"><a href="./meusPedidos.html">Meus pedidos</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
                         </div>
-                        <ul class="site-header-cart-v2 menu">
-                            <li class="cart-content ">
-                                <a href="https://meupequenobistro.com.br/cardapio/fechar" title="Seu Carrinho">
-                                    <span>Seu Carrinho</span>
-                                </a>
-                                <ul class="sub-menu">
-                                    <li sytle="padding-bottom:10px;">
-                                        <a href="https://meupequenobistro.com.br/cardapio/fechar" title="Seu Carrinho">
-                                            <span class="count" style="font-size:12px;">0 item</span> <span
-                                                class="amount" style="font-size:14px">R$ 0,00</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
                     </div>
+
                 </div>
                 <div class="pizzaro-secondary-navigation">
                     <nav class="secondary-navigation" aria-label="Secondary Navigation">
@@ -322,6 +348,12 @@
                             <li class="menu-item bebidas">
                                 <a
                                     href="https://meupequenobistro.com.br/cardapio/produtos/bebidas"><span>Bebidas</span></a>
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#fechadoModal">
+                                    Open Modal Fechado
+                                </button>
                             </li>
 
                         </ul>
@@ -887,7 +919,7 @@
                         </div>
                     </li>
                     <li class="cart">
-                        <a class="footer-cart-contents" href="https://meupequenobistro.com.br/cardapio/fechar"
+                        <a class="footer-cart-contents" href="./fecharPedido.html"
                             title="Finalizar Pedido">
                             <span class="count">0</span>
                         </a>
