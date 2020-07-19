@@ -24203,26 +24203,31 @@ margin:auto;
   font-size: 140%;
 }
 
-.modalVisualizarPedido .tableInfos {
+.modalVisualizarPedido .tableInfos,
+#modalVerPedido .tableInfos{
   padding-top: 2%;
 }
 
-.modalVisualizarPedido .tableInfos td {
+.modalVisualizarPedido .tableInfos td,
+#modalVerPedido .tableInfos td {
   padding: 1px 1%;
 }
 
-.modalVisualizarPedido .tableInfos td h4 {
+.modalVisualizarPedido .tableInfos td h4,
+#modalVerPedido .tableInfos td h4 {
   text-align: left;
   margin-top: 5px;
   margin-bottom: 0;
 }
 
-.modalVisualizarPedido .tableInfos td h3 {
+.modalVisualizarPedido .tableInfos td h3,
+#modalVerPedido .tableInfos td h3 {
   margin-top: 5px;
   margin-bottom: 0;
 }
 
-.modalVisualizarPedido .tableInfos .lastTd {
+.modalVisualizarPedido .tableInfos .lastTd,
+#modalVerPedido .tableInfos .lastTd {
   text-align: right;
 }
 
@@ -24252,7 +24257,8 @@ margin:auto;
 }
 
 @media (min-width: 100px) and (max-width:630px) {
-  .modalVisualizarPedido .tableInfos .hideMobile {
+  .modalVisualizarPedido .tableInfos .hideMobile,
+  #modalVerPedido .tableInfos .hideMobile{
     display: none;
   }
   .showMobile {
@@ -24269,10 +24275,14 @@ margin:auto;
   .bg-dark {
     width: 100%;
   }
-  .modalVisualizarPedido .tableInfos td h4, .modalVisualizarPedido .tableInfos td h3 {
+  .modalVisualizarPedido .tableInfos td h4,
+   .modalVisualizarPedido .tableInfos td h3,
+   #modalVerPedido .tableInfos td h4,
+   #modalVerPedido .tableInfos td h3 {
     width: 100%;
   }
-  .modalVisualizarPedido .tableInfos td {
+  .modalVisualizarPedido .tableInfos td,
+  #modalVerPedido .tableInfos td {
     width: 60%;
     margin-right: 5px;
   }
@@ -24551,4 +24561,84 @@ transform:rotate(180deg);
     right:calc(25% - 18px);
     top:95%;
   }
+}
+/*---Meus Dados Page---*/
+
+.meusDadosPage .card{
+  margin-top:5%;
+}
+.meusDadosPage .card input{
+  border-radius:5px;
+}
+
+.backPedido{
+background-color:#f8ff69;
+}
+.backPedidoBody{
+  background-color:#fbfec0;
+}
+.meusPedidosPage{
+  padding:3rem 1rem;
+}
+.meusPedidosPage .breadcrumb{
+  margin: 0 0 1em;
+}
+.meusPedidosPage .contentPedidoBody{
+  padding:.75rem 0;
+}
+.meusPedidosPage .contentPedidoBody table td{
+  padding:.75rem .2rem;
+  font-size:80%;
+}
+.meusPedidosPage .contentPedidoBody table td:first-of-type{
+  padding-left:.75rem;
+}
+.meusPedidosPage .contentPedidoBody table td:last-of-type{
+  padding:.75rem 2rem;
+}
+@media (max-width: 1140px){
+  .meusPedidosPage .contentPedidoBody table td:last-of-type{
+    padding:.75rem .75rem;
+  }
+}
+.meusPedidosPage table thead th {
+  text-transform: none;
+  font-weight:600;
+  font-size:120%;
+}
+.meusPedidosPage{
+  font-family:Roboto;
+}
+.meusPedidosPage h1:first-of-type{
+  font-weight:500;
+}
+.meusPedidosPage h3:first-of-type{
+  font-weight:400;
+}
+.meusPedidosPage button{
+  font-weight:500;
+  font-family:Roboto;
+  color:#fff;
+  border-radius:7px;
+  min-width:120px;
+}
+.meusPedidosPage button:hover{
+  color:#000;
+}
+.btnPink{
+  background-color:rgb(229, 153, 210);
+}
+#modalVerPedido .headerModal h3{
+  color:white;
+  text-align:center;
+  margin:auto;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+#modalVerPedido .btnLarge {
+  margin-top:4%;
+  width:20%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  float:right;
 }
