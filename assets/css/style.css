@@ -23103,7 +23103,7 @@ input[type=checkbox] {
 /*------JAILSON------*/
 
 .modal {
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
 }
 
 .headerModal {
@@ -23768,14 +23768,19 @@ table.cart {
 .modalLocalFechado .text-danger {
   text-align: center;
 }
-
+.modalLocalFechado .rowBtn{
+  margin: auto;
+    text-align: center;
+}
 .modalLocalFechado button {
-  margin-left: 30%;
+  margin: auto;
+    text-align: center;
   margin-top: 1%;
 }
 
 .modalLocalFechado .rowSelect {
-  margin-left: 2.5%;
+  margin: auto;
+    text-align: center;
 }
 
 .modalLocalFechado .cardLocalFechado .optWrapper {
@@ -23847,13 +23852,19 @@ table.cart {
 .modalSuccessAddItem {
   padding-right: 0px !important;
   padding-left: 0px !important;
-  font-family: Roboto !important;
+  font-family: 'Roboto', sans-serif !important;
   border: none;
 }
 
 .modalAddItem .sidebarAddItem .active {
   background-color: #343434;
   border-color: #343434;
+}
+.modalAddItem .list-group-item+.list-group-item {
+  border-top-width: 0;
+  font-weight: 600;
+  font-size: 140%;
+  text-align: center;
 }
 
 .modalAddItem .sidebarAddItem {
@@ -24118,7 +24129,7 @@ border-bottom: 4px solid #bbb;
 .modalAddItem .quantidadeServirItem{
   display: inline-block;
   border: none;
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 250%;
   text-align: center;
@@ -24619,7 +24630,7 @@ background-color:#f8ff69;
   font-size:120%;
 }
 .meusPedidosPage{
-  font-family:Roboto;
+  font-family:'Roboto', sans-serif;
 }
 .meusPedidosPage h1:first-of-type{
   font-weight:500;
@@ -24629,7 +24640,7 @@ background-color:#f8ff69;
 }
 .meusPedidosPage button{
   font-weight:500;
-  font-family:Roboto;
+  font-family:'Roboto', sans-serif;
   color:#fff;
   border-radius:7px;
   min-width:120px;
@@ -24653,4 +24664,10 @@ background-color:#f8ff69;
   padding-top: 1%;
   padding-bottom: 1%;
   float:right;
+}
+
+@media (min-width:640px){
+  .modal .headerModal .headerTitle{
+    margin-left: 40%;   
+  }
 }
