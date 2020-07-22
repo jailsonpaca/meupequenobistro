@@ -41,7 +41,7 @@
                 </div>
             </div>
         </header>
-        
+
         <div class="modal modalCEP" tabindex="-1" role="dialog" id="CEPModal">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -122,14 +122,9 @@
                                 <h5 class="textDanger">O estabelecimento está fechado no momento, deseja agendar um
                                     horário para receber o produto?</h5>
                                 <p>Horário de atendimento:</p>
-                                <div class="dropDiv">
-                                    <select class="bootstrap-select">
-                                        <option value="1" selected="selected">(Segunda-feira: 8:00h - 13:30h e 14:30h - 20:00h)
-                                        </option>
-                                        <option value="2">(Segunda-feira: 8:00h - 13:30h e 14:30h - 20:00h)</option>
-                                        <option value="3">(Segunda-feira: 8:00h - 13:30h e 14:30h - 20:00h)</option>
-                                        <option value="4">(Segunda-feira: 8:00h - 13:30h e 14:30h - 20:00h)</option>
-                                    </select>
+                                <div class="horariosDiv">
+                                    <h6>(Segunda-feira a sexta-feira: 8:00h - 13:30h e 14:30h - 20:00h)</h6>
+                                    <h6>(Finais de semana: 8:00h - 13:30h e 14:30h - 20:00h)</h6>
                                 </div>
                             </div>
                         </div>
@@ -158,8 +153,18 @@
                         </div>
                         <h6 class="text-danger">*após o agendamento do horário, respeitar a tolerância que pode ser
                             de 25-30min</h6>
-                        <div class="rowBtn"><button type="button" class="btn btn-success">CONFIRMAR HORÁRIO</button>
+                        <div class="rowBtn"><button type="button" class="btn btn-success" onclick="$('#modalVisualizarPedido').modal('show')">CONFIRMAR HORÁRIO</button>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal modalErrorEndereco" tabindex="-1" role="dialog" id="modalErrorEndereco">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header headerModal"></div>
+                    <div class="modal-body ">
+                        <h4 class="text-danger">O estabelecimento não entrega no local desejado!</h4>
                     </div>
                 </div>
             </div>
@@ -168,9 +173,10 @@
             <h2>Finalização do Pedido</h2>
             <h4>Retirada do produto</h4>
             <hr />
-            <h3 class="textGrey"><strong><!--O numero do seu pedido é: <span class="numeroPedido">#12I24654</span>,--> 
-                O estabelecimento está fechado no
-                momento, como deseja usar seu voucher?</strong></h3>
+            <h3 class="textGrey"><strong>
+                    <!--O numero do seu pedido é: <span class="numeroPedido">#12I24654</span>,-->
+                    O estabelecimento está fechado no
+                    momento, como deseja usar seu voucher?</strong></h3>
             <div class="container" id="myGroup2">
                 <div class="card">
                     <div class="card-body">
@@ -215,7 +221,7 @@
                             </label>
                         </div>
                         <div id="voucherDadosViagem" class="voucherDadosViagem collapse" data-parent="#myGroup2">
-                            <button type="submit" class="btn btn-block btn-success">ABRIR VOUCHER</button>
+                            <button class="btn btn-block btn-success" >ABRIR VOUCHER</button>
                         </div>
                     </div>
                 </div>
@@ -242,7 +248,8 @@
                             </label>
                         </div>
 
-                        <form id="deliveryDadosFechado" class="deliveryDados deliveryDadosFechado collapse" data-parent="#myGroup2">
+                        <form id="deliveryDadosFechado" class="deliveryDados deliveryDadosFechado collapse"
+                            data-parent="#myGroup2">
                             <h4>Informe o local de entrega</h4>
                             <div class="form-row">
                                 <div class="form-group col-md-4" onclick="$('#CEPModal').modal('show')">
@@ -277,59 +284,171 @@
                                 <div class="form-group col-md-4">
                                     <!--type="submit"-->
                                     <button type="button" class="btn btn-success "
-                                        onclick="$('#modalErrorEndereco').modal('show')">FINALIZAR PEDIDO</button>
-                                    <button type="button" class="btn btn-success .btnFinalizar"
-                                        onclick="$('#modalPedidoSucessoDelivery').modal('show')">FINALIZAR
-                                        PEDIDO(DELIVERY)</button>
-                                    <button type="button" class="btn btn-success .btnFinalizar"
-                                        onclick="$('#modalLocalFechado').modal('show')">FINALIZAR
-                                        PEDIDO(LOCAL FECHADO)</button>
+                                        onclick="$('#modalVisualizarPedido').modal('show')">CONTINUAR</button>
+                                    <button type="button" class="btn btn-success "
+                                        onclick="$('#modalErrorEndereco').modal('show')">CONTINUAR(Erro no
+                                        endereço)</button>
                                 </div>
                         </form>
                     </div>
                 </div>
-                <button type="button" class="btn  btn-success btnFinalizar"
-                    onclick="$('#modalPedidoSucessoVoucher').modal('show')">FINALIZAR PEDIDO(VOUCHER)</button>
-                <button type="button" class="btn  btn-success btnFinalizar"
-                    onclick="$('#modalPedidoSucessoDelivery').modal('show')">FINALIZAR PEDIDO(DELIVERY)</button>
+
             </div>
 
 
         </div>
-        <div class="modal modalPedidoSucessoVoucher" tabindex="-1" role="dialog" id="modalPedidoSucessoVoucher">
+
+        <div class="modal modalVisualizarPedido" tabindex="-1" role="dialog" id="modalVisualizarPedido">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header headerModal">
-                        <h4>PEDIDO ACEITO</h4>
+                        <h5 class="modal-title headerTitle">Visualização do pedido</h5>
                     </div>
                     <div class="modal-body">
-                        <div class="modal-title">Seu pedido foi recebido com sucesso!</div>
-                        <div class="successIcon"><i class="fa fa-check" aria-hidden="true"></i></div>
-                        <h5>Nossa equipe encaminhará o Voucher para o seu e-mail o mais rápido possível.</h5>
+                        <table class="table">
+                            <tbody>
+                                <tr class="firstTr">
+                                    <th scope="row"><span id="productQty1">1</span> <span class="productName"
+                                            id="productName1">Burguer Cheese</span></th>
+                                    <td><strong>R$ <span id="productPrice1">29,90</span></strong></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="textGrey">Modo se servir: </td>
+                                    <td><span id="productServir1">Embalado a vácuo, 3 copos descartáveis</span></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="textGrey">Ingredientes retirados:</th>
+                                    <th scope="row" class="textGrey">Adicionais:</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Cebola</td>
+                                    <td>Bacon</td>
+                                    <td>R$ 5,90</td>
+                                </tr>
+                                <tr>
+                                    <td>Tomate</td>
+                                    <td>Thornton</td>
+                                    <td>R$ 5,90</td>
+                                </tr>
+                                <td>Rúcula</td>
+                                <td>Tomate seco</td>
+                                <td>R$ 5,90</td>
+                                <tr>
+                                    <td></td>
+                                    <td class="textGrey">Total de adicionais</td>
+                                    <td>R$ 25,90</td>
+                                </tr>
+                                <tr class="lastTr">
+                                    <td></td>
+                                    <td class="textGrey">Total:</td>
+                                    <td class="text-danger textGrey">R$ <span id="productTotal1">59,90</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr />
+                        <table class="table">
+                            <tbody>
+                                <tr class="firstTr">
+                                    <th scope="row"><span id="productQty1">1</span> <span id="productName1">Burguer
+                                            Cheese</span></th>
+                                    <td><strong>R$ <span id="productPrice1">29,90</span></strong></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td class="textGrey">Modo se servir: </td>
+                                    <td><span id="productServir1">Embalado a vácuo, 3 copos descartáveis</span></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="textGrey">Ingredientes retirados:</th>
+                                    <th scope="row" class="textGrey">Adicionais:</th>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Cebola</td>
+                                    <td>Bacon</td>
+                                    <td>R$ 5,90</td>
+                                </tr>
+                                <tr>
+                                    <td>Tomate</td>
+                                    <td>Thornton</td>
+                                    <td>R$ 5,90</td>
+                                </tr>
+                                <td>Rúcula</td>
+                                <td>Tomate seco</td>
+                                <td>R$ 5,90</td>
+                                <tr>
+                                    <td></td>
+                                    <td class="textGrey">Total de adicionais</td>
+                                    <td>R$ 25,90</td>
+                                </tr>
+                                <tr class="lastTr">
+                                    <td></td>
+                                    <td class="textGrey">Total:</td>
+                                    <td class="text-danger textGrey">R$ <span id="productTotal1">59,90</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr />
+                        <table class="table table-borderless tableInfos">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <h3><span class="font-weight-bold">Agendado para o dia</span></h3>
+                                    </td>
+                                    <td class="lastTd">Taxa de entrega: R$ 19,90</td>
+                                </tr>
+                                <tr>
+                                    <td>Quarta - 10:30h ás 14:00h e das 16:30 ás 22:00</td>
+                                    <td class="lastTd">Cupom: -R$ 10,00</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h3><span class="font-weight-bold">Local de entrega</span></h3>
+                                        </th>
+                                    <td class="lastTd">Taxa de entrega: R$ 19,90</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h4><span class="hideMobile badge badge-pill badge-secondary">R.Pedro
+                                                Martinelo Pacheco, 394. Araranguá/SC</span><span
+                                                class="showMobile d-none bg-dark text-white">R.Pedro Martinelo
+                                                Pacheco,
+                                                394. Araranguá/SC</span></h4>
+                                    </td>
+                                    <td class="lastTd">Subtotal dos produtos: <span class="font-weight-bold">R$
+                                            59,00</span></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td class="lastTd">Subtotal: <span class="font-weight-bold">R$ 59,00</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <h3><span class="font-weight-bold">Pedido:</span> 11900</h3>
+                                    </td>
+                                    <td class="lastTd">Total:<span class="text-danger textGrey"> R$ 59,00</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="invisible"></td>
+                                    <td class="lastTd">Cashback: <span class="font-weight-bold">R$ 2,95</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-lg btn-danger">Voltar</button>
                         <button type="button" class="btn btn-lg btn-success"
-                            onclick="window.location.href='./pagamentoPedido.html';">Continuar</button>
+                            onclick="window.location.href='./cpfFinalizar.html'">Continuar</button>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="modal modalPedidoSucessoDelivery" tabindex="-1" role="dialog" id="modalPedidoSucessoDelivery">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header headerModal">
-                        <h4>PEDIDO ACEITO</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="modal-title">Seu pedido foi recebido com sucesso!</div>
-                        <div class="successIcon"><i class="fa fa-check" aria-hidden="true"></i></div>
-                        <h5>O pedido está a caminho.</h5>
-                        <button type="button" class="btn btn-lg btn-success"
-                            onclick="window.location.href='./pagamentoPedido.html';">Continuar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
     </div>
 

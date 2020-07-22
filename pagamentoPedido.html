@@ -41,43 +41,100 @@
                 </div>
             </div>
         </header>
-        <div class="formFinalizar col-sm-10 ">
-            <h2>Forma de Pagamento</h2>
-            <h5>Escolha o método de pagamento desejado</h5>
-            <hr />
-            <br />
-            <div class="row payments">
-                <div class="boleto col-lg-3 col-md-6"
-                    onclick="document.getElementById('cartaoDados').classList.add('invisible'); document.getElementById('boletoDados').classList.remove('invisible');">
+        <div class="formFinalizar row">
 
-                    <i class="fa fa-barcode" aria-hidden="true"></i>
-                    <h4>Pagar com boleto bancário</h4>
-                </div>
-                <div class="dinheiro col-lg-3 col-md-6"
-                    onclick="document.getElementById('cartaoDados').classList.add('invisible'); document.getElementById('boletoDados').classList.remove('invisible');">
+            <div class="col-lg-10 col-md-10 col-sm-10 col-12 payments">
+                <h2>Forma de Pagamento</h2>
+                <h5>Escolha o método de pagamento desejado</h5>
+                <hr />
+                <br />
+                <div class="row">
+                    <div class="boleto col-lg-3 col-md-6" onclick="openOption('boleto')">
 
-                    <i class="fa fa-money" aria-hidden="true"></i>
-                    <h4>Pagamento em dinheiro</h4>
-                </div>
-                <div class="cartao col-lg-3 col-md-6"
-                    onclick="document.getElementById('boletoDados').classList.add('invisible'); document.getElementById('cartaoDados').classList.remove('invisible');">
-                    <i class="fa fa-credit-card" aria-hidden="true"></i>
-                    <h4>Pagar com cartão de crédito</h4>
-                </div>
-                <div class="cartaoPrime col-lg-3 col-md-6"
-                    onclick="document.getElementById('boletoDados').classList.add('invisible'); document.getElementById('cartaoDados').classList.remove('invisible');">
-                    <img src="./assets/images/cartaoPrime.png" class="cartaoPrimeImg">
-                    <h4>Pagar com cartão Prime</h4>
+                        <i class="fa fa-barcode" aria-hidden="true"></i>
+                        <h4>Pagar com boleto bancário</h4>
+                    </div>
+                    <div class="dinheiro col-lg-3 col-md-6" onclick="openOption('dinheiro1')">
+
+                        <i class="fa fa-money" aria-hidden="true"></i>
+                        <h4>Pagamento em dinheiro</h4>
+                    </div>
+                    <div class="cartao col-lg-3 col-md-6" onclick="openOption('cartao')">
+                        <i class="fa fa-credit-card" aria-hidden="true"></i>
+                        <h4>Pagar com cartão de crédito</h4>
+                    </div>
+                    <div class="cartaoPrime col-lg-3 col-md-6" onclick="openOption('cartaoPrime1').modal('show')">
+                        <img src="./assets/images/cartaoPrime.png" class="cartaoPrimeImg">
+                        <h4>Pagar com cartão Prime</h4>
+                    </div>
                 </div>
             </div>
-            <div class="BannerCartaoPrime">
-                <img src="./assets/images/BannerCartaoPrime.png" class="cartaoPrimeBanner">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 rowBanner">
+                <div class="BannerCartaoPrime">
+                    <img src="./assets/images/BannerCartaoPrime.png" class="cartaoPrimeBanner">
+                </div>
             </div>
             <br />
-            <div id="boletoDados" class="boletoDados invisible">
+
+            <div id="boletoDados" class="col-12 boletoDados d-none">
                 <button type="submit" class="btn btn-block btn-success">ABRI BOLETO</button>
+                <button type="button" class="btn btn-block btn-success "
+                    onclick="$('#modalPedidoSucessoVoucher').modal('show')">FINALIZAR PEDIDO(VOUCHER)</button>
+                <button type="button" class="btn btn-block btn-success "
+                    onclick="$('#modalPedidoSucessoDelivery').modal('show')">FINALIZAR PEDIDO(DELIVERY)</button>
             </div>
-            <form id="cartaoDados" class="cartaoDados invisible">
+
+            <div class="modal modalTroco" tabindex="-1" role="dialog" id="modalTroco1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header headerModal">
+                            <h5 class="modal-title headerTitle">Visualização do pedido</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-title">Precisa de troco?</div>
+                            <button class="btn btn-lg btn-success" onclick="openOption('dinheiro2')">Sim</button>
+                            <button class="btn btn-lg btn-danger" onclick="openOption('dinheiro3')">Não</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal modalTroco" tabindex="-1" role="dialog" id="modalTroco2">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header headerModal">
+                            <h5 class="modal-title headerTitle">Pagamento em dinheiro</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-title">Troco para quanto?</div>
+                            <p>O total do seu pedido foi de <span class="textGrey">R$ 68,00</span>.
+                                Digite quanto vai pagar em dinheiro para que o entregador leve o seu troco.</p>
+                            <div class="form-group ">
+                                <label for="qtyTroco">R$ </label>
+                                <input type="number" name="qtyTroco" class="form-control" id="qtyTroco" /></div>
+                            <button class="btn btn-lg btn-success" onclick="openOption('dinheiro3')">Sim</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal modalTroco" tabindex="-1" role="dialog" id="modalTroco3">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header headerModal">
+                            <h5 class="modal-title headerTitle">Pagamento em dinheiro</h5>
+                        </div>
+                        <div class="modal-body">
+                            <i class="fa fa-check checkTrocoModal" aria-hidden="true"></i>
+                            <h3>Pagamento efetuado com sucesso!</h3>
+                            <button class="btn btn-success"
+                            onclick="window.location.href='./meusPedidos.html'">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form id="cartaoDados" class="cartaoDados d-none">
                 <h3 class="roundedTitle">Dados do Cartão</h3>
                 <h2>Digite os dados do seu cartão</h2>
                 <hr />
@@ -134,9 +191,120 @@
                             placeholder="Ex: Anderson da Silva">
                     </div>
                 </div>
-                <button type="button" class="btn btn-block btn-success"
-                    onclick="window.location.href='./modalsPagTrocoView.html';">CONFIRMAR PAGAMENTO</button>
+                <button type="button" class="btn btn-block btn-success "
+                    onclick="$('#modalPedidoSucessoVoucher').modal('show')">CONFIRMAR PAGAMENTO(VOUCHER)</button>
+                <button type="button" class="btn btn-block btn-success "
+                    onclick="$('#modalPedidoSucessoDelivery').modal('show')">CONFIRMAR PAGAMENTO(DELIVERY)</button>
+
             </form>
+
+            <div class="modal modalPedidoSucessoVoucher" tabindex="-1" role="dialog" id="modalPedidoSucessoVoucher">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header headerModal">
+                            <h4>PEDIDO ACEITO</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-title">Seu pedido foi recebido com sucesso!</div>
+                            <div class="successIcon"><i class="fa fa-check" aria-hidden="true"></i></div>
+                            <h5>Nossa equipe encaminhará o Voucher para o seu e-mail o mais rápido possível.</h5>
+                            <button type="button" class="btn btn-lg btn-success"
+                                onclick="window.location.href='./meusPedidos.html';">Continuar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal modalPedidoSucessoDelivery" tabindex="-1" role="dialog" id="modalPedidoSucessoDelivery">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header headerModal">
+                            <h4>PEDIDO ACEITO</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-title">Seu pedido foi recebido com sucesso!</div>
+                            <div class="successIcon"><i class="fa fa-check" aria-hidden="true"></i></div>
+                            <h5>O pedido está a caminho.</h5>
+                            <button type="button" class="btn btn-lg btn-success"
+                                onclick="window.location.href='./meusPedidos.html';">Continuar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal modalPrimeCard" tabindex="-1" role="dialog" id="modalPrimeCard1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header headerModal">
+                            <h5 class="modal-title headerTitle">Pagamento por PrimeCard</h5>
+                        </div>
+                        <div class="modal-body">
+                            <i class="fa fa-qrcode codePrimeCardModal" aria-hidden="true"></i>
+                            <h3 class="textGrey">ou</h3>
+                            <div class="form-group PrimeCard">
+                                <input type="number" name="numberPrimeCard" class="form-control" id="numberPrimeCard"
+                                    placeholder="Número do cartão" /></div>
+                            <h3 class="textGrey">ou</h3>
+                            <div class="form-group PrimeCard">
+                                <input type="number" name="cpfPrimeCard" class="form-control" id="cpfPrimeCard"
+                                    placeholder="CPF" /></div>
+                            <button class="btn btn-lg btn-success" onclick="openOption('cartaoPrime2')">Sim</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal modalPrimeCard" tabindex="-1" role="dialog" id="modalPrimeCard2">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header headerModal">
+                            <h5 class="modal-title headerTitle">Pagamento por PrimeCard</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-title">Voce tem <span class="textGrey">R$ 25,00</span> de cash back,
+                                Deseja usar agora?</div>
+                            <button class="btn btn-lg btn-success" onclick="openOption('cartaoPrime3')">Sim</button>
+                            <button class="btn btn-lg btn-danger" onclick="openOption('cartaoPrime4')">Não</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal modalPrimeCard" tabindex="-1" role="dialog" id="modalPrimeCard3">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header headerModal">
+                            <h5 class="modal-title headerTitle">Pagamento por PrimeCard</h5>
+                        </div>
+                        <div class="modal-body">
+                            <div class="modal-title">Voce tem <span class="textGrey">R$ 25,00</span> de cash back,
+                                Deseja usar agora?</div>
+                            <p>Digite o Valor</p>
+                            <div class="form-group inputPrimeCard">
+                                <label for="qtyTroco">R$ </label>
+                                <input type="number" name="qtyTroco" class="form-control" id="qtyTroco" /></div>
+                            <button class="btn btn-lg btn-success"
+                                onclick="openOption('cartaoPrime4')">Finalizar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal modalPrimeCard" tabindex="-1" role="dialog" id="modalPrimeCard4">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header headerModal">
+                            <h5 class="modal-title headerTitle">Pagamento por PrimeCard</h5>
+                        </div>
+                        <div class="modal-body">
+                            <i class="fa fa-check checkTrocoModal" aria-hidden="true"></i>
+                            <h3>Pagamento efetuado com sucesso!</h3>
+                            <button class="btn btn-success"
+                                onclick="window.location.href='./meusPedidos.html'">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -160,6 +328,62 @@
         });
         var GLOBAL_LINK = "https://meupequenobistro.com.br/cardapio/";
         $('select').SumoSelect();
+
+        function openOption(op) {
+            switch (op) {
+                case 'boleto':
+                    var $target = $('html,body');
+                    $target.animate({ scrollTop: $target.height() }, 500);
+                    document.getElementById('boletoDados').classList.remove('d-none');
+                    document.getElementById('cartaoDados').classList.add('d-none');
+                    break;
+                case 'cartao':
+                    var $target = $('html,body');
+                    $target.animate({ scrollTop: $target.height() }, 500);
+                    document.getElementById('cartaoDados').classList.remove('d-none');
+                    document.getElementById('boletoDados').classList.add('d-none');
+                    break;
+                case 'cartaoPrime1':
+                    $('#modalPrimeCard1').modal('show');
+                    $('#modalPrimeCard2').modal('hide');
+                    $('#modalPrimeCard3').modal('hide');
+                    $('#modalPrimeCard4').modal('hide');
+                    break;
+                case 'cartaoPrime2':
+                    $('#modalPrimeCard1').modal('hide');
+                    $('#modalPrimeCard2').modal('show');
+                    $('#modalPrimeCard3').modal('hide');
+                    $('#modalPrimeCard4').modal('hide');
+                    break;
+                case 'cartaoPrime3':
+                    $('#modalPrimeCard1').modal('hide');
+                    $('#modalPrimeCard2').modal('hide');
+                    $('#modalPrimeCard3').modal('show');
+                    $('#modalPrimeCard4').modal('hide');
+                    break;
+                case 'cartaoPrime4':
+                    $('#modalPrimeCard1').modal('hide');
+                    $('#modalPrimeCard2').modal('hide');
+                    $('#modalPrimeCard3').modal('hide');
+                    $('#modalPrimeCard4').modal('show');
+                    break;
+                case 'dinheiro1':
+                    $('#modalTroco1').modal('show');
+                    $('#modalTroco2').modal('hide');
+                    $('#modalTroco3').modal('hide');
+                    break;
+                case 'dinheiro2':
+                    $('#modalTroco1').modal('hide');
+                    $('#modalTroco2').modal('show');
+                    $('#modalTroco3').modal('hide');
+                    break;
+                case 'dinheiro3':
+                    $('#modalTroco1').modal('hide');
+                    $('#modalTroco2').modal('hide');
+                    $('#modalTroco3').modal('show');
+                    break;
+            }
+        }
     </script>
 </body>
 

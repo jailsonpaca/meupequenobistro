@@ -23343,28 +23343,22 @@ ul.products li.product .woocommerce-LoopProduct-link>h3 {
     margin: auto;
     text-align: center;
   }
-  .fecharPedido .itemDesc,.fecharPedido .lastColumn {
+  .fecharPedido .itemDesc, .fecharPedido .lastColumn {
     margin-top: 10%;
   }
-  .fecharPedido .subtotalColumn,
-  .fecharPedido .subTotalLabel,
-  .fecharPedido .subTotalContainer,
-  .fecharPedido .itemServir,
-  .fecharPedido .itemIngre{
+  .fecharPedido .subtotalColumn, .fecharPedido .subTotalLabel, .fecharPedido .subTotalContainer, .fecharPedido .itemServir, .fecharPedido .itemIngre {
     margin: auto;
     text-align: center;
   }
-  .fecharPedido .itemIngre{
-    float:none;
+  .fecharPedido .itemIngre {
+    float: none;
   }
-  .fecharPedido .timeEntContainer h5{
+  .fecharPedido .timeEntContainer h5 {
     padding-bottom: 0%;
   }
-  .fecharPedido .timeEntContainer,
-  .fecharPedido  .taxaEntContainer,
-  .fecharPedido  .subtotalColumn{
+  .fecharPedido .timeEntContainer, .fecharPedido .taxaEntContainer, .fecharPedido .subtotalColumn {
     padding-top: 5%;
-    border-top:4px solid #eee;
+    border-top: 4px solid #eee;
   }
   .fecharPedido .btnClose {
     float: left;
@@ -23416,7 +23410,8 @@ table.cart {
   vertical-align: super;
   padding: 0 0 5px 10px;
 }
-.formEntrega .taxaEntClass{
+
+.formEntrega .taxaEntClass {
   font-weight: normal;
   font-size: 100%;
 }
@@ -23522,20 +23517,18 @@ table.cart {
   .cupomFinalizar .textCupomFinalizar, .agenciaCode .textAgenciaCode {
     padding: 2% 0% 2% 4%;
   }
-  .fecharPedido .itemIngre,
-  .fecharPedido .itemServir,
-  .fecharPedido .itemDesc{
+  .fecharPedido .itemIngre, .fecharPedido .itemServir, .fecharPedido .itemDesc {
     margin: 2% auto;
-    padding-top:4%;
-    border-top:4px solid #eee;
+    padding-top: 4%;
+    border-top: 4px solid #eee;
   }
-  .fecharPedido .lastColumn{
-    padding-top:8%;
-    margin-top:2%;
-    border-top:4px solid #eee;
+  .fecharPedido .lastColumn {
+    padding-top: 8%;
+    margin-top: 2%;
+    border-top: 4px solid #eee;
   }
-  .fecharPedido .itemRow img{
-  margin: auto;
+  .fecharPedido .itemRow img {
+    margin: auto;
   }
 }
 
@@ -23573,7 +23566,7 @@ table.cart {
     width: 35%;
   }
   .subTotalLabel {
-    width:50%;
+    width: 50%;
     font-size: 100%;
     vertical-align: middle;
   }
@@ -23693,10 +23686,10 @@ table.cart {
   }
 }
 
-.formFinalizarPage .formFinalizar .btn-success {
-  width: 50%;
-  margin: auto;
-  margin-top: 3%;
+.formFinalizarPage .formFinalizar .btn-success,
+.formFinalizarPage .formFinalizar .btn-danger{
+  width: 70%;
+  margin:5% auto;
 }
 
 .pagamentoPage .formFinalizar .boleto, .pagamentoPage .formFinalizar .dinheiro, .pagamentoPage .formFinalizar .cartao, .pagamentoPage .formFinalizar .cartaoPrime {
@@ -23721,10 +23714,16 @@ table.cart {
 }
 
 .formFinalizar .payments {
-  padding-bottom:
+  margin: auto;
+  text-align: center;
 }
 
-.BannerCartaoPrime {
+.formFinalizar .rowBanner {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.BannerCartaoPrime img{
   width: 100%;
 }
 
@@ -23747,7 +23746,11 @@ table.cart {
   padding: 1% 2%;
   margin: 2% auto;
 }
-
+.pagamentoPage .cartaoDados{
+  margin:auto;
+  width:100%;
+  padding:2% 5%;
+}
 .pagamentoPage .cartaoDados .SumoSelect {
   width: 100%;
 }
@@ -23761,6 +23764,9 @@ table.cart {
 .formEntrega h3 {
   text-align: center;
   font-weight: 500;
+}
+.formEntrega .tableInfos h3{
+  text-align:left;
 }
 
 .formEntrega hr:first-of-type {
@@ -23933,24 +23939,52 @@ table.cart {
 }
 
 .modalLocalFechado .rowSelect {
-  margin:5% auto;
-  margin-bottom:3%;
+  margin: 5% auto;
+  margin-bottom: 3%;
   text-align: center;
 }
-.modalLocalFechado .rowBtn{
-  margin-top:5%;
-  margin-bottom:5%;
+
+.modalLocalFechado .rowBtn {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
-.modalLocalFechado .rowSelect .form-group:first-of-type{
+
+.modalLocalFechado .cardLocalFechado {
+  max-width: 700px;
+  margin: auto;
+}
+
+.modalErrorEndereco {
+  margin: auto;
+  text-align: center;
+}
+
+.modalErrorEndereco .modal-dialog {
+  margin-top: 30%;
+}
+
+.modalLocalFechado .horariosDiv {
+  margin: auto;
+  text-align: center;
+}
+
+.modalLocalFechado .horariosDiv h6 {
+  color: #666;
+  font-weight: 400;
+}
+
+.modalLocalFechado .rowSelect .form-group:first-of-type {
   margin-left: auto;
   text-align: center;
 }
-.modalLocalFechado .rowSelect .form-group:last-of-type{
+
+.modalLocalFechado .rowSelect .form-group:last-of-type {
   text-align: center;
   margin-right: auto;
 }
-.textCenter{
-text-align:center;
+
+.textCenter {
+  text-align: center;
 }
 
 .formLocalFechado .timeEntContainer h5, .formLocalFechado .taxaEntContainer h5 {
@@ -23960,17 +23994,19 @@ text-align:center;
 .formLocalFechado .taxRow {
   width: 120%;
 }
-.formEntrega .card .card-body .form-check .row .timeEntContainer .timeEntClass{
+
+.formEntrega .card .card-body .form-check .row .timeEntContainer .timeEntClass {
   font-size: 100%;
 }
-.formEntrega .card .form-check-label{
+
+.formEntrega .card .form-check-label {
   width: 100%;
 }
+
 @media (min-width: 217px) and (max-width: 750px) {
   .formLocalFechado .taxRow {
     width: 100%;
   }
-  
 }
 
 .formLocalFechado .timeEntContainer i, .formLocalFechado .taxaEntContainer i {
@@ -24265,17 +24301,14 @@ text-align:center;
   min-width: 230px;
 }
 
-.modalAddItem .removerBody .form-check input[type="checkbox"]+label::before, 
-.modalAddItem .modoServirBody .form-check input[type="checkbox"]+label::before {
+.modalAddItem .removerBody .form-check input[type="checkbox"]+label::before, .modalAddItem .modoServirBody .form-check input[type="checkbox"]+label::before {
   font-size: 140%;
   height: 40px;
   vertical-align: baseline;
   width: 40px;
 }
 
-.modalAddItem .removerBody .form-check input[type="checkbox"]:checked+label:before, 
-.modalAddItem .modoServirBody .form-check input[type="checkbox"]:checked+label:before,
-.modalCEP .form-check input[type="checkbox"]:checked+label:before {
+.modalAddItem .removerBody .form-check input[type="checkbox"]:checked+label:before, .modalAddItem .modoServirBody .form-check input[type="checkbox"]:checked+label:before, .modalCEP .form-check input[type="checkbox"]:checked+label:before {
   background: #fff;
   color: #0d0;
   font-weight: bolder;
@@ -24819,7 +24852,7 @@ text-align:center;
 }
 
 .meusPedidosPage .contentPedidoBody table td:last-of-type {
-  padding: .75rem 2rem;
+  padding: .75rem 1.3rem;
 }
 
 @media (max-width: 1140px) {
