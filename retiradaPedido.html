@@ -103,13 +103,29 @@
                             </div>
                         </form>
                         <button type="button" class="btn  btn-success" data-toggle="collapse" data-target="#CEPDados"
-                            aria-expanded="false" aria-controls="CEPDados">Confirmar</button>
+                            aria-expanded="false" aria-controls="CEPDados"
+                            onclick="openObs()">Confirmar</button>
                     </div>
 
                 </div>
             </div>
         </div>
-
+        <div class="modal modalObsEntrega" tabindex="-1" role="dialog" id="modalObsEntrega">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header headerModal">
+                        <h4>Agendamento Automático</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h3 class="textCenter">Alguma observação sobre a entrega?</h3>
+                        <textarea>Exemplo: A casa se encontra aos fundos
+                        </textarea>
+                        <button type="button" class="btn btn-success"
+                                onclick="$('#modalObsEntrega').modal('hide')">CONFIRMAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal modalLocalFechado" tabindex="-1" role="dialog" id="modalLocalFechado">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -119,7 +135,8 @@
                     <div class="modal-body">
                         <div class="card cardLocalFechado">
                             <div class="card-body">
-                                <h5 class="textDanger">O estabelecimento está fechado no momento, deseja agendar um
+                                <h5 class="textDanger">O estabelecimento está fechado no momento, deseja agendar
+                                    um
                                     horário para receber o produto?</h5>
                                 <p>Horário de atendimento:</p>
                                 <div class="horariosDiv">
@@ -151,9 +168,11 @@
                                 </select>
                             </div>
                         </div>
-                        <h6 class="text-danger">*após o agendamento do horário, respeitar a tolerância que pode ser
+                        <h6 class="text-danger">*após o agendamento do horário, respeitar a tolerância que pode
+                            ser
                             de 25-30min</h6>
-                        <div class="rowBtn"><button type="button" class="btn btn-success" onclick="$('#modalVisualizarPedido').modal('show')">CONFIRMAR HORÁRIO</button>
+                        <div class="rowBtn"><button type="button" class="btn btn-success"
+                                onclick="$('#modalVisualizarPedido').modal('show')">CONFIRMAR HORÁRIO</button>
                         </div>
                     </div>
                 </div>
@@ -187,7 +206,8 @@
                                 aria-controls="voucherDadosLocal">
                             <label class="form-check-label" for="checkVoucherLocal">
                                 Comer no local
-                                <p class="card-text">Apresente o voucher(ou o número do pedido) e retire o produto para
+                                <p class="card-text">Apresente o voucher(ou o número do pedido) e retire o
+                                    produto para
                                     comer no local.</p>
                             </label>
                         </div>
@@ -205,7 +225,8 @@
                                 aria-controls="voucherDadosViagem">
                             <label class="form-check-label" for="checkVoucherDados">
                                 Levar para a viagem
-                                <p class="card-text">Apresente o voucher no estabelecimento e retire o produto embalado
+                                <p class="card-text">Apresente o voucher no estabelecimento e retire o produto
+                                    embalado
                                     para viagem.</p>
                                 <div class="row taxRow col-lg-12">
                                     <div class="timeEntContainer col-sm-6 col-lg-6"><i class="fa fa-clock-o"
@@ -221,7 +242,7 @@
                             </label>
                         </div>
                         <div id="voucherDadosViagem" class="voucherDadosViagem collapse" data-parent="#myGroup2">
-                            <button class="btn btn-block btn-success" >ABRIR VOUCHER</button>
+                            <button class="btn btn-block btn-success">ABRIR VOUCHER</button>
                         </div>
                     </div>
                 </div>
@@ -315,7 +336,8 @@
                                 </tr>
                                 <tr>
                                     <td class="textGrey">Modo se servir: </td>
-                                    <td><span id="productServir1">Embalado a vácuo, 3 copos descartáveis</span></td>
+                                    <td><span id="productServir1">Embalado a vácuo, 3 copos descartáveis</span>
+                                    </td>
                                     <td></td>
                                 </tr>
                                 <tr>
@@ -344,7 +366,8 @@
                                 <tr class="lastTr">
                                     <td></td>
                                     <td class="textGrey">Total:</td>
-                                    <td class="text-danger textGrey">R$ <span id="productTotal1">59,90</span></td>
+                                    <td class="text-danger textGrey">R$ <span id="productTotal1">59,90</span>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -359,7 +382,8 @@
                                 </tr>
                                 <tr>
                                     <td class="textGrey">Modo se servir: </td>
-                                    <td><span id="productServir1">Embalado a vácuo, 3 copos descartáveis</span></td>
+                                    <td><span id="productServir1">Embalado a vácuo, 3 copos descartáveis</span>
+                                    </td>
                                     <td></td>
                                 </tr>
                                 <tr>
@@ -388,7 +412,8 @@
                                 <tr class="lastTr">
                                     <td></td>
                                     <td class="textGrey">Total:</td>
-                                    <td class="text-danger textGrey">R$ <span id="productTotal1">59,90</span></td>
+                                    <td class="text-danger textGrey">R$ <span id="productTotal1">59,90</span>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -424,7 +449,8 @@
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td class="lastTd">Subtotal: <span class="font-weight-bold">R$ 59,00</span></td>
+                                    <td class="lastTd">Subtotal: <span class="font-weight-bold">R$ 59,00</span>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -435,14 +461,16 @@
                                 </tr>
                                 <tr>
                                     <td class="invisible"></td>
-                                    <td class="lastTd">Cashback: <span class="font-weight-bold">R$ 2,95</span></td>
+                                    <td class="lastTd">Cashback: <span class="font-weight-bold">R$ 2,95</span>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-lg btn-danger">Voltar</button>
+                        <button type="button" class="btn btn-lg btn-danger"
+                        onclick="$('#modalVisualizarPedido').modal('hide')">Voltar</button>
                         <button type="button" class="btn btn-lg btn-success"
                             onclick="window.location.href='./cpfFinalizar.html'">Continuar</button>
                     </div>
@@ -471,7 +499,16 @@
         });
         var GLOBAL_LINK = "https://meupequenobistro.com.br/cardapio/";
         $('select').SumoSelect();
-
+        var obsVar=0;
+        function openObs(){
+            
+            if(obsVar!=0 && obsVar%2!=0){
+                $('#CEPModal').modal('hide');
+                $('#modalObsEntrega').modal('show');
+            }
+            obsVar++;
+            
+        }
 
 
     </script>
