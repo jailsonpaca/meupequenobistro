@@ -41,119 +41,7 @@
                 </div>
             </div>
         </header>
-        <div class="formEntrega col-lg-12 col-sm-12 ">
-            <h2>Finalização do Pedido</h2>
-            <h4>Retirada do produto</h4>
-            <hr />
-            <h3>O numero do seu pedido é: <span class="numeroPedido">#12I24654</span> selecione abaixo o método de
-                recebimento</h3>
-            <div class="container" id="myGroup">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="form-check">
-                            <input class="form-check-input input-group-lg mb-3" type="radio" name="checkEntrega"
-                                id="checkVoucher" value="checkVoucher" data-toggle="collapse"
-                                data-target="#voucherDados" aria-expanded="false" aria-controls="voucherDados">
-                            <label class="form-check-label" for="checkVoucher">
-                                Retirada por meio de Voucher
-                                <p class="card-text">Apresente na hora do pagamento no estabelecimento esse voucher ou
-                                    cpf e
-                                    documento com foto</p>
-                            </label>
-                        </div>
-                        <div id="voucherDados" class="voucherDados collapse" data-parent="#myGroup">
-                            <button type="submit" class="btn btn-block btn-success">ABRIR VOUCHER</button>
-                            <button type="button" class="btn btn-success .btnFinalizar"
-                                onclick="$('#modalPedidoSucessoVoucher').modal('show')">FINALIZAR
-                                PEDIDO(VOUCHER)</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="checkEntrega" id="checkDelivery"
-                                value="checkDelivery" data-toggle="collapse" data-target="#deliveryDados"
-                                aria-expanded="false" aria-controls="deliveryDados">
-                            <label class="form-check-label" for="checkDelivery">
-                                Retirada por Delivery <p class="card-text">Caso queira receber no local, ou retirar no
-                                    estabelecimento.</p>
-                            </label>
-                        </div>
-
-                        <form id="deliveryDados" class="deliveryDados collapse" data-parent="#myGroup">
-                            <br />
-                            <div class="timeEntContainer"><i class="fa fa-clock-o" aria-hidden="true"></i>
-                                <h5>Tempo de entrega:</h5>
-                                <div class="timeEntClass">25-30min</div>
-                            </div>
-                            <div class="taxaEntContainer"><i class="fa fa-percent" aria-hidden="true"></i>
-                                <h5>Taxa de entrega: R$</h5>
-                                <div class="taxaEntClass">9,90</div>
-                            </div>
-                            <h4>Informe o local de entrega</h4>
-                            <div class="form-row">
-                                <div class="form-group col-md-4" onclick="$('#CEPModal').modal('show')">
-                                    <label for="inputZip">CEP :</label>
-                                    <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="inputZip">Cidade :</label>
-                                    <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="inputZip">Bairro :</label>
-                                    <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <label for="inputRua">Rua :</label>
-                                    <input type="text" class="form-control" id="inputRua" placeholder="Digite aqui">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="inputAddress2">Numero:</label>
-                                    <input type="number" class="form-control" id="inputAddress2"
-                                        placeholder="Digite aqui">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="inputCity">Complemento :</label>
-                                    <input type="text" class="form-control" id="inputCity" placeholder="Digite aqui">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <!--type="submit"-->
-                                    <button type="button" class="btn btn-success "
-                                        onclick="$('#modalErrorEndereco').modal('show')">FINALIZAR PEDIDO</button>
-                                    <button type="button" class="btn btn-success .btnFinalizar"
-                                        onclick="$('#modalPedidoSucessoDelivery').modal('show')">FINALIZAR
-                                        PEDIDO(DELIVERY)</button>
-                                    <button type="button" class="btn btn-success .btnFinalizar"
-                                        onclick="$('#modalLocalFechado').modal('show')">FINALIZAR
-                                        PEDIDO(LOCAL FECHADO)</button>
-
-                                </div>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="modal modalErrorEndereco" tabindex="-1" role="dialog" id="modalErrorEndereco">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header headerModal"></div>
-                        <div class="modal-body text-danger">
-                            O estabelecimento não entrega no local desejado!
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-        </div>
+        
         <div class="modal modalCEP" tabindex="-1" role="dialog" id="CEPModal">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -233,22 +121,22 @@
                             <div class="card-body">
                                 <h5 class="textDanger">O estabelecimento está fechado no momento, deseja agendar um
                                     horário para receber o produto?</h5>
-                                <p>(Horário de atendimento)</p>
+                                <p>Horário de atendimento:</p>
                                 <div class="dropDiv">
                                     <select class="bootstrap-select">
-                                        <option value="1" selected="selected">8:00h - 13:30h e 14:30h - 20:00h
+                                        <option value="1" selected="selected">(Segunda-feira: 8:00h - 13:30h e 14:30h - 20:00h)
                                         </option>
-                                        <option value="2">8:00h - 13:30h e 14:30h - 20:00h</option>
-                                        <option value="3">8:00h - 13:30h e 14:30h - 20:00h</option>
-                                        <option value="4">8:00h - 13:30h e 14:30h - 20:00h</option>
+                                        <option value="2">(Segunda-feira: 8:00h - 13:30h e 14:30h - 20:00h)</option>
+                                        <option value="3">(Segunda-feira: 8:00h - 13:30h e 14:30h - 20:00h)</option>
+                                        <option value="4">(Segunda-feira: 8:00h - 13:30h e 14:30h - 20:00h)</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <div class="clockIcon"> <i class="fa fa-clock-o" aria-hidden="true"></i></div>
-                        <h3>Agende data e hora</h3>
+                        <h3 class="textCenter">Agende data e hora</h3>
                         <div class="form-row rowSelect">
-                            <div class="form-group col-md-6 SelectDia">
+                            <div class="form-group col-md-3 SelectDia">
                                 <select class="form-control" id="SelectDia">
                                     <option>03/07/2020</option>
                                     <option>04/07/2020</option>
@@ -257,7 +145,7 @@
                                     <option>07/07/2020</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6 SelectHora">
+                            <div class="form-group col-md-3 SelectHora">
                                 <select class="form-control" id="SelectHora">
                                     <option>18:00</option>
                                     <option>20:00</option>
@@ -276,12 +164,13 @@
                 </div>
             </div>
         </div>
-        <div class="formLocalFechado col-lg-12 col-sm-12 ">
+        <div class="formEntrega col-lg-12 col-sm-12 ">
             <h2>Finalização do Pedido</h2>
             <h4>Retirada do produto</h4>
             <hr />
-            <h3>O numero do seu pedido é: <span class="numeroPedido">#12I24654</span>, o estabelecimento está fechado no
-                momento, como deseja usar seu voucher?</h3>
+            <h3 class="textGrey"><strong><!--O numero do seu pedido é: <span class="numeroPedido">#12I24654</span>,--> 
+                O estabelecimento está fechado no
+                momento, como deseja usar seu voucher?</strong></h3>
             <div class="container" id="myGroup2">
                 <div class="card">
                     <div class="card-body">
@@ -353,7 +242,7 @@
                             </label>
                         </div>
 
-                        <form id="deliveryDadosFechado" class="deliveryDadosFechado collapse" data-parent="#myGroup2">
+                        <form id="deliveryDadosFechado" class="deliveryDados deliveryDadosFechado collapse" data-parent="#myGroup2">
                             <h4>Informe o local de entrega</h4>
                             <div class="form-row">
                                 <div class="form-group col-md-4" onclick="$('#CEPModal').modal('show')">
@@ -389,6 +278,12 @@
                                     <!--type="submit"-->
                                     <button type="button" class="btn btn-success "
                                         onclick="$('#modalErrorEndereco').modal('show')">FINALIZAR PEDIDO</button>
+                                    <button type="button" class="btn btn-success .btnFinalizar"
+                                        onclick="$('#modalPedidoSucessoDelivery').modal('show')">FINALIZAR
+                                        PEDIDO(DELIVERY)</button>
+                                    <button type="button" class="btn btn-success .btnFinalizar"
+                                        onclick="$('#modalLocalFechado').modal('show')">FINALIZAR
+                                        PEDIDO(LOCAL FECHADO)</button>
                                 </div>
                         </form>
                     </div>
