@@ -23132,7 +23132,7 @@ input[type=checkbox] {
   }
 }
 .modalFechado {
-margin-top: 20%;
+margin-top: 10%;
 }
 .modalFechado .modal-body .dropDiv {
   margin: auto;
@@ -24960,8 +24960,16 @@ min-height:200px;
   float: right;
 }
 
-@media (min-width:640px) and(max-width:620px) {
+@media (min-width:640px) and (max-width:800px) {
   .modal .headerModal .headerTitle {
     margin-left: 40%;
+  }
+}
+.modalAddItem .headerModal .headerTitle {
+  margin-left: 40%;
+}
+@media (max-width:600px) {
+  .modalAddItem .headerModal .headerTitle {
+    margin-left: auto;
   }
 }
