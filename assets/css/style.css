@@ -23122,8 +23122,13 @@ input[type=checkbox] {
   text-align: center;
   margin: auto;
   color: #FFF;
-  font-weight: 500;
+  font-weight: 600;
   padding-top: 0px;
+}
+@media (max-width:1200px) {
+.handheld-navigation ul li ul::after, .handheld-navigation ul li ul::before{
+  display:none;
+}
 }
 
 @media (max-width:400px) {
@@ -23183,7 +23188,23 @@ ul.products li.product .product-content-wrapper, ul.products li.product .product
 
 ul.products li.product {
   width: 25%;
-  margin: 4%;
+  margin: 2%;
+}
+
+.stretch-full-width {
+  width: 99%;
+}
+@media (max-width: 740px) and (min-width: 217px){
+  .stretch-full-width {
+      width: 97.8%;
+  }
+}
+
+@media (min-width: 217px) and (max-width: 500px){
+.stretch-full-width {
+    width: 96.5%;
+}
+
 }
 
 ul.products li.product .hover-area {
@@ -23191,9 +23212,43 @@ ul.products li.product .hover-area {
   width: 100%;
   height: 70px;
   font-size: 100%;
-  padding-top: 7%;
+  padding-top: 6%;
+}
+@media (max-width: 1100px) {
+  ul.products li.product .hover-area {
+    padding-top: 7%;
+  }
 }
 
+@media (max-width: 600px) {
+  ul.products li.product .hover-area {
+    padding-top: 4%;
+  }
+}
+
+@media (max-width: 800px) {
+  ul.products li.product .hover-area {
+    padding-top: 3%;
+  }
+}
+
+@media (max-width: 600px) {
+  ul.products li.product .hover-area {
+    padding-top: 4%;
+  }
+}
+
+@media (max-width: 480px) {
+  ul.products li.product .hover-area {
+    padding-top: 5%;
+  }
+}
+
+@media (max-width: 400px) {
+  ul.products li.product .hover-area {
+    padding-top: 6%;
+  }
+}
 
 @media (min-width: 768px) {
   ul.products li.product {
@@ -23214,13 +23269,13 @@ ul.products li.product .hover-area {
 }
 @media (min-width: 993px){
 .listaProdutosPage ul.products li.product:nth-child(3n+1){
-  margin-left:6%;
+  margin-left:4%;
 }
 .listaProdutosPage ul.products li.product:nth-child(3n-1){
-  margin:4% 2%;
+  margin:2% 2%;
 }
 ul.products li.product {
-  width: 25%;
+  width: 28%;
 }
 ul.products li.product:hover .hover-area {
   font-size: 130%;
@@ -23240,18 +23295,19 @@ ul.products li.product:hover .hover-area {
     margin: 2% !important;
   }
   .listaProdutosPage ul.products li.product:nth-child(2n+1){
-    margin-left:2.5% !important;
+    margin-left:3% !important;
   }
   .stretch-full-width{
     width:98%;
   }
 }
 .listaProdutosPage ul.products li.product .product-content-wrapper p{
+  display:inline-block;
   padding: 0 4%;
+  margin-bottom:0;
 }
 @media (min-width: 217px) and (max-width: 740px) {
   .listaProdutosPage ul.products li.product .btnComprar {
-    padding-top: 3%;
     padding-right: 0;
     padding-left: 0;
   }
@@ -23262,9 +23318,6 @@ ul.products li.product:hover .hover-area {
   ul.products li.product:hover .hover-area {
     font-size: 130%;
     padding-top: 5%;
-  }
-  .stretch-full-width{
-    width:97.8%;
   }
 }
 
@@ -23280,7 +23333,7 @@ ul.products li.product .woocommerce-LoopProduct-link>h3 {
 
 .product-image-wrapper img {
   width: 100%;
-  height: 200px !important;
+  height: 250px !important;
   background-color: #ccc;
   object-fit: cover;
   border-radius: 15px 15px 0px 0px;
@@ -23288,6 +23341,8 @@ ul.products li.product .woocommerce-LoopProduct-link>h3 {
 
 .productPrices {
   display: inline-block;
+  line-height: normal;
+  margin-top: 4%;
 }
 
 .line-through {
@@ -24324,13 +24379,18 @@ min-height:200px;
 
 .modalAddItem .sidebarAddImg h3 {
   position: absolute;
-  top: 30%;
+  top: 45%;
   text-align: center;
   color: white;
-  left: 10%;
+  width:100%;
   text-shadow: 3px 3px 4px black;
 }
-
+@media (max-width: 680px) {
+  .modalAddItem .sidebarAddImg h3 {
+    top: 35%;
+    font-size:100%;
+  }
+}
 @media (min-width: 576px) {
   .modal-dialog {
     max-width: 900px;
@@ -24732,6 +24792,13 @@ min-height:200px;
   text-align: center;
 }
 
+.card-header,.modal-header {
+  padding: 1.5rem 1.25rem;
+}
+.modal-header ,.modal-title,.header-title{
+  font-weight:600;
+}
+
 .cardComandaLogin .card-body .form-group {
   margin: 2% 10%;
 }
@@ -24959,17 +25026,24 @@ min-height:200px;
   padding-bottom: 1%;
   float: right;
 }
+.modalAddItem .headerModal .headerTitle {
+  margin-left: 40%;
+}
 
 @media (min-width:640px) and (max-width:800px) {
   .modal .headerModal .headerTitle {
     margin-left: 40%;
   }
 }
-.modalAddItem .headerModal .headerTitle {
-  margin-left: 40%;
+@media (max-width:639px) {
+.modalAddItem .headerModal .headerTitle{
+  margin-left:25%;
 }
+}
+
 @media (max-width:600px) {
   .modalAddItem .headerModal .headerTitle {
     margin-left: auto;
   }
 }
+
