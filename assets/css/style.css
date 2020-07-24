@@ -23282,6 +23282,18 @@ ul.products li.product:hover .hover-area {
   padding-top: 7%;
 }
 }
+@media (min-width: 1200px){
+ul.products li.product:hover .hover-area {
+  font-size: 130%;
+  padding-top: 6%;
+}
+}
+@media (min-width: 1400px){
+  ul.products li.product:hover .hover-area {
+    font-size: 130%;
+    padding-top: 5%;
+  }
+  }
 
 @media (min-width: 741px) and (max-width: 992px) {
   ul.products li.product .btnComprar {
@@ -23318,6 +23330,12 @@ ul.products li.product:hover .hover-area {
   ul.products li.product:hover .hover-area {
     font-size: 130%;
     padding-top: 5%;
+  }
+}
+@media (max-width: 400px){
+  ul.products li.product:hover .hover-area {
+    font-size: 130%;
+    padding-top: 6%;
   }
 }
 
@@ -24850,10 +24868,14 @@ min-height:200px;
 }
 
 .myAccountIcon {
-  width: 60%;
+  width: 35%;
   margin: auto;
 }
 
+.myAccountArrow {
+  font-size:70%;
+  margin-left:4%;
+}
 .myAccountLink {
   color: white;
   font-size: 95%;
@@ -25041,9 +25063,23 @@ min-height:200px;
 }
 }
 
+.titleListaProducts{
+  margin-left:5%;
+  margin-bottom:2%;
+}
+@media (max-width:990px) {
+  .titleListaProducts{
+    margin-left:auto;
+    text-align:center;
+    margin-bottom:10%;
+  }
+}
+
 @media (max-width:600px) {
   .modalAddItem .headerModal .headerTitle {
     margin-left: auto;
   }
 }
+
+
 
