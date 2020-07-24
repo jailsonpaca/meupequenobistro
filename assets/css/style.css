@@ -24871,7 +24871,11 @@ min-height:200px;
   width: 35%;
   margin: auto;
 }
-
+@media (min-width:1200px){
+.myAccountIcon {
+margin-right:38%;
+}
+}
 .myAccountArrow {
   font-size:70%;
   margin-left:4%;
