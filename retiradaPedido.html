@@ -103,8 +103,7 @@
                             </div>
                         </form>
                         <button type="button" class="btn  btn-success" data-toggle="collapse" data-target="#CEPDados"
-                            aria-expanded="false" aria-controls="CEPDados"
-                            onclick="openObs()">Confirmar</button>
+                            aria-expanded="false" aria-controls="CEPDados" onclick="openObs()">Confirmar</button>
                     </div>
 
                 </div>
@@ -121,7 +120,7 @@
                         <textarea>Exemplo: A casa se encontra aos fundos
                         </textarea>
                         <button type="button" class="btn btn-success"
-                                onclick="$('#modalObsEntrega').modal('hide')">CONFIRMAR</button>
+                            onclick="$('#modalObsEntrega').modal('hide')">CONFIRMAR</button>
                     </div>
                 </div>
             </div>
@@ -309,6 +308,8 @@
                                     <button type="button" class="btn btn-success "
                                         onclick="$('#modalErrorEndereco').modal('show')">CONTINUAR(Erro no
                                         endereço)</button>
+                                    <button type="button" class="btn btn-success "
+                                    onclick="$('#modalLocalFechado').modal('show')">CONTINUAR(Local Fechado)</button>
                                 </div>
                         </form>
                     </div>
@@ -470,7 +471,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-lg btn-danger"
-                        onclick="$('#modalVisualizarPedido').modal('hide')">Voltar</button>
+                            onclick="$('#modalVisualizarPedido').modal('hide')">Voltar</button>
                         <button type="button" class="btn btn-lg btn-success"
                             onclick="window.location.href='./cpfFinalizar.html'">Continuar</button>
                     </div>
@@ -499,15 +500,15 @@
         });
         var GLOBAL_LINK = "https://meupequenobistro.com.br/cardapio/";
         $('select').SumoSelect();
-        var obsVar=0;
-        function openObs(){
-            
-            if(obsVar!=0 && obsVar%2!=0){
+        var obsVar = 0;
+        function openObs() {
+
+            if (obsVar != 0 && obsVar % 2 != 0) {
                 $('#CEPModal').modal('hide');
                 $('#modalObsEntrega').modal('show');
             }
             obsVar++;
-            
+
         }
 
 
