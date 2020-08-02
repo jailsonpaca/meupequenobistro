@@ -53,7 +53,7 @@
 
                         <h2 class="modal-title">Informe o local de entrega</h2>
                         <h5>Digite seu CEP</h5>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-6 col-8">
                             <input type="number" class="form-control" id="inputCEPModal" placeholder="Digite aqui">
                         </div>
                         <div class="form-group col-md-12">
@@ -84,7 +84,7 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label class="labelNumeroCasa" for="inputNumeroCasa">Numero</label>
+                                    <label class="labelNumeroCasa" for="inputNumeroCasa">Numero da residência</label>
                                     <input type="number" class="form-control" id="inputNumeroCasa"
                                         placeholder="Digite aqui">
                                 </div>
@@ -117,8 +117,7 @@
                     </div>
                     <div class="modal-body">
                         <h3 class="textCenter">Alguma observação sobre a entrega?</h3>
-                        <textarea>Exemplo: A casa se encontra aos fundos
-                        </textarea>
+                        <textarea placeholder="Exemplo: A casa se encontra aos fundos"></textarea>
                         <button type="button" class="btn btn-success"
                             onclick="$('#modalObsEntrega').modal('hide')">CONFIRMAR</button>
                     </div>
@@ -138,16 +137,16 @@
                                     um
                                     horário para receber o produto?</h5>
                                 <p>Horário de atendimento:</p>
-                                <div class="horariosDiv">
+                                <div class="horariosDiv form-group">
                                     <h6>(Segunda-feira a sexta-feira: 8:00h - 13:30h e 14:30h - 20:00h)</h6>
                                     <h6>(Finais de semana: 8:00h - 13:30h e 14:30h - 20:00h)</h6>
                                 </div>
                             </div>
                         </div>
-                        <div class="clockIcon"> <i class="fa fa-clock-o" aria-hidden="true"></i></div>
-                        <h3 class="textCenter">Agende data e hora</h3>
+                        <div class="clockIcon"><img src="./assets/images/agendarIcon.svg"/></div>
+                        <h1 class="textCenter">Agende data e hora</h1>
                         <div class="form-row rowSelect">
-                            <div class="form-group col-md-3 SelectDia">
+                            <div class="form-group col-6 SelectDia">
                                 <select class="form-control" id="SelectDia">
                                     <option>03/07/2020</option>
                                     <option>04/07/2020</option>
@@ -156,8 +155,8 @@
                                     <option>07/07/2020</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-3 SelectHora">
-                                <select class="form-control" id="SelectHora">
+                            <div class="form-group col-6 SelectHora">
+                                <select class="form-control" id="SelectHora" >
                                     <option>18:00</option>
                                     <option>20:00</option>
                                     <option>20:30</option>
@@ -250,7 +249,7 @@
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="checkFechado" id="checkDelivery"
                                 value="checkDelivery" data-toggle="collapse" data-target="#deliveryDadosFechado"
-                                aria-expanded="false" aria-controls="deliveryDadosFechado">
+                                aria-expanded="false" aria-controls="deliveryDadosFechado" onclick="$('#CEPModal').modal('show')">
                             <label class="form-check-label" for="checkDelivery">
                                 Delivery <p class="card-text">Tenha o pedido entregue no local desejado.</p>
                                 <div class="row taxRow">
@@ -270,36 +269,13 @@
 
                         <form id="deliveryDadosFechado" class="deliveryDados deliveryDadosFechado collapse"
                             data-parent="#myGroup2">
-                            <h4>Informe o local de entrega</h4>
+                            <!--<h4>Informe o local de entrega</h4>
                             <div class="form-row">
                                 <div class="form-group col-md-4" onclick="$('#CEPModal').modal('show')">
                                     <label for="inputZip">CEP :</label>
                                     <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <label for="inputZip">Cidade :</label>
-                                    <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="inputZip">Bairro :</label>
-                                    <input type="text" class="form-control" id="inputZip" placeholder="Digite aqui">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <label for="inputRua">Rua :</label>
-                                    <input type="text" class="form-control" id="inputRua" placeholder="Digite aqui">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="inputAddress2">Numero:</label>
-                                    <input type="number" class="form-control" id="inputAddress2"
-                                        placeholder="Digite aqui">
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <label for="inputCity">Complemento :</label>
-                                    <input type="text" class="form-control" id="inputCity" placeholder="Digite aqui">
-                                </div>
-                            </div>
+                            </div>-->
                             <div class="form-row">
                                 <div class="form-group col-md-4">
                                     <!--type="submit"-->
@@ -311,6 +287,7 @@
                                     <button type="button" class="btn btn-success "
                                     onclick="$('#modalLocalFechado').modal('show')">CONTINUAR(Local Fechado)</button>
                                 </div>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -324,7 +301,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header headerModal">
-                        <h5 class="modal-title headerTitle">Visualização do pedido</h5>
+                        <h5 class="modal-title headerTitle">Resumo do pedido</h5>
                     </div>
                     <div class="modal-body">
                         <table class="table">
@@ -437,8 +414,8 @@
                                         </th>
                                     <td class="lastTd">Taxa de entrega: R$ 19,90</td>
                                 </tr>
-                                <tr>
-                                    <td>
+                                <tr >
+                                    <td rowspan="2">
                                         <h4><span class="hideMobile badge badge-pill badge-secondary">R.Pedro
                                                 Martinelo Pacheco, 394. Araranguá/SC</span><span
                                                 class="showMobile d-none bg-dark text-white">R.Pedro Martinelo
@@ -449,7 +426,7 @@
                                             59,00</span></td>
                                 </tr>
                                 <tr>
-                                    <td></td>
+                                    
                                     <td class="lastTd">Subtotal: <span class="font-weight-bold">R$ 59,00</span>
                                     </td>
                                 </tr>

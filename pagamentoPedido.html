@@ -43,7 +43,9 @@
         </header>
         <div class="formFinalizar row">
 
-            <div class="col-lg-10 col-md-10 col-sm-10 col-12 payments">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-12 payments">
+                <br />
+                <hr />
                 <h2>Forma de Pagamento</h2>
                 <h5>Escolha o método de pagamento desejado</h5>
                 <hr />
@@ -51,20 +53,20 @@
                 <div class="row">
                     <div class="boleto col-lg-3 col-md-6" onclick="openOption('boleto')">
 
-                        <i class="fa fa-barcode" aria-hidden="true"></i>
+                       <img src="./assets/images/boletoIcon.svg"/>
                         <h4>Pagar com boleto bancário</h4>
                     </div>
                     <div class="dinheiro col-lg-3 col-md-6" onclick="openOption('dinheiro1')">
 
-                        <i class="fa fa-money" aria-hidden="true"></i>
+                        <img src="./assets/images/dinheiroIcon.svg"/>
                         <h4>Pagamento em dinheiro</h4>
                     </div>
                     <div class="cartao col-lg-3 col-md-6" onclick="openOption('cartao')">
-                        <i class="fa fa-credit-card" aria-hidden="true"></i>
+                        <img src="./assets/images/cartaoIcon.svg"/>
                         <h4>Pagar com cartão de crédito</h4>
                     </div>
-                    <div class="cartaoPrime col-lg-3 col-md-6" onclick="openOption('cartaoPrime1').modal('show')">
-                        <img src="./assets/images/cartaoPrime.png" class="cartaoPrimeImg">
+                    <div class="cartaoPrime col-lg-3 col-md-6" onclick="openOption('cartaoPrime1')">
+                        <img src="./assets/images/cartaoPrime.svg" >
                         <h4>Pagar com cartão Prime</h4>
                     </div>
                 </div>
@@ -77,10 +79,10 @@
             <br />
 
             <div id="boletoDados" class="col-12 boletoDados d-none">
-                <button type="submit" class="btn btn-block btn-success">ABRI BOLETO</button>
-                <button type="button" class="btn btn-block btn-success "
+                <button type="submit" class="btn btn-success">ABRIR BOLETO</button>
+                <button type="button" class="btn btn-success "
                     onclick="$('#modalPedidoSucessoVoucher').modal('show')">FINALIZAR PEDIDO(VOUCHER)</button>
-                <button type="button" class="btn btn-block btn-success "
+                <button type="button" class="btn btn-success "
                     onclick="$('#modalPedidoSucessoDelivery').modal('show')">FINALIZAR PEDIDO(DELIVERY)</button>
             </div>
 
@@ -112,7 +114,7 @@
                             <div class="form-group ">
                                 <label for="qtyTroco">R$ </label>
                                 <input type="number" name="qtyTroco" class="form-control" id="qtyTroco" /></div>
-                            <button class="btn btn-lg btn-success" onclick="openOption('dinheiro3')">Sim</button>
+                            <button class="btn btn-lg btn-success" onclick="openOption('dinheiro3')">Confirmar</button>
                         </div>
                     </div>
                 </div>
@@ -191,9 +193,9 @@
                             placeholder="Ex: Anderson da Silva">
                     </div>
                 </div>
-                <button type="button" class="btn btn-block btn-success "
+                <button type="button" class="btn btn-success "
                     onclick="$('#modalPedidoSucessoVoucher').modal('show')">CONFIRMAR PAGAMENTO(VOUCHER)</button>
-                <button type="button" class="btn btn-block btn-success "
+                <button type="button" class="btn btn-success "
                     onclick="$('#modalPedidoSucessoDelivery').modal('show')">CONFIRMAR PAGAMENTO(DELIVERY)</button>
 
             </form>
@@ -248,7 +250,7 @@
                             <div class="form-group PrimeCard">
                                 <input type="number" name="cpfPrimeCard" class="form-control" id="cpfPrimeCard"
                                     placeholder="CPF" /></div>
-                            <button class="btn btn-lg btn-success" onclick="openOption('cartaoPrime2')">Sim</button>
+                            <button class="btn btn-lg btn-success" onclick="openOption('cartaoPrime2')">Confirmar</button>
                         </div>
                     </div>
                 </div>

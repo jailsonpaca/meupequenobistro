@@ -4872,7 +4872,7 @@ embed, iframe, object, video {
 
 @media (min-width: 768px) {
   table.shop_table_responsive tbody tr td, table.shop_table_responsive tbody tr th {
-    text-align: left;
+    /* text-align: left;*/
   }
   .site-header {
     padding-top: 2.617924em;
@@ -23574,12 +23574,15 @@ table.cart {
 }
 
 .cart_totals table .cart-total th h5 {
-  padding-left: 10%;
+  padding-left: 6%;
+}
+
+.cart_totals table .cart-total td h5 {
+  padding-right: 6%;
 }
 
 .cart_totals table .cart-total td h5 {
   padding-left: 5%;
-  color: red;
 }
 
 .btnFinalizarPedido, .btnContinuarComprando {
@@ -23787,8 +23790,27 @@ table.cart {
   margin-top: 5%;
 }
 
-.formFinalizarPage .formFinalizar .form-group .SelectBox, .formFinalizarPage .formFinalizar .form-group input {
+.formFinalizarPage .formFinalizar .form-group .SelectBox {
   border-radius: 5px;
+}
+.formFinalizarPage .formFinalizar .form-group input{
+border-radius: 5px;
+}
+
+.formFinalizarPage .formFinalizar .modal:not(.modalPrimeCard) .form-group input{
+  border-radius: 5px;
+    border:none;
+  text-align: center;
+      padding-right: 15%;
+  }
+  
+  .formFinalizarPage .formFinalizar  .modal:not(.modalPrimeCard) .form-control{
+    display: inline-block;
+    width: 80%;
+    font-size:200%;
+  }
+.formFinalizarPage .formFinalizar .form-control{
+  display: inline-block;
 }
 
 .formFinalizarPage .formFinalizar .form-check {
@@ -23801,9 +23823,18 @@ table.cart {
   }
 }
 
-.formFinalizarPage .formFinalizar .btn-success, .formFinalizarPage .formFinalizar .btn-danger {
-  width: 70%;
+.formFinalizarPage .formFinalizar .modal .btn-success, .formFinalizarPage .formFinalizar .modal .btn-danger {
+  width: 80%;
+  padding: 3% 5%;
+  font-size: 150%;
   margin: 5% auto;
+
+}
+
+.formFinalizarPage .formFinalizar .btn-success, .formFinalizarPage .formFinalizar .btn-danger {
+    margin: 5% auto;
+    padding: 1% 10%;
+    display:block;
 }
 
 .pagamentoPage .formFinalizar .boleto, .pagamentoPage .formFinalizar .dinheiro, .pagamentoPage .formFinalizar .cartao, .pagamentoPage .formFinalizar .cartaoPrime {
@@ -23812,24 +23843,24 @@ table.cart {
   margin-bottom: 6%;
 }
 
-.pagamentoPage .formFinalizar .boleto i, .pagamentoPage .formFinalizar .dinheiro i, .pagamentoPage .formFinalizar .cartao i, .pagamentoPage .formFinalizar .cartaoPrime img {
-  font-size: 900%;
-  text-align: center;
+.pagamentoPage .formFinalizar .boleto img, .pagamentoPage .formFinalizar .dinheiro img, .pagamentoPage .formFinalizar .cartao img, .pagamentoPage .formFinalizar .cartaoPrime img {
   margin: auto;
-  margin-bottom: 6%;
   width: 80%;
   border-radius: 10px;
-  box-shadow: 0px 0px 29px -13px rgba(0, 0, 0, 0.75);
-}
-
-.pagamentoPage .formFinalizar .cartaoPrime img {
-  width: 90%;
-  height: 65%;
 }
 
 .formFinalizar .payments {
   margin: auto;
   text-align: center;
+}
+
+.formFinalizar .payments .row:first-of-type {
+  padding: 5%;
+}
+
+.formFinalizar .payments h2, .formFinalizar .payments h5 {
+  text-align: left;
+  margin-left: 2%;
 }
 
 .formFinalizar .rowBanner {
@@ -23845,13 +23876,9 @@ table.cart {
   margin-bottom: 2%;
 }
 
-.pagamentoPage .formFinalizar .boleto:hover i, .pagamentoPage .formFinalizar .dinheiro:hover i, .pagamentoPage .formFinalizar .cartao:hover i {
-  font-size: 1000%;
-  width: 90%;
-}
-
-.pagamentoPage .formFinalizar .cartaoPrime:hover img {
-  width: 100%;
+.pagamentoPage .formFinalizar .boleto:hover, .pagamentoPage .formFinalizar .dinheiro:hover, .pagamentoPage .formFinalizar .cartao:hover, .pagamentoPage .formFinalizar .cartaoPrime:hover {
+  box-shadow: 0px 0px 60px -13px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
 }
 
 .roundedTitle {
@@ -23959,13 +23986,35 @@ table.cart {
   margin-top: 5%;
 }
 
+.modalCEP .modal-title {
+  font-size: 250%;
+  font-weight: 500;
+}
+
+.modalCEP label {
+  text-align: left;
+}
+
 .modalCEP #inputCEPModal {
   margin-bottom: 5%;
+  padding: 10%;
+  font-size: 200%;
+  text-align: center;
 }
 
 .modalCEP #CEPDados {
   margin: auto;
   margin-bottom: 1%;
+}
+
+.modalCEP .btn-success {
+  padding: 1.5% 7%;
+  font-size: 120%;
+}
+
+.modalObsEntrega .btn-success {
+  padding: 2.5% 10%;
+  font-size: 120%;
 }
 
 .modalCEP #CEPDados .form-group {
@@ -24006,7 +24055,7 @@ table.cart {
 }
 
 .cardLocalFechado .textDanger {
-  text-align: center;
+  text-align: left;
   font-weight: 400;
   color: red;
 }
@@ -24028,9 +24077,59 @@ table.cart {
   border-radius: 5px;
 }
 
+.modalLocalFechado .SelectHora .SumoSelect select, .modalLocalFechado .SelectDia .SumoSelect select {
+  max-width: 75%;
+}
+
+.modalLocalFechado .SelectHora .SumoSelect select option, .modalLocalFechado .SelectDia .SumoSelect select option {
+  background: rgba(255, 255, 255, 1);
+}
+
+.modalLocalFechado .SumoSelect.open>.optWrapper {
+  top: 50px;
+}
+
+.modalLocalFechado .SelectHora .SumoSelect, .modalLocalFechado .SelectDia .SumoSelect {
+  width: 70%;
+  font-size: 200%;
+}
+
+.modalLocalFechado .SelectHora .SumoSelect .SelectBox, .modalLocalFechado .SelectDia .SumoSelect .SelectBox {
+  padding: 10%;
+}
+
+.modalLocalFechado .SumoSelect>.CaptionCont>label {
+  width: 50px;
+}
+
+.modalLocalFechado .SumoSelect>.CaptionCont>label i {
+  background-image: url('../images/seta.png');
+  background-position: center right;
+  background-size: 60%;
+  width: 50px;
+  margin-right: 15px;
+}
+
 .modalLocalFechado .modal-header h4, .modalObsEntrega .modal-header h4 {
   margin: auto;
   color: white;
+}
+
+.modalObsEntrega textarea {
+  resize: none;
+  border-radius: 5px;
+  border: none;
+}
+
+.modalLocalFechado .rowSelect .form-group:first-of-type {
+  margin-left: auto;
+  text-align: center;
+}
+
+@media (max-width:850px) {
+  .modalLocalFechado .SelectHora .SumoSelect, .modalLocalFechado .SelectDia .SumoSelect {
+    width: 100%;
+  }
 }
 
 .modalObsEntrega .modal-dialog {
@@ -24063,6 +24162,11 @@ table.cart {
   margin-bottom: 3%;
 }
 
+.modalLocalFechado .clockIcon img {
+  max-width: 250px;
+  margin: auto;
+}
+
 .modalLocalFechado .text-danger {
   text-align: center;
 }
@@ -24076,6 +24180,9 @@ table.cart {
   margin: auto;
   text-align: center;
   margin-top: 1%;
+  padding: 2% 6%;
+  font-size: 120%;
+  font-weight: 600;
 }
 
 .modalLocalFechado .rowSelect {
@@ -24100,7 +24207,7 @@ table.cart {
 }
 
 .modalErrorEndereco .modal-dialog {
-  margin-top: 30%;
+  margin-top: 20%;
 }
 
 .modalLocalFechado .horariosDiv {
@@ -24111,11 +24218,6 @@ table.cart {
 .modalLocalFechado .horariosDiv h6 {
   color: #666;
   font-weight: 400;
-}
-
-.modalLocalFechado .rowSelect .form-group:first-of-type {
-  margin-left: auto;
-  text-align: center;
 }
 
 .modalLocalFechado .rowSelect .form-group:last-of-type {
@@ -24245,6 +24347,11 @@ table.cart {
 .modalAddItem .containerAddItem .card .quantidadeBody a {
   margin: auto;
   text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .modalAddItem .containerAddItem .card .quantidadeBody input::-webkit-outer-spin-button, .modalAddItem .containerAddItem .card .quantidadeBody input::-webkit-inner-spin-button {
@@ -24610,6 +24717,29 @@ table.cart {
   text-align: right;
 }
 
+.modalVisualizarPedido .modal-footer .btn:first-of-type {
+  margin: auto;
+  padding: 1% 12%;
+}
+
+.modalVisualizarPedido .modal-footer .btn:last-of-type {
+  margin: auto;
+  margin-left: 20%;
+  padding: 1% 12%;
+}
+
+.modalVisualizarPedido .modal-footer {
+  margin-bottom: 5%;
+}
+
+.modalAddItem .badge-secondary, .modalVisualizarPedido .badge-secondary {
+  background-color: #ccc;
+  color: black;
+  border-radius: 5px;
+  font-weight: 500;
+  padding: .5em 1em;
+}
+
 @media (min-width: 769px) {
   .showOnMobile {
     display: none;
@@ -24684,7 +24814,6 @@ table.cart {
 
 .modalTroco .modal-body .form-group label, .modalPrimeCard .modal-body .form-group label {
   display: inline-block;
-  width: 25%;
   font-size: 200%;
   margin: auto;
   text-align: center;
@@ -24733,9 +24862,7 @@ table.cart {
   max-width: 600px;
 }
 
-.modalPrimeCard .modal-body .codePrimeCardModal {
-  margin-left: 25%;
-}
+
 
 @media (min-width: 217px) and (max-width:780px) {
   .modalTroco .modal-body .form-group {
@@ -24804,13 +24931,22 @@ table.cart {
 .modalTroco .modal-body button, .modalPrimeCard .modal-body button {
   display: block;
   margin: 10% auto;
-  border-radius: 30px;
   padding: 2% 20%;
 }
 
+.fa-check:before {
+  padding-left: 10%;
+}
+
+.modalPrimeCard .modal-body  {
+  margin: auto 5%;
+}
 .modalPrimeCard .modal-body .PrimeCard input {
   width: 100%;
+  height: 50px;
   text-align: center;
+  color: black;
+    font-weight: 600;
 }
 
 .inputPrimeCard input {
@@ -24980,6 +25116,18 @@ table.cart {
 
 /*---Meus Dados Page---*/
 
+.meusDadosPageContainer .col-full {
+  width: 100%;
+}
+
+.meusDadosPageContainer .btn {
+  padding: 1% 5%;
+  font-size: 150%;
+  margin: auto;
+  margin-top: 3%;
+  display: block;
+}
+
 .meusDadosPage .card {
   margin-top: 5%;
 }
@@ -25119,13 +25267,14 @@ table.cart {
     margin-left: auto;
   }
 }
+
 @media (max-width:500px) {
-.cupomFinalizar, .agenciaCode {
-  margin: 10% 12%;
+  .cupomFinalizar, .agenciaCode {
+    margin: 10% auto;
+  }
 }
-}
+
 @media (max-width:575px) {
-  
   .hideSmallScreen {
     display: none;
   }
@@ -25140,7 +25289,6 @@ table.cart {
   }
   .fecharPedido .subTotalContainer {
     float: none;
-    margin-left: 5%;
   }
   .hideLargeScreen {
     text-align: center;
@@ -25148,4 +25296,173 @@ table.cart {
     color: black;
     font-weight: 600;
   }
+}
+
+@media (min-width:880px) and (max-width:990px) {
+  .timeEntContainer, .taxaEntContainer, .subtotalColumn {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .timeEntContainer i, .taxaEntContainer i {
+    font-size: 150%;
+  }
+}
+
+@media (max-width:1185px) {
+  .subTotalLabel {
+    font-size: 100%;
+  }
+  .timeEntContainer, .taxaEntContainer {
+    text-align: center;
+  }
+  .timeEntContainer h5, .taxaEntContainer h5 {
+    font-size: 120%;
+  }
+  .taxaEntClass {
+    display: block;
+  }
+}
+
+@media (max-width: 590px) {
+  .subtotalColumn {
+    text-align: center;
+  }
+  .subTotalLabel {
+    margin-left: auto;
+    font-size: 130%;
+    width: 20%;
+  }
+  .subTotalContainer {
+    margin-left: 0%;
+  }
+}
+
+@media (max-width:500px) {
+  .subTotalLabel {
+    vertical-align: top;
+    font-size: 130%;
+  }
+  .cupomFinalizar input, .agenciaCode input {
+    margin-left: auto;
+  }
+  .cupomFinalizar .input-group-append, .agenciaCode .input-group-append {
+    margin-right: auto;
+  }
+}
+
+.cart-cortesia th, .cart-cortesia td, .cart-total-ingresso th, .cart-total-ingresso td, .cart-sub-total th, .cart-sub-total td, .cart-total-cupom th, .cart-total-cupom td, .cart-taxa-entrega th, .cart-taxa-entrega td, .cart-total td h5, .cart-total {
+  font-weight: 600;
+  color: black;
+}
+
+.cart_totals table td, .cart_totals table th {
+  vertical-align: baseline;
+}
+
+.cart-cortesia, .cart-total-ingresso, .cart-sub-total, .cart-total-cupom, .cart-taxa-entrega {
+  text-align: end;
+}
+
+#tb2 th {
+  font-size: 150%;
+  padding: 1em 1em;
+}
+
+@media (max-width: 1000px) {
+  .cart-total {}
+  .cart-total td {
+    text-align: end !important;
+  }
+  #tb2 th {
+    text-align: start !important;
+    padding: 1em 1.41575em;
+  }
+}
+
+.cart-total {
+  border-top: 3px solid #eee;
+}
+
+#tb2 {
+  border-top: 2px solid black;
+  padding-top: 5px;
+}
+
+@media (max-width: 760px) {
+  .cart-total .hideSmallScreen {
+    display: none;
+  }
+  table.shop_table_responsive .cart-total td:after {
+    font-size: 200%;
+    content: attr(value);
+    float: right;
+    color: red;
+  }
+  #tb2 {
+    padding-top: 10px;
+  }
+}
+
+.btnContinuarComprando {
+  background-color: #dcdcdc;
+  border-color: #dcdcdc;
+  color: #fff;
+  font-weight: 600;
+}
+
+table.shop_table_responsive .lineTable td:before {
+  content: none;
+}
+
+table.shop_table_responsive .cart-total td:before {
+  font-size: 200%;
+}
+
+@media (max-width:800px) {
+  .fecharPedido .btnClose {
+    margin-right: 15%;
+  }
+}
+
+@media (max-width:560px) {
+  .fecharPedido .btnClose {
+    margin-right: 80%;
+    float: none;
+  }
+}
+
+.scrollUl{
+  scroll-behavior: smooth;
+  white-space:nowrap;
+  overflow: auto !important;
+  display: inline-block !important;
+  width:70% !important;
+}
+.scrollUl::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+.controlRight{
+  text-align: end;
+}
+.controlLeft{
+  text-align: start;
+}
+.controlLeft,.controlRight{
+  cursor:pointer;
+  width: 10%;
+  display: inline-block;
+    vertical-align: 100%;
+    font-size: 400%;
+}
+.scrollUl .menu-item{
+  display: inline-block;
+  clear: both;
+}
+.secondary-navigation{
+text-align: center;
+}
+.secondary-navigation .fa-arrow-left,
+.secondary-navigation .fa-arrow-right{
+display:inline-block;
 }

@@ -33,8 +33,8 @@
                     </div>
                     <div class="modal-body">
                         <h4>Estamos fechados no momento!</h4>
-                        
-                        
+
+
                         <div class="dropDiv">
                             <div class="horariosDiv">
                                 <p>Horário de atendimento:</p>
@@ -50,9 +50,8 @@
                         </div>
                         <br />
                         <br />
-                        <button type="button" class="btn btn-lg btn-success"
-                        data-toggle="modal"
-                                    data-target="#fechadoModal">Continuar</button>
+                        <button type="button" class="btn btn-lg btn-success" data-toggle="modal"
+                            data-target="#fechadoModal">Continuar</button>
                     </div>
                     <div class="modal-footer">
 
@@ -223,10 +222,11 @@
                                         <div href="#" class="myAccountLink">
                                             <ul class=" myAccountList">
                                                 <li class="blackOnHover"><a href="./meusDados.html">Meus dados</a></li>
-                                                <li class="blackOnHover"><a href="./meusPedidos.html">Meus pedidos</a></li>
+                                                <li class="blackOnHover"><a href="./meusPedidos.html">Meus pedidos</a>
+                                                </li>
                                             </ul>
                                         </div>
-        
+
                                     </div>
                                 </li>
                             </ul>
@@ -246,8 +246,7 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <li sytle="padding-bottom:10px;">
-                                            <a href="./fecharPedido.html"
-                                                title="Seu Carrinho">
+                                            <a href="./fecharPedido.html" title="Seu Carrinho">
                                                 <span class="count" style="font-size:12px;">0 item</span> <span
                                                     class="amount" style="font-size:14px">R$ 0,00</span>
                                             </a>
@@ -271,7 +270,8 @@
                 </div>
                 <div class="pizzaro-secondary-navigation">
                     <nav class="secondary-navigation" aria-label="Secondary Navigation">
-                        <ul class="menu">
+                        <div class="controlLeft"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
+                        <ul class="menu scrollUl">
                             <li class="menu-item confeitaria">
                                 <a
                                     href="https://meupequenobistro.com.br/cardapio/produtos/confeitaria"><span>Confeitaria</span></a>
@@ -307,8 +307,40 @@
                                     Open Modal Fechado
                                 </button>
                             </li>
-
+                            <li class="menu-item bebidas">
+                                <a
+                                    href="https://meupequenobistro.com.br/cardapio/produtos/bebidas"><span>Bebidas</span></a>
+                            </li>
+                            <li class="menu-item bebidas">
+                                <a
+                                    href="https://meupequenobistro.com.br/cardapio/produtos/bebidas"><span>Bebidas</span></a>
+                            </li>
+                            <li class="menu-item bebidas">
+                                <a
+                                    href="https://meupequenobistro.com.br/cardapio/produtos/bebidas"><span>Bebidas</span></a>
+                            </li>
+                            <li class="menu-item bebidas">
+                                <a
+                                    href="https://meupequenobistro.com.br/cardapio/produtos/bebidas"><span>Bebidas</span></a>
+                            </li>
+                            <li class="menu-item bebidas">
+                                <a
+                                    href="https://meupequenobistro.com.br/cardapio/produtos/bebidas"><span>Bebidas</span></a>
+                            </li>
+                            <li class="menu-item bebidas">
+                                <a
+                                    href="https://meupequenobistro.com.br/cardapio/produtos/bebidas"><span>Bebidas</span></a>
+                            </li>
+                            <li class="menu-item bebidas">
+                                <a
+                                    href="https://meupequenobistro.com.br/cardapio/produtos/bebidas"><span>Bebidas</span></a>
+                            </li>
+                            <li class="menu-item bebidas">
+                                <a
+                                    href="https://meupequenobistro.com.br/cardapio/produtos/bebidas"><span>Bebidas</span></a>
+                            </li>
                         </ul>
+                        <div class="controlRight"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
                     </nav>
                 </div>
             </div>
@@ -613,8 +645,7 @@
                             </div>
                         </div>
 
-                        <div class="stretch-full-width section-products-sale-event"
-                            style="background-size: cover; background-position: center center; background-image: url( assets/images/homepage-banners/5.jpg); height: 468px;
+                        <div class="stretch-full-width section-products-sale-event" style="background-size: cover; background-position: center center; background-image: url( assets/images/homepage-banners/5.jpg); height: 468px;
                             margin-left: 0; left: 0; width: 100%;">
                             <div class="sale-event-content">
                                 <h3 class="pre-title"><span>PROMOÇÃO NOVINHA SAINDO</span></h3>
@@ -790,8 +821,7 @@
                             </div>
                         </li>
                         <li class="cart">
-                            <a class="footer-cart-contents" href="./fecharPedido.html"
-                                title="Finalizar Pedido">
+                            <a class="footer-cart-contents" href="./fecharPedido.html" title="Finalizar Pedido">
                                 <span class="count">0</span>
                             </a>
                         </li>
@@ -815,6 +845,33 @@
     <script type="text/javascript">
         var GLOBAL_LINK = "https://meupequenobistro.com.br/cardapio/";
         $('select').SumoSelect();
+        let wrap = document.querySelector(".scrollUl");
+        let prev = document.querySelector(".controlLeft");
+        let next = document.querySelector(".controlRight");
+        next.addEventListener('click', () => {
+            wrap.scrollTo(wrap.scrollLeft + 300, 0)
+        })
+
+        prev.addEventListener('click', () => {
+            wrap.scrollTo(wrap.scrollLeft - 300, 0)
+        })
+        wrap.addEventListener("scroll", () => {
+            let scrollLeft = wrap.scrollLeft;
+            let scrollRight = wrap.scrollRight;
+            let scrollLeftMax =wrap.scrollWidth - wrap.clientWidth;
+            if (scrollLeft > 0) {
+                prev.classList.remove("invisible");
+                prev.classList.add("visible");
+            } else {
+                prev.classList.add("invisible");
+            }
+            if (scrollLeft == scrollLeftMax) {
+                next.classList.add("invisible");
+            } else {
+                next.classList.remove("invisible");
+                next.classList.add("visible");
+            }
+        });
     </script>
 </body>
 
